@@ -117,11 +117,13 @@ q:before, q:after {
   width: 10%;
   border-width: 0.1em;
   background-color: #381D2A;
+  margin-top: 30px;
   }
 
   .account-text {
       font-family: Georgia, 'Times New Roman', Times, serif;
       font-size: 1.3em;
+      font-weight: bold;
       color: #381D2A;
       width: 100%;
       text-align: center;
@@ -138,3 +140,46 @@ q:before, q:after {
     margin-bottom: 10px;
   }
 
+  buttons2{
+    margin-left: 45%;
+    font-size: 1.3em;
+  }
+
+  .account-text2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #381D2A;
+    width: 70%;
+    text-align: center;
+    margin-top: 20px;
+    margin-left:15%;
+}
+
+.form3 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 3em;
+  margin-left: 20%;
+  margin-top: 10px;
+  border-width: 0.3em;
+  margin-bottom: 10px;
+}
+
+.check-left{
+  width: 50%;
+  float: left;
+}
+
+.check-right{
+  width: 50%;
+  float:right;
+}
+
+.allergies{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.1em;
+  color: #381D2A;
+  width: 60%;
+  margin-left:30%;
+  margin-top: 10px;
+}
