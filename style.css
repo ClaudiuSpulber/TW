@@ -183,3 +183,57 @@ q:before, q:after {
   margin-left:30%;
   margin-top: 10px;
 }
+
+.product-title{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 3em;
+  font-weight: bold;
+  color: #381D2A;
+  width: 45%;
+  margin-top: 10%;
+  margin-left: 40%;
+}
+
+.product-description{
+  margin-top:10px;
+}
+
+.left-product{
+  float:left;
+  margin-top: 80px;
+  width: 50%;
+  text-align: center;
+}
+
+.right-product{
+  width: 50%;
+  background-color: #F9F9F9;
+  float:right;
+  margin-top: 80px;
+}
+
+.description-title{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.2em;
+  color: #381D2A;
+  width: 45%;
+  margin-left: 170px;
+  margin-bottom: 4px;
+}
+
+.content{
+  font-weight: bold;
+  font-size: 1.9em;
+  margin-left:170px;
+  margin-bottom: 4px;
+}
+
+.buttonfav{
+  text-align:center;
+  width: 1000px;
+}
+
+.buttoncart{
+  text-align:center;
+  width: 1000px;
+}
