@@ -30,40 +30,22 @@
     <div class="content2">
         <div class="container">
                 <div class="little-container">
-                <h1 class="product-title">
-                    My lists
-                </h1>
-                <div class="section-2">
-                    <ul>
-                        <li>
-                            <div class="list-title">List 1</div>
-                            <div class="list-item">-Milk
-                                <a href="without-milk.html"><img src="bin.png" style="box-shadow: 0 4px 50px 0 rgba(20, 13, 65, 0.2)" width="20px"></a>
-                            </div>
-                            <div class="list-item">-Coffee
-                                <a href="without-milk.html"><img src="bin.png" style="box-shadow: 0 4px 50px 0 rgba(20, 13, 65, 0.2)" width="20px"></a>
-                            </div>
-                            <div class="list-item">-Sugar
-                                <a href="without-milk.html"><img src="bin.png" style="box-shadow: 0 4px 50px 0 rgba(20, 13, 65, 0.2)" width="20px"></a>
-                            </div>
-                            <a href="delete-first.html"><button type="button">Delete all list</button></a>
-                        </li>
-                        <li>
-                            <div class="list-title">List 2</div>
-                            <div class="list-item">-Flour
-                                <a href="without-milk.html"><img src="bin.png" style="box-shadow: 0 4px 50px 0 rgba(20, 13, 65, 0.2)" width="20px"></a>
-                            </div>
-                            <div class="list-item">-Biscuits
-                                <a href="without-milk.html"><img src="bin.png" style="box-shadow: 0 4px 50px 0 rgba(20, 13, 65, 0.2)" width="20px"></a>
-                            </div>
-                            <div class="list-item">-Apples
-                                <a href="without-milk.html"><img src="bin.png" style="box-shadow: 0 4px 50px 0 rgba(20, 13, 65, 0.2)" width="20px"></a>
-                            </div>
-                            <a href="delete-second.html"><button type="button">Delete all list</button></a>
-                        </li>
-                    </ul>
-                </div>
+                    <h1 class="product-title">
+                        Add a new product
+                    </h1>
+                <form>
+                    <input type="text" id="productname" class="form2" maxlength="255" placeholder="Product name" required="required" ><br>
+                    <input type="text" id="description" class="form2" maxlength="255" placeholder="Product description" required="required" ><br>
+                    <input type="text" id="price" class="form2" maxlength="255" placeholder="Product price" required="required" ><br>
+                    <input type="text" id="ingredients" class="form2" maxlength="255" placeholder="Product ingredients" required="required" ><br>   
+                    <input type="text" id="allergens" class="form2" maxlength="255" placeholder="Product allergens" required="required" ><br>
+                    <input type="text" id="restaurants" class="form2" maxlength="255" placeholder="Restaurant where you find" required="required" ><br>       
+                    <input type="text" id="season" class="form2" maxlength="255" placeholder="Season" required="required" >
+                </form>
+                <div class="add-button">
+                <button type="button" onclick="alert('You have added a new product')">Add product</button></a>
              </div>
+            </div>
         </div>
         <div class="menu">
             <div class="menu-element">
