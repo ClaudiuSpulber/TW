@@ -1,81 +1,58 @@
 header{
-    width: 100%;
-    display:flex;
-    align-items: center;
-    background-color:#381D2A;
-<<<<<<< HEAD
+  width: 100%;
+  display:flex;
+  align-items: center;
+  background-color:#381D2A;
 }
-=======
-    
-}
-
-
->>>>>>> 7a08f0f1ef53f5a576af0e7feb99eb5adcf34f70
 header .logo{
-    margin-right: auto;
+  margin-right: auto;
 }
 * {
-    box-sizing: border-box;
-  }
-<<<<<<< HEAD
-=======
-  
->>>>>>> 7a08f0f1ef53f5a576af0e7feb99eb5adcf34f70
-  .search{
-    background-color:transparent;
-    width:80%;
-    float:right;
-    height:100px;
-  }
-  .searchbar[type=text]{
-    float: right;
-    margin-top:50px;
-    font-family:'Raleway';
-    padding: 0.5%;
-    border: 1px solid rgb(66, 3, 56);
-    border-radius:20px;
-    font-size: 17px;
-    color:#001A33;
-  }
-  .buttonsearch{
-    float: right;
-    margin-right:5px;
-    padding-top:0.6%;
-    padding-bottom:0.6%;
-    background: rgba(95, 0, 63, 0.479);
-    color: white;
-    font-size: 17px;
-    border: 1px solid grey;
-    border-radius:15px;
-    cursor: pointer;
-    margin-top:50px;
-  }
-<<<<<<< HEAD
-=======
-
->>>>>>> 7a08f0f1ef53f5a576af0e7feb99eb5adcf34f70
+  box-sizing: border-box;
+}
+.search{
+  background-color:transparent;
+  width:80%;
+  float:right;
+  height:100px;
+}
+.searchbar[type=text]{
+  float: right;
+  margin-top:50px;
+  font-family:'Raleway';
+  padding: 0.5%;
+  border: 1px solid rgb(66, 3, 56);
+  border-radius:20px;
+  font-size: 17px;
+  color:#001A33;
+}
+.buttonsearch{
+  float: right;
+  margin-right:5px;
+  padding-top:0.6%;
+  padding-bottom:0.6%;
+  background: rgba(95, 0, 63, 0.479);
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-radius:15px;
+  cursor: pointer;
+  margin-top:50px;
+}
 header .blabla{
-    width: 50px;
-    height: 50px;
+  width: 50px;
+  height: 50px;
 }
 header .blabla .account{
-    width: 100%;
-    height: 100%;
-<<<<<<< HEAD
-=======
-    
->>>>>>> 7a08f0f1ef53f5a576af0e7feb99eb5adcf34f70
+  width: 100%;
+  height: 100%;
 }
 header .blabla .grup{
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 header .blabla .list{
-    width: 100%;
-    height: 100%;
-    margin-right: 10px;
-<<<<<<< HEAD
+  width: 100%;
+  height: 100%;
+  margin-right: 10px;
 }
-=======
-}
->>>>>>> 7a08f0f1ef53f5a576af0e7feb99eb5adcf34f70
