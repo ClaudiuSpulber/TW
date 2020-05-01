@@ -1,0 +1,252 @@
+html,body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color:#381D2A
+}
+
+/*header*/
+header{
+  width: 100%;
+  display:flex;
+  align-items: center;
+  background-color:#381D2A
+  
+}
+
+
+header .logo{
+  margin-right: auto;
+}
+* {
+  box-sizing: border-box;
+}
+
+/* Style the search field */
+form.search-claus input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+/* Style the submit button */
+form.search-claus button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+
+form.search-claus button:hover {
+  background: #0b7dda;
+}
+
+/* Clear floats */
+form.search-claus::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.search-icon{
+position: relative;
+float: right;
+width: 75px;
+height: 75px;
+top: -62px;
+right: -45px;
+margin-right: auto;
+}
+
+header .blabla{
+  width: 50px;
+  height: 50px;
+}
+header .blabla .account{
+  width: 100%;
+  height: 100%;
+  
+}
+header .blabla .grup{
+  width: 100%;
+  height: 100%;
+}
+header .blabla .list{
+  width: 100%;
+  height: 100%;
+}
+
+.content1{
+  width: 100%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  display: flex;
+
+}
+.container{
+  width: 100%;
+  margin-right: 50px;
+  margin-left: 50px;
+  background-color:rgb(255, 255, 255)
+}
+.row{
+  margin-right: -15px;
+  margin-left: 50px;
+  text-align: center;
+}
+
+.menu {
+margin: 0;
+padding: 0;
+width: fit-content;
+  background-color:#381D2A
+}
+
+.submenu-claus-container {
+  position: relative;
+  width: 197px;
+}
+
+.submenu-claus {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0px;
+  text-decoration: none;
+  color: white;
+}
+
+.submenu-text {
+  color:rgb(255, 255, 255);
+  text-decoration: none;
+}
+div.menu > div > div:nth-child(2):hover > .submenu-claus{
+  display: block;
+}
+
+.menu-element{
+display: flex;
+
+padding: 8px 16px;
+}
+.menu-image {
+  color: #000;
+  width: 40px;
+  height: 40px;
+  max-width: 220px;
+  padding-right: 12%;
+}
+.menu-text {
+  color:rgb(255, 255, 255);
+  text-decoration: none;
+  display: none;
+}
+.menu:hover .menu-text{
+  display: initial;
+}
+.menu-text:hover{
+  background-color: #555;
+color: white;
+}
+
+.editeazaDatele{
+  float: right;
+}
+
+.date{
+  width: 50%;
+  margin-top: 1%;
+}
+
+.dataTable{
+  background-color: white;
+  width: 100%;
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+
+.titlu{
+  font-size: 25px;
+  font-family: "Times New Roman", sans-serif;
+}
+
+.myLists{
+  float: right;
+  width: 20%;
+  padding: 2%;
+  background-color: white;
+  margin: auto;
+}
+
+.lists{
+  color: red;
+  font: 40px Arial;
+  margin: auto;
+}
+
+.listButton{
+  margin: auto;
+  height: 35px;
+  background-color: orange;
+  color: purple;
+  padding-bottom: 4px;
+  width: 200px;
+  font-family: Georgia;
+}
+
+.groupsList{
+  display: flex;
+  justify-content: center;
+}
+
+.li0{
+  padding: 15px;
+  margin: 30px;
+}
+
+.li1 { 
+  list-style-type: none;
+  position: relative;
+  font-size: 1.5rem;
+  padding: 15px;
+  margin: 30px;
+  background-image: linear-gradient(to right bottom, white, gray);
+  color: #fff;
+  border-radius: 25px;
+  font-family: Georgia;
+}
+
+.grCreate{
+  background-color: white;
+  color: purple;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align : center;
+  border-radius: 12px;
+}
+
+.groupParagraph{
+  position: relative;
+}
+
+.content3{
+  margin-top: 60px;
+  text-align: center; 
+}
+
+.favorites{
+  font-size:xx-large;
+  color: pink;
+}
