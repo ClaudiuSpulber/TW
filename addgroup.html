@@ -1,45 +1,49 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css"> 
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="navbar.css">
     <link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FORGshop</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORGshop</title>
 </head>
+
 <body style="background-color: #381D2A">
     <header style="background-color:#381D2A">
         <img class="logo" src="logo.png" style="width:10%;">
-        <form class="search-claus" action="action_page.php">
-            <input type="text" placeholder="Search.." name="search">
-            <button type="submit-search"><i class="c-search"></i></button>
-            <a href="#"><img class="search-icon" src="search.png"></a>
-        </form>
-            <a href="#" class="blabla">
-                <img class="account" src="persoana.png">
-            </a>
-            <a href="#" class="blabla">
-                <img class="grup" src="grup.png">
-            </a>
-            <a href="#" class="blabla">
-                <img class="list" src="list.png">
-            </a>
-
+        <div class="search">
+            <form class="search" action="cautare.php">
+                <button type="submit" class="buttonsearch"><i class="fa fa-search"></i></button>
+                <input type="text" class="searchbar" placeholder="Căutare..">
+            </form>
+        </div>
+        <a href="#" class="blabla">
+            <img class="account" src="persoana.png">
+        </a>
+        <a href="#" class="blabla">
+            <img class="grup" src="grup.png">
+        </a>
+        <a href="#" class="blabla">
+            <img class="list" src="list.png">
+        </a>
     </header>
     <div class="content2">
         <div class="container">
-                <div class="little-container">
-                    <h1 class="product-title">
-                        Add a new group
-                    </h1>
+            <div class="little-container">
+                <h1 class="product-title">
+                    Add a new group
+                </h1>
                 <form>
-                    <input type="text" id="groupname" class="form2" maxlength="255" placeholder="Group name" required="required" ><br>
-                    <input type="text" id="description" class="form2" maxlength="255" placeholder="Group description" required="required" ><br>
+                    <input type="text" id="groupname" class="form2" maxlength="255" placeholder="Group name"
+                        required="required"><br>
+                    <input type="text" id="description" class="form2" maxlength="255" placeholder="Group description"
+                        required="required"><br>
                 </form>
                 <div class="add-button">
-                <button type="button" onclick="alert('You have added a new group')">Add group</button></a>
-             </div>
+                    <button type="button" onclick="alert('You have added a new group')">Add group</button></a>
+                </div>
             </div>
         </div>
         <div class="menu">
@@ -49,7 +53,7 @@
                 </div>
                 <div class="submenu-claus-container">
                     <a href="carne.asp" class="menu-text">Preparate din carne</a>
-    
+
                     <div class="submenu-claus">
                         <div>
                             <a href="pui.asp" class="submenu-text">Pui</a>
@@ -68,6 +72,9 @@
                         </div>
                     </div>
                 </div>
+
+
+
             </div>
             <div class="menu-element">
                 <div>
@@ -106,9 +113,10 @@
                 <a href="desert.asp" class="menu-text">Desert</a>
             </div>
         </div>
-        </div>
-        <section class="title-section">
-            <h1 id="test" class="school">Hello</h1>
-        </section>
-    </body>
+    </div>
+    <section class="title-section">
+        <h1 id="test" class="school">Hello</h1>
+    </section>
+</body>
+
 </html>

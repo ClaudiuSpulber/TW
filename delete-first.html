@@ -1,35 +1,37 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css"> 
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="navbar.css">
     <link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FORGshop</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORGshop</title>
 </head>
+
 <body style="background-color: #381D2A">
     <header style="background-color:#381D2A">
         <img class="logo" src="logo.png" style="width:10%;">
-        <form class="search-claus" action="action_page.php">
-            <input type="text" placeholder="Search.." name="search">
-            <button type="submit-search"><i class="c-search"></i></button>
-            <a href="#"><img class="search-icon" src="search.png"></a>
-        </form>
-            <a href="#" class="blabla">
-                <img class="account" src="persoana.png">
-            </a>
-            <a href="#" class="blabla">
-                <img class="grup" src="grup.png">
-            </a>
-            <a href="#" class="blabla">
-                <img class="list" src="list.png">
-            </a>
-
+        <div class="search">
+            <form class="search" action="cautare.php">
+                <button type="submit" class="buttonsearch"><i class="fa fa-search"></i></button>
+                <input type="text" class="searchbar" placeholder="Căutare..">
+            </form>
+        </div>
+        <a href="#" class="blabla">
+            <img class="account" src="persoana.png">
+        </a>
+        <a href="#" class="blabla">
+            <img class="grup" src="grup.png">
+        </a>
+        <a href="#" class="blabla">
+            <img class="list" src="list.png">
+        </a>
     </header>
-            <div class="content2">
-                <div class="container">
-                <div class="little-container">
+    <div class="content2">
+        <div class="container">
+            <div class="little-container">
                 <h1 class="product-title">
                     My lists
                 </h1>
@@ -38,84 +40,91 @@
                         <li>
                             <div class="list-title">List 2</div>
                             <div class="list-item">-Flour
-                                <a href="without-flour.html"><img src="bin.png" style="box-shadow: 0 4px 50px 0 rgba(20, 13, 65, 0.2)" width="20px"></a>
+                                <a href="without-flour.html"><img src="bin.png"
+                                        style="box-shadow: 0 4px 50px 0 rgba(20, 13, 65, 0.2)" width="20px"></a>
                             </div>
                             <div class="list-item">-Biscuits
-                                <a href="without-biscuits.html"><img src="bin.png" style="box-shadow: 0 4px 50px 0 rgba(20, 13, 65, 0.2)" width="20px"></a>
+                                <a href="without-biscuits.html"><img src="bin.png"
+                                        style="box-shadow: 0 4px 50px 0 rgba(20, 13, 65, 0.2)" width="20px"></a>
                             </div>
                             <div class="list-item">-Apples
-                                <a href="without-apples.html"><img src="bin.png" style="box-shadow: 0 4px 50px 0 rgba(20, 13, 65, 0.2)" width="20px"></a>
+                                <a href="without-apples.html"><img src="bin.png"
+                                        style="box-shadow: 0 4px 50px 0 rgba(20, 13, 65, 0.2)" width="20px"></a>
                             </div>
                             <a href="no-lists.html"><button type="button">Delete all list</button></a>
                         </li>
                     </ul>
                 </div>
-                </div>
-                </div>
-                <div class="menu">
-                    <div class="menu-element">
-                        <div>
-                            <img class="menu-image" src="Pui.png">
-                        </div>
-                        <div class="submenu-claus-container">
-                            <a href="carne.asp" class="menu-text">Preparate din carne</a>
-            
-                            <div class="submenu-claus">
-                                <div>
-                                    <a href="pui.asp" class="submenu-text">Pui</a>
-                                </div>
-                                <div>
-                                    <a href="vita.asp" class="submenu-text">Vita</a>
-                                </div>
-                                <div>
-                                    <a href="rata.asp" class="submenu-text">Rata</a>
-                                </div>
-                                <div>
-                                    <a href="curcan.asp" class="submenu-text">Curcan</a>
-                                </div>
-                                <div>
-                                    <a href="porc.asp" class="submenu-text">Porc</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-element">
-                        <div>
-                            <img class="menu-image" src="Vegetarian.png">
-                        </div>
-                        <a href="vegetarian.asp" class="menu-text">Preparate vegetariene</a>
-                    </div>
-                    <div class="menu-element">
-                        <div>
-                            <img class="menu-image" src="Peste.png">
-                        </div>
-                        <a href="peste.asp" class="menu-text">Peste si Fructe de mare</a>
-                    </div>
-                    <div class="menu-element">
-                        <div>
-                            <img class="menu-image" src="Ciorba.png">
-                        </div>
-                        <a href="supe.asp" class="menu-text">Supe/Ciorbe</a>
-                    </div>
-                    <div class="menu-element">
-                        <div>
-                            <img class="menu-image" src="garnituri.png">
-                        </div>
-                        <a href="Garnituri.asp" class="menu-text">Garnituri</a>
-                    </div>
-                    <div class="menu-element">
-                        <div>
-                            <img class="menu-image" src="Salata.png">
-                        </div>
-                        <a href="salate.asp" class="menu-text">Salate</a>
-                    </div>
-                    <div class="menu-element">
-                        <div>
-                            <img class="menu-image" src="Tort.png">
-                        </div>
-                        <a href="desert.asp" class="menu-text">Desert</a>
-                    </div>
-                </div>
+            </div>
         </div>
-    </body>
+        <div class="menu">
+            <div class="menu-element">
+                <div>
+                    <img class="menu-image" src="Pui.png">
+                </div>
+                <div class="submenu-claus-container">
+                    <a href="carne.asp" class="menu-text">Preparate din carne</a>
+
+                    <div class="submenu-claus">
+                        <div>
+                            <a href="pui.asp" class="submenu-text">Pui</a>
+                        </div>
+                        <div>
+                            <a href="vita.asp" class="submenu-text">Vita</a>
+                        </div>
+                        <div>
+                            <a href="rata.asp" class="submenu-text">Rata</a>
+                        </div>
+                        <div>
+                            <a href="curcan.asp" class="submenu-text">Curcan</a>
+                        </div>
+                        <div>
+                            <a href="porc.asp" class="submenu-text">Porc</a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="menu-element">
+                <div>
+                    <img class="menu-image" src="Vegetarian.png">
+                </div>
+                <a href="vegetarian.asp" class="menu-text">Preparate vegetariene</a>
+            </div>
+            <div class="menu-element">
+                <div>
+                    <img class="menu-image" src="Peste.png">
+                </div>
+                <a href="peste.asp" class="menu-text">Peste si Fructe de mare</a>
+            </div>
+            <div class="menu-element">
+                <div>
+                    <img class="menu-image" src="Ciorba.png">
+                </div>
+                <a href="supe.asp" class="menu-text">Supe/Ciorbe</a>
+            </div>
+            <div class="menu-element">
+                <div>
+                    <img class="menu-image" src="garnituri.png">
+                </div>
+                <a href="Garnituri.asp" class="menu-text">Garnituri</a>
+            </div>
+            <div class="menu-element">
+                <div>
+                    <img class="menu-image" src="Salata.png">
+                </div>
+                <a href="salate.asp" class="menu-text">Salate</a>
+            </div>
+            <div class="menu-element">
+                <div>
+                    <img class="menu-image" src="Tort.png">
+                </div>
+                <a href="desert.asp" class="menu-text">Desert</a>
+            </div>
+        </div>
+    </div>
+</body>
+
 </html>
