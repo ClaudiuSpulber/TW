@@ -22,15 +22,19 @@
                 <form method="POST" action="welcome.php" name="formular">
                     <input type="text" id="username" name="username" class="form1" maxlength="255" placeholder="Username"
                         required="required"><br>
-                    <input type="text" id="password" name="password" class="form1" maxlength="255" placeholder="Password"
+                    <input type="password" id="password" name="password" class="form1" maxlength="255" placeholder="Password"
                         required="required">
                 
                 <buttons>
                     <button type="submit" name="login_user" value="Log in">Log in</button>
-                    <word>or</word>
+                    or
                     <a href="welcomeSignUp.php"><button type="button">Sign up</button></a>
                 </buttons>
+                <?php if ($logok==1){?>
+                <h1 style="text-align:center; margin-top:10px;">Username/password wrong</h1>
+                <?php } ?>
                 </form>
+                
             </div>
         </div>
     </div>
