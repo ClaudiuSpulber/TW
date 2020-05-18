@@ -38,7 +38,7 @@
                 <h1 class="product-title">
                     Add an user account
                 </h1>
-                <form>
+                <form method="post">
                     <input type="text" id="fullname" class="form2" maxlength="255" placeholder="Full name"
                         required="required"><br>
                     <input type="text" id="email" class="form2" maxlength="255" placeholder="E-mail"
@@ -48,7 +48,7 @@
                     <input type="text" id="username" class="form2" maxlength="255" placeholder="Username"
                         required="required"><br> <input type="text" id="password" class="form2" maxlength="255"
                         placeholder="Password" required="required">
-                </form>
+                
                 <div class="allergies">
                     <div class="check-left">
                         <input type="checkbox">
@@ -75,6 +75,14 @@
                     <button type="button" onclick="alert('You have created a new account')">Add an user
                         account</button></a>
                 </div>
+            </form>
+                <h1 class="product-title">
+                    Delete an user
+                </h1>
+                <form method="post">
+                    <input type="text" id="email" class="form2" maxlength="255" placeholder="E-mail"
+                        required="required"><br>
+                </form>
             </div>
         </div>
         <div class="menu">

@@ -38,7 +38,7 @@
                 <h1 class="product-title">
                     Add a new product
                 </h1>
-                <form>
+                <form method="post">
                     <input type="text" id="productname" class="form2" maxlength="255" placeholder="Product name"
                         required="required"><br>
                     <input type="text" id="description" class="form2" maxlength="255" placeholder="Product description"
@@ -53,10 +53,22 @@
                         placeholder="Restaurant where you find" required="required"><br>
                     <input type="text" id="season" class="form2" maxlength="255" placeholder="Season"
                         required="required">
+                        <div class="add-button">
+                            <button type="button" onclick="alert('You have added a new product')">Add product</button></a>
+                        </div>
                 </form>
-                <div class="add-button">
-                    <button type="button" onclick="alert('You have added a new product')">Add product</button></a>
-                </div>
+                
+                <h1 class="product-title">
+                    Delete product
+                </h1>
+                <form method="post">
+                    <input type="text" id="productname" class="form2" maxlength="255" placeholder="Product name"
+                        required="required"><br>
+                        <div class="add-button">
+                            <button type="button">Delete product</button></a>
+                        </div>
+                </form>
+                
             </div>
         </div>
         <div class="menu">
