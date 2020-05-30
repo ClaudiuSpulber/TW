@@ -1,6 +1,6 @@
 <?php include ('server.php') ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -24,17 +24,18 @@
                         required="required"><br>
                     <input type="password" id="password" name="password" class="form1" maxlength="255" placeholder="Password"
                         required="required">
-                
-                <buttons>
-                    <button type="submit" name="login_user" value="Log in">Log in</button>
-                    or
-                    <a href="welcomeSignUp.php"><button type="button">Sign up</button></a>
-                </buttons>
-                <?php if ($logok==1){?>
-                <h1 style="text-align:center; margin-top:10px;">Username/password wrong</h1>
-                <?php } ?>
+                    <br>
+                    <div class="centerbutton">
+                    <button type="submit"name="login_user" value="Log in">Log in</button></div>
                 </form>
-                
+                <div class="word">or</div>
+                <form method="get" action="welcomeSignUp.php">
+                    <div class="centerbutton">
+                    <button type="submit" class="buttons" name="redirect" value="Sign up" >Sign up</button></div>
+                </form>
+                <?php if ($logok==1){?>
+                    <h1 style="text-align:center; margin-top:10px;">Username/password wrong</h1>
+                <?php } ?>
             </div>
         </div>
     </div>

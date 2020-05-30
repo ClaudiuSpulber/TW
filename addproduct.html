@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -14,7 +14,7 @@
 
 <body style="background-color: #381D2A">
     <header style="background-color:#381D2A">
-        <img class="logo" src="logo.jpg" style="width:10%;">
+        <img class="logo" src="logo.jpg" alt="logo" style="width:10%;">
         <div class="search">
             <form class="search" action="cautare.php">    
                     <button type="submit" class="buttonsearch"><i class="fa fa-search"></i></button>
@@ -22,13 +22,13 @@
             </form> 	
         </div>
             <a href="myAccount.html" class="blabla">
-                <img class="account" src="persoana.png">
+                <img class="account" alt="account" src="persoana.png">
             </a>
             <a href="Group.html" class="blabla">
-                <img class="grup" src="grup.png">
+                <img class="grup" alt="grup" src="grup.png">
             </a>
             <a href="Lists.html" class="blabla">
-                <img class="list" src="list.png">
+                <img class="list" alt="list" src="list.png">
             </a>
     
     </header>
@@ -38,6 +38,23 @@
                 <h1 class="product-title">
                     Add a new product
                 </h1>
+                
+            <h1 class="product-title2"> 
+                Allergens
+                </h1>
+                <table id="allerg">
+                    <tr>
+                        <th>Gluten</th>
+                        <th>Shellfish</th>
+                        <th>Eggs</th>
+                        <th>Fish</th>
+                        <th>Peanuts</th>
+                        <th>Soy</th>
+                        <th>Milk</th>
+                        <th>Tree nuts</th>
+                    </tr>
+                </table>
+          
                 <form method="post">
                     <input type="text" id="productname" class="form2" maxlength="255" placeholder="Product name"
                         required="required"><br>
@@ -54,7 +71,7 @@
                     <input type="text" id="season" class="form2" maxlength="255" placeholder="Season"
                         required="required">
                         <div class="add-button">
-                            <button type="button" onclick="alert('You have added a new product')">Add product</button></a>
+                            <button type="submit" onclick="alert('You have added a new product')">Add product</button>
                         </div>
                 </form>
                 
@@ -62,10 +79,10 @@
                     Delete product
                 </h1>
                 <form method="post">
-                    <input type="text" id="productname" class="form2" maxlength="255" placeholder="Product name"
+                    <input type="text" id="productname2" class="form2" maxlength="255" placeholder="Product name"
                         required="required"><br>
                         <div class="add-button">
-                            <button type="button">Delete product</button></a>
+                            <button type="submit">Delete product</button>
                         </div>
                 </form>
                 
@@ -74,26 +91,26 @@
         <div class="menu">
             <div class="menu-element">
                 <div>
-                    <img class="menu-image" src="Pui.png">
+                    <img class="menu-image" alt="menu-image" src="Pui.png">
                 </div>
                 <div class="submenu-claus-container">
-                    <a href="carne.asp" class="menu-text">Preparate din carne</a>
+                    <a href="carne.asp" class="menu-text">Meat products</a>
 
                     <div class="submenu-claus">
                         <div>
-                            <a href="Subcategory.html" class="submenu-text">Pui</a>
+                            <a href="pui.asp" class="submenu-text">Chicken</a>
                         </div>
                         <div>
-                            <a href="Subcategory.html" class="submenu-text">Vita</a>
+                            <a href="vita.asp" class="submenu-text">Beef</a>
                         </div>
                         <div>
-                            <a href="Subcategory.html" class="submenu-text">Rata</a>
+                            <a href="rata.asp" class="submenu-text">Duck</a>
                         </div>
                         <div>
-                            <a href="Subcategory.html" class="submenu-text">Curcan</a>
+                            <a href="curcan.asp" class="submenu-text">Turkey</a>
                         </div>
                         <div>
-                            <a href="Subcategory.html" class="submenu-text">Porc</a>
+                            <a href="porc.asp" class="submenu-text">Pork</a>
                         </div>
                     </div>
                 </div>
@@ -103,45 +120,42 @@
             </div>
             <div class="menu-element">
                 <div>
-                    <img class="menu-image" src="Vegetarian.png">
+                    <img class="menu-image" alt="menu-image" src="Vegetarian.png">
                 </div>
-                <a href="Subcategory.html" class="menu-text">Preparate vegetariene</a>
+                <a href="vegetarian.asp" class="menu-text">Vegetarian products</a>
             </div>
             <div class="menu-element">
                 <div>
-                    <img class="menu-image" src="Peste.png">
+                    <img class="menu-image" alt="menu-image" src="Peste.png">
                 </div>
-                <a href="Subcategory.html" class="menu-text">Peste si Fructe de mare</a>
+                <a href="peste.asp" class="menu-text">Fish and Seafood</a>
             </div>
             <div class="menu-element">
                 <div>
-                    <img class="menu-image" src="Ciorba.png">
+                    <img class="menu-image" alt="menu-image" src="Ciorba.png">
                 </div>
-                <a href="Subcategory.html" class="menu-text">Supe/Ciorbe</a>
+                <a href="supe.asp" class="menu-text">Soups</a>
             </div>
             <div class="menu-element">
                 <div>
-                    <img class="menu-image" src="garnituri.png">
+                    <img class="menu-image" alt="menu-image" src="garnituri.png">
                 </div>
-                <a href="Subcategory.html" class="menu-text">Garnituri</a>
+                <a href="Garnituri.asp" class="menu-text">Sides</a>
             </div>
             <div class="menu-element">
                 <div>
-                    <img class="menu-image" src="Salata.png">
+                    <img class="menu-image" alt="menu-image" src="Salata.png">
                 </div>
-                <a href="Subcategory.html" class="menu-text">Salate</a>
+                <a href="salate.asp" class="menu-text">Salads</a>
             </div>
             <div class="menu-element">
                 <div>
-                    <img class="menu-image" src="Tort.png">
+                    <img class="menu-image" alt="menu-image" src="Tort.png">
                 </div>
-                <a href="Subcategory.html" class="menu-text">Desert</a>
+                <a href="desert.asp" class="menu-text">Dessert</a>
             </div>
         </div>
     </div>
-    <section class="title-section">
-        <h1 id="test" class="school">Hello</h1>
-    </section>
 </body>
 
 </html>

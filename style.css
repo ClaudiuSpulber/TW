@@ -120,6 +120,167 @@ q:after {
   content: none;
 }
 
+/*Header and menu and footer */
+
+header{
+  width: 100%;
+  display:flex;
+  align-items: center;
+  background-color:#381D2A;
+  
+}
+
+
+header .logo{
+  margin-right: auto;
+}
+* {
+  box-sizing: border-box;
+}
+
+.search{
+  background-color:transparent;
+  width:80%;
+  float:right;
+  height:100px;
+}
+.searchbar[type=text]{
+  float: right;
+  margin-top:50px;
+  font-family:'Raleway';
+  padding: 0.5%;
+  border: 1px solid rgb(66, 3, 56);
+  border-radius:20px;
+  font-size: 17px;
+  color:#001A33;
+}
+.buttonsearch{
+  float: right;
+  margin-right:5px;
+  padding-top:0.6%;
+  padding-bottom:0.6%;
+  background: rgba(95, 0, 63, 0.479);
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-radius:15px;
+  cursor: pointer;
+  margin-top:50px;
+}
+
+header .blabla{
+  width: 50px;
+  height: 50px;
+}
+header .blabla .account{
+  width: 100%;
+  height: 100%;
+  
+}
+header .blabla .grup{
+  width: 100%;
+  height: 100%;
+}
+header .blabla .list{
+  width: 100%;
+  height: 100%;
+  margin-right: 10px;
+}
+
+html,body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color:#381D2A
+}
+
+.menu {
+  margin: 0;
+  width:18%;
+padding: 0;
+  background-color:#381D2A
+}
+
+.submenu-claus-container {
+  position: relative;
+  width: 197px;
+}
+
+.submenu-claus {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0px;
+  text-decoration: none;
+  color: white;
+}
+
+.submenu-text {
+  color:rgb(255, 255, 255);
+  text-decoration: none;
+}
+div.menu > div > div:nth-child(2):hover > .submenu-claus{
+  display: block;
+}
+
+.menu-element{
+display: flex;
+padding: 8px 16px;
+}
+.menu-image {
+  color: #000;
+  width: 50px;
+  height: 40px;
+  max-width: 220px;
+  padding-right: 12%;
+}
+.menu-text {
+  color:rgb(255, 255, 255);
+  padding-top:5px;
+  text-decoration: none;
+  display: none;
+}
+.menu:hover .menu-text{
+  display: initial;
+}
+.menu-text:hover{
+  background-color: #555;
+color: white;
+}
+footer{
+  text-align:left;
+}
+
+.contact a{
+  text-decoration: none;
+  color: white;
+  display: inline;
+}
+.contact-form{
+  text-align: center;
+  text-decoration: wavy;
+}
+.another-container{
+  text-align: center;
+}
+
+
+
+/* All pages */
+.content2{/* container cu tot cu meniu */
+  width: 100%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.container{ /* container cu tot continutul fara meniu */
+  width: 100%;
+  margin-right: 50px;
+  background-color:rgb(255, 255, 255);
+  border-radius: 25px;
+}
+
 .box2 {
   margin-top: 1%;
   width: 80%;
@@ -130,9 +291,12 @@ q:after {
   margin-bottom: 1%;
 }
 
-.little-container {
+.little-container {/*container cu continutul scris, fara spatiile goale */
   padding-bottom: 30%;
 }
+
+
+/* Welcome to FORG title */
 
 .section-1 {
   display: flex;
@@ -168,14 +332,7 @@ h1.welcome-text {
   width: auto;
 }
 
-h1.welcome-text1 {
-  display: block;
-  margin-bottom: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  width: auto;
-}
+/* Sign in text */
 
 .sign-in {
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -186,12 +343,14 @@ h1.welcome-text1 {
   margin-top: 50px;
 }
 
+/* Form from welcome */
+
 form {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-.form1 {
+.form1 { /* inputurile din form */
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 100%;
   width: 25%;
@@ -200,10 +359,21 @@ form {
   border-width: 0.3em;
   margin-bottom: 10px;
 }
+.centerbutton button{
+  margin-left: 45%;
+  margin-top: 3px;
+  border-radius: 6px;
+}
 
-buttons {
-  margin-left: 38.6%;
-  margin-top: 50px;
+.centerbutton button:hover{
+  background-color: #FFA552;
+  color: white;
+}
+
+.word{
+  text-align:center;
+  font-weight: bold;
+  color: #381D2A;
 }
 
 button {
@@ -217,7 +387,20 @@ button {
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(66, 5, 66, 0.19);
 }
 
-.account-text {
+/* Text from sign up */
+
+.centerbutton2 button{
+  margin-top: 20px;
+  margin-left: 45%;
+  border-radius: 6px;
+}
+
+.centerbutton2 button:hover{
+  background-color: #FFA552;
+  color: white;
+}
+
+.account-text {/* primul text */
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 130%;
   font-weight: bold;
@@ -227,22 +410,7 @@ button {
   margin-top: 50px;
 }
 
-.form2 {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 100%;
-  width: 40%;
-  margin-left: 30%;
-  margin-top: 10px;
-  border-width: 0.3em;
-  margin-bottom: 10px;
-}
-
-buttons2 {
-  margin-left: 45%;
-  font-size: 1.3em;
-}
-
-.account-text2 {
+.account-text2 {/* al doilea text */
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 110%;
   font-weight: bold;
@@ -253,6 +421,19 @@ buttons2 {
   margin-left: 15%;
 }
 
+/* classes of inputs form */
+
+.form2 {/* inputuri form */
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 100%;
+  width: 40%;
+  margin-left: 30%;
+  margin-top: 10px;
+  border-width: 0.3em;
+  margin-bottom: 10px;
+}
+
+
 .form3 {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 300%;
@@ -261,6 +442,7 @@ buttons2 {
   border-width: 0.3em;
   margin-bottom: 10px;
 }
+/* classes for radio buttons from form */
 
 .check-left {
   width: 50%;
@@ -281,6 +463,18 @@ buttons2 {
   margin-top: 10px;
 }
 
+/* Product page */
+
+h1.product-title {
+  display: block;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: auto;
+}
+
+
 .product-title {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 300%;
@@ -292,113 +486,38 @@ buttons2 {
   margin-left: 40%;
 }
 
-.left-product {
-  float: left;
-  margin-top: 80px;
-  width: 40%;
-  text-align: center;
-}
-
-.right-product {
-  width: 60%;
-  background-color: #F9F9F9;
-  float: right;
-  margin-top: 80px;
-}
-
-.description-title {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 120%;
-  font-weight: bold;
-  color: #381D2A;
-  width: 45%;
-  margin-left: 170px;
-  margin-bottom: 4px;
-}
-
-.content {
-  font-size: 150%;
-  margin-left: 170px;
-  margin-right: 100px;
-  margin-bottom: 4px;
-  word-wrap: break-word;
-}
-
-.buttonfav {
-  margin-left: 170px;
-  width: 1500px;
-}
-
-.details {
-  margin-top: 30%;
-  text-align: center;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 120%;
-  color: #381D2A;
-}
-
-.det1 {
-  font-weight: bold;
-  margin-top: 20px;
-}
-
-.big-list {
-  text-align: center;
-  margin-right: 50px;
-  margin-top: 50px;
-}
-
-.list-title {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 200%;
-  color: #381D2A;
-  margin-top: 2%;
-  font-weight: bold;
-}
-
-.content-list {
-  font-size: 150%;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  color: #381D2A;
-}
-
-.big-list p {
-  text-align: center;
-  margin-top: 20%;
-  font-size: 200%;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  color: #381D2A;
-}
-
-h1.product-title {
-  display: block;
-  margin-bottom: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  width: auto;
-}
-
-.middle-section-container {
+.middle-section-container { /* partea de sus cu imaginea, pana la butoane */
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
 
-.section-image {
-  max-width: 450px;
+.section-image {/* imaginea */
+  width: 45%;
   margin-right: 25px;
   margin-left: 25px;
   box-shadow: 0 4px 50px 0 rgba(20, 13, 65, 0.2);
 }
+/*.middle-section-container .section-image .image {
+  width: 220px;
+  height: 220px;
+}*/
 
+
+.c {
+  clear: both;
+}
 .image {
   max-height: 100%;
   max-width: 100%;
+  width: 25%;
+  height: 220px;
+ float: left;
+ margin-left: 20px;
 }
 
-.section-description .title {
+.section-description .title { /* parte din middle section care contine descrierea produsului */
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 120%;
   font-weight: bold;
@@ -409,7 +528,7 @@ h1.product-title {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 120%;
   color: #381D2A;
-  margin: 0;
+  margin: 0 auto;
   word-wrap: normal;
 }
 
@@ -418,17 +537,35 @@ h1.product-title {
   margin: 0;
 }
 
+.section-description {
+  float: left;
+  height: 220px;
+  width: 75%;
+}
+
 .section-description .price,
 .section-description .actions {
   margin-top: 20px;
 }
 
-.section-3 {
+.description , .price, .actions {
+  float: left;
+  width: 90%;
+  margin-left: 3%;
+}
+
+.description {
+  margin-top: 20px;
+  margin-right : 20px;
+}
+
+.section-3 { /* partea cu informatiile de jos */
   color: #381D2A;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  font-size: 120%;
 }
 
 .section-3 ul li {
@@ -437,8 +574,21 @@ h1.product-title {
 
 .section-3 .menu-item {
   font-weight: bold;
+  font-size: 120%;
   margin-bottom: 5px;
 }
+
+
+
+.content {
+  font-size: 150%;
+  margin-left: 170px;
+  margin-right: 100px;
+  margin-bottom: 4px;
+  word-wrap: break-word;
+}
+
+/* Lists page */
 
 .section-2 {
   color: #381D2A;
@@ -458,7 +608,7 @@ h1.product-title {
 }
 
 .section-2 button {
-  width: auto;
+  width: auto; 
   font-size: 1.5em;
   margin-top: 30px;
 
@@ -470,12 +620,132 @@ h1.product-title {
   margin-top: 7%;
 }
 
-.add-button button {
-  width: auto;
-  font-size: 1.2em;
-  margin-top: 20px;
-  margin-left: 44%;
+.section-2 h1 {
+  font-size: 4em;
 }
+.list-title {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 200%;
+  color:#FFA552;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align:center;
+  font-weight: bold;
+}
+
+.list-item button {
+  font-size: 0.8em;
+}
+
+.list-item2 .image {
+    width:30%;
+    height: 30%;
+    float:left;
+}
+.card {
+  margin-top:25px;
+  margin-bottom:25px;
+  width : 90%;
+  border-radius: 3px;
+  border-bottom:2px solid #A9A9A9;
+  border-top:2px solid #A9A9A9;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; 
+}
+
+.list-image {
+    max-width: 30%;
+    float:left;
+}
+
+.image-size {
+    width:90%;
+    height:200px;
+    margin-top:10px;
+    margin-bottom:10px;
+    border-radius:2px;
+    margin-left:10px;
+}
+
+.list-description {
+    width: 70%;
+    float:right;  
+}
+
+.list-ingredients {
+  font-size: 1.3em;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.buttoncard{
+  width: auto;
+  float: left;
+}
+
+.ingredients-title {
+  font-size: 1.4em;
+  text-align: left;
+  font-weight: bold;
+}
+
+
+
+/* Add product page*/
+
+
+.product-title2 {
+  display: block;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #381D2A;
+  margin-bottom : 2%;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.add-button button {
+  width: 25%;
+  background-color: grey;
+  color: black;
+  border-radius: 6px;
+  font-size: 1.2em;
+  margin-left: 38%;
+}
+
+.add-button button:hover{
+  background-color: #381D2A;
+  color: white;
+}
+
+
+#allerg {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+  margin-bottom: 3%;
+  margin-left: 6%;
+}
+
+#allerg td, #allerg th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#allerg th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: grey;
+  color: white;
+}
+
+/* Administrator page */
 
 .section-4 {
   color: #381D2A;
@@ -485,25 +755,103 @@ h1.product-title {
 }
 
 .section-4 img {
-  width: 15%;
-  margin-left: 5%;
+  width: 10%;
+  margin-left: 15%;
   margin-right: 5%;
+  height: 5%;
 }
 
 html,
 body {
   height: 100%;
+  overflow-x:hidden;
   width: 100%;
+}
+
+.csv-buttons button{
+  width: 25%;
+  background-color: grey;
+  color: black;
+  border-radius: 6px;
+  margin: 0 auto;
+}
+
+.title-csv{
+  font-size: 2em;
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 3%;
+  font-weight: bold;
+}
+
+.csv-buttons button:hover{
+  background-color: #381D2A;
+  color: white;
+}
+
+.title-csv1{
+  font-size: 1em;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 3%;
+}
+
+.actions input{
+  margin:0 auto;
+}
+
+.actions form{
+  margin-bottom: 4%;
+}
+
+.title-csv2{
+  font-size: 1.3em;
+  text-align: center;
+  margin-top: 2%;
+  margin-bottom: 3%;
+  font-weight: bold;
+} 
+
+#exp {
+  margin-top: 2%;
+}
+
+
+
+/* TABEL */
+.table {
+  overflow-x: auto;
+}
+#msg {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+  margin-bottom: 3%;
+  margin-left: 6%;
+}
+
+#msg td, #msg th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#msg th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: grey;
+  color: white;
 }
 
 
 /* Responsivness */
 @media all and (max-width: 1024px) {
-  .middle-section-container {
+  
+  .middle-section-container {/*product page */
     flex-direction: column;
   }
 
-  .section-description {
+  .section-description {/*product page */
     margin-top: 25px;
     margin-left: 25px;
     margin-right: 25px;
@@ -512,6 +860,7 @@ body {
   .section-3 {
     margin-left: 25px;
     margin-right: 25px;
+    margin-top:25px;
     text-align: left;
     align-items: flex-start;
   }
@@ -530,11 +879,11 @@ body {
     align-items: flex-start;
   }
 
-  buttons {
-    margin-left: 30%;
+  .centerbutton button {
+    text-align: center;
   }
 
-  buttons button {
+  .centerbutton2 button {
     width: auto;
   }
 
@@ -559,7 +908,7 @@ body {
 
   .center-content {
     width: 100%;
-    height: 100%;
+   
 
     display: flex;
     flex-direction: column;
@@ -593,10 +942,6 @@ body {
     width: auto;
   }
 
-  buttons2 {
-    margin-left: 30%;
-  }
-
   button {
     width: auto;
   }
@@ -622,10 +967,204 @@ body {
   .section-2 button {
     font-size: 1em;
   }
+  .actions button{
+    width: auto;
+   /* font-size: 0.5em;
+    margin-top:10px; */
+  }
+
+  .card {
+    flex-direction: column;
+  }
 }
 
 @media all and (max-width: 414px) {
-  .center-content {
-    height: auto;
+
+  .middle-section-container .image {
+    width: 40%;
   }
+  .account-text {
+    font-size: 0.6em;
+  }
+
+  .account-text2 {
+    font-size: 0.6em;
+  }
+  .form2{
+    width: 50%;
+    margin-left: 70px;
+  }
+
+  .allergies{
+    font-size: 0.6em;
+  }
+
+  .centerbutton2 button{
+    margin-left: 115px;
+  }
+  .section-1 .welcome-text {
+    font-size: 2em;
+  }
+
+  .section-1 .welcome-text1{
+    font-size: 2.4em;
+  }
+
+  .sign-in {
+    font-size: 0.8em;
+    font-weight: bold;
+  }
+  .form1{
+    width: 40%;
+    margin-left: 100px;
+  }
+
+  .centerbutton button {
+    font-size: 0.6em;
+    margin-left: 43%;
+  }
+
+  .word {
+    font-size: 0.6em;
+  }
+  
+
+  .actions button{
+    width: auto;
+    font-size: 0.5em;
+    margin-top:10px; 
+  }
+
+
+.container {
+    margin-right: 2%;
+  }
+
+  .list-item2 .image{
+    max-width: 100%;
+  }
+
+  .list-ingredients {
+    font-size: 0.9em;
+  }
+  .list-title {
+    font-size: 1.1em;
+  }
+  .ingredients-title {
+    font-size: 1em;
+  }
+
+  .list-image .image-size{
+    width: 150%;
+    height: 90%;
+    margin-left: -16px;
+
+  }
+
+  .list-description button {
+    width: 100%;
+    font-size:0.9em;
+    margin: 0 auto;
+    margin-left: 29%;
+  }
+
+  .section-3 .menu-item {
+    font-size: 0.8em;
+    font-weight: bold;
+  }
+
+  .section-3 .menu-item-details {
+    font-size: 0.8em;
+   
+  }
+
+  .description .title {
+    font-size: 0.9em;
+    font-weight: bold;
+  }
+
+  .description .content {
+    font-size: 0.9em;
+  }
+
+  .price .title {
+    font-size: 0.9em;
+    font-weight: bold;
+  }
+
+  .price .content {
+    font-size: 0.9em;
+  }
+
+  .section-image .image {
+    max-width: 200px;
+  }
+
+  .actions .title-csv{
+    font-size: 1em;
+  }
+
+  .actions .title-csv1{
+    font-size: 0.8em;
+  }
+  .csv-buttons input {
+    width: 30%;
+    font-size: 0.5em;
+  }
+  .little-container .product-title{
+    font-size: 1em;
+  
+  }
+
+  .little-container .section-4 .image{
+    width: 25%;
+    height: 20%;
+    margin-left: 40%;
+  }
+}
+
+@media all and (max-width: 320px) {
+  .section-image .image {
+    max-width: 150px;
+  }
+  .section-3 .menu-item {
+    font-size: 0.6em;
+    font-weight: bold;
+  }
+
+  .section-3 .menu-item-details {
+    font-size: 0.6em;
+   
+  }
+
+  .description .title {
+    font-size: 0.7em;
+    font-weight: bold;
+  }
+
+  .description .content {
+    font-size: 0.7em;
+  }
+
+  .price .title {
+    font-size: 0.7em;
+    font-weight: bold;
+  }
+
+  .price .content {
+    font-size: 0.7em;
+  }
+
+  .section-image .image {
+    max-width: 150px;
+  }
+
+  .actions button {
+    margin-top: 0.2px;
+  }
+
+  .little-container .product-title{
+    font-size: 1em;
+  }
+
 }

@@ -1,6 +1,6 @@
 <?php include('server.php') ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -57,9 +57,9 @@
                         <label> Tree nuts</label>
                     </div>
                 </div>
-                <buttons2>
-                    <button class="button" type="submit" name="register_user">Sign up</button>
-                </buttons2>
+                   <div class="centerbutton2">
+                        <button class="button" type="submit" name="register_user">Sign up</button>
+                   </div>              
                 <?php if ($userok==1){?>
                 <h1 style="text-align:center; margin-top:10px;">Username already exists.</h1>
                 <?php }
