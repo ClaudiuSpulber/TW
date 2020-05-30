@@ -442,6 +442,16 @@ button {
   border-width: 0.3em;
   margin-bottom: 10px;
 }
+
+.form5 {/* inputuri form */
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 100%;
+  width: 40%;
+  margin-left: 30%;
+  margin-top: 10px;
+  border-width: 0.3em;
+  margin-bottom: 10px;
+}
 /* classes for radio buttons from form */
 
 .check-left {
@@ -822,12 +832,13 @@ body {
 .table {
   overflow-x: auto;
 }
+
 #msg {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 90%;
   margin-bottom: 3%;
-  margin-left: 6%;
+  margin-left: 8%;
 }
 
 #msg td, #msg th {
@@ -847,6 +858,7 @@ body {
 /* Responsivness */
 @media all and (max-width: 1024px) {
   
+
   .middle-section-container {/*product page */
     flex-direction: column;
   }
@@ -922,6 +934,11 @@ body {
     margin-left: 15px;
   }
 
+  .form5{
+    width: 50%;
+    margin-left: 29%;
+  }
+
   .account-text,
   .account-text2 {
     font-size: 100%;
@@ -947,7 +964,7 @@ body {
   }
 
   .add-button button {
-    margin-left: 15px;
+    margin-left: 39%;
   }
 
   .section-4 {
@@ -958,6 +975,8 @@ body {
 
   .section-4 a {
     margin-top: 15px;
+    margin-left: 65%;
+    width: 100%;
   }
 
   .list-title {
@@ -976,9 +995,55 @@ body {
   .card {
     flex-direction: column;
   }
+
+  #msg {
+    margin: 0 auto;
+  }
+}
+
+@media all and (max-width: 768px) {
+
+  .title-csv2{
+    font-size: 1em;
+  }
+  .add-button button{
+    font-size: 1em;
+  }
+}
+
+@media all and (max-width: 682px) {
+
+  #allerg, #msg{
+    font-size: 0.4em;
+  }
+}
+
+@media all and (max-width: 427px) {
+
+  #allerg{
+    font-size: 0.4em;
+    margin-left: 10%;
+  }
+
+  
+  #msg{
+    font-size: 0.5em;
+  }
 }
 
 @media all and (max-width: 414px) {
+
+  .title-csv2{
+    font-size: 0.7em;
+  }
+
+  #msg {
+    font-size: 0.4em;
+  }
+  #allerg{
+    font-size: 0.4em;
+    margin: 0 auto;
+  }
 
   .middle-section-container .image {
     width: 40%;
@@ -1121,9 +1186,64 @@ body {
     height: 20%;
     margin-left: 40%;
   }
+
+  .form5{
+    font-size: 0.6em;
+    margin-left: 25%;
+  }
+
+  .add-button button{
+    font-size: 0.7em;
+  }
+
+  .product-title2{
+    font-size: 1em;
+  }
+
+  .section-4 a {
+    width:45%;
+    margin-left: 5%;
+  }
+}
+
+@media all and (max-width: 375px){
+
+  .title-csv2{
+    font-size: 0.6em;
+  }
+  .section-4 a {
+   
+    margin-left: 5%;
+    width: 45%;
+   
+  }
+  #allerg{
+    margin: 0 auto;
+  }
+  .add-button button{
+    font-size: 0.5em;
+  }
+}
+
+@media all and (max-width: 360px) {
+
+  #allerg{
+    font-size: 0.1em;
+    margin: 0 auto;
+  }
 }
 
 @media all and (max-width: 320px) {
+
+ #msg {
+   font-size: 0.10em;
+    
+ }
+
+ #allerg{
+  margin: 0 auto;
+ }
+
   .section-image .image {
     max-width: 150px;
   }
@@ -1167,4 +1287,17 @@ body {
     font-size: 1em;
   }
 
+  .product-title2{
+    font-size: 0.9em;
+  }
+
+  .add-button {
+    font-size: 0.9em;
+    margin: 0 auto;
+    width: 85%;
+}
+
+  .form5{
+    font-size: 0.6em;
+  }
 }
