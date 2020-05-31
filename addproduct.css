@@ -1,0 +1,251 @@
+html,body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color:#381D2A
+  }
+  
+  /*header*/
+  header{
+    width: 100%;
+    display:flex;
+    align-items: center;
+    background-color:#381D2A;
+  }
+  header .logo{
+    margin-right: auto;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  .search{
+    background-color:transparent;
+    width:80%;
+    float:right;
+    height:100px;
+  }
+  .searchbar[type=text]{
+    float: right;
+    margin-top:50px;
+    font-family:'Raleway';
+    padding: 0.5%;
+    border: 1px solid rgb(66, 3, 56);
+    border-radius:20px;
+    font-size: 17px;
+    color:#001A33;
+  }
+  .buttonsearch{
+    float: right;
+    margin-right:5px;
+    padding-top:0.6%;
+    padding-bottom:0.6%;
+    background: rgba(95, 0, 63, 0.479);
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-radius:15px;
+    cursor: pointer;
+    margin-top:50px;
+  }
+  header .blabla{
+    width: 50px;
+    height: 50px;
+  }
+  header .blabla .account{
+    width: 100%;
+    height: 100%;
+  }
+  header .blabla .grup{
+    width: 100%;
+    height: 100%;
+  }
+  header .blabla .list{
+    width: 100%;
+    height: 100%;
+    margin-right: 10px;
+  }
+
+  
+  .menu {
+  margin: 0;
+  padding: 0;
+  width: fit-content;
+    background-color:#381D2A
+  }
+  
+  .submenu-claus-container {
+    position: relative;
+    width: 197px;
+  }
+  
+  .submenu-claus {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0px;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .submenu-text {
+    color:rgb(255, 255, 255);
+    text-decoration: none;
+  }
+  div.menu > div > div:nth-child(2):hover > .submenu-claus{
+    display: block;
+  }
+  .menu {
+    margin: 0;
+    width:18%;
+  padding: 0;
+    background-color:#381D2A
+  }
+  
+  .submenu-claus-container {
+    position: relative;
+    width: 197px;
+  }
+  
+  .submenu-claus {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0px;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .submenu-text {
+    color:rgb(255, 255, 255);
+    text-decoration: none;
+  }
+  div.menu > div > div:nth-child(2):hover > .submenu-claus{
+    display: block;
+  }
+  
+  .menu-element{
+  display: flex;
+  padding: 8px 16px;
+  }
+  .menu-image {
+    color: #000;
+    width: 50px;
+    height: 40px;
+    max-width: 220px;
+    padding-right: 12%;
+  }
+  .menu-text {
+    color:rgb(255, 255, 255);
+    padding-top:5px;
+    text-decoration: none;
+    display: none;
+  }
+  .menu:hover .menu-text{
+    display: initial;
+  }
+  .menu-text:hover{
+    background-color: #555;
+  color: white;
+  }
+
+  .content2{/* container cu tot cu meniu */
+    width: 100%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    display: flex;
+  }
+
+  .container {
+    width: 80%;
+    background-color: white; 
+    border-radius: 25px;
+    margin-right: 50px;
+  }
+
+  h1.product-title {
+    display: block;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: auto;
+  }
+  
+  
+  .product-title {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 300%;
+    display: inline-block;
+    font-weight: bold;
+    color: #381D2A;
+    width: 45%;
+    margin-top: 10%;
+    margin-left: 40%;
+  }
+
+  .product-title2 {
+    display: block;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #381D2A;
+    margin-bottom : 2%;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  
+  .add-button button {
+    width: 25%;
+    background-color: grey;
+    color: black;
+    border-radius: 6px;
+    font-size: 1.2em;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 38%;
+  }
+  
+  .add-button button:hover{
+    background-color: #381D2A;
+    color: white;
+  }
+  
+  
+  #allerg {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 90%;
+    margin-bottom: 3%;
+    margin-left: 6%;
+  }
+  
+  #allerg td, #allerg th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #allerg th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: grey;
+    color: white;
+  }
+
+  .form5 {/* inputuri form */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 100%;
+    width: 40%;
+    margin-left: 30%;
+    margin-top: 10px;
+    border-width: 0.3em;
+    margin-bottom: 10px;
+  }
+
+  @media all and (max-width: 1024px) {
+      .content2 {
+          height: 90%;
+      }
+    }
