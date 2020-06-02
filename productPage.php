@@ -1,7 +1,24 @@
  <?php
 if (isset($_GET['id'])) {
     include "server.php";
-    /*$id = preg_replace('#[^0-9]#i', '', $_GET['id']);*/
+   /* */
+    $idclient = $_SESSION['id'];
+    $variable="SELECT * FROM users where id='$idclient'";
+    $sql2= mysqli_query($db, $variable);
+    $count=mysqli_num_rows($sql2);
+   
+    if($count>0){
+        while($row=mysqli_fetch_array($sql2)){
+            $allergies=$row['allergies'];
+        }
+    }
+    $allergies_list = array();
+    
+        $x = explode(',', $allergies);
+        for ($a = 0; $a < sizeof($x); $a++) {
+            $allergies_list[$a] = $x[$a];
+    }
+
     $id = (int) $_GET['id'];
     $var = "SELECT * FROM products WHERE id='$id' LIMIT 1";
     $sql = mysqli_query($db, $var);//cauta in bd daca exista id-ul respectiv
@@ -27,6 +44,17 @@ if (isset($_GET['id'])) {
         echo "That product does not exists.";
         exit();
     }
+
+    $atentie=0;
+   
+    for($i=0; $i< sizeof($allergies_list); $i++){  
+        if(strpos( $allergens, $allergies_list[$i])!==false)
+        {
+            $atentie=1;
+        }
+    }
+    
+    
     $iduser = $_SESSION['id'];
 
     if (isset($_POST['favorites'])) {
@@ -39,7 +67,7 @@ if (isset($_GET['id'])) {
     }
 
     if (isset($_POST['all'])) {
-        $var = "INSERT INTO lists (id_client, id_product, product_name) VALUES ('$iduser','$id','$product_name')";
+        $var = "INSERT INTO lists (id_client, id_product, product_name, ingredients) VALUES ('$iduser','$id','$product_name','$ingredients')";
         $var1 = "SELECT * FROM lists WHERE id_client='$iduser' and id_product = '$id'";
         $ceva = mysqli_query($db, $var1);
         $count = mysqli_num_rows($ceva);
@@ -60,6 +88,7 @@ mysqli_close($db);
     <title>Subcategory</title>
     <link rel="stylesheet" href="productPage.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
 </head>
 
 <body style="background-color: #381D2A">
@@ -198,7 +227,8 @@ mysqli_close($db);
           </li>
           <li>
             <div class="menu-item">Allergens</div>
-            <div class="menu-item-details"><?php echo $allergens; ?></div>
+            <div class="menu-item-details"><?php echo $allergens; if($atentie==1){?>
+            <p class="menu-item2">This is important! This product contains ingredients that you are allergic to.</p><?php };?></div>
           </li>
           <li>
             <div class="menu-item">Perishable</div>

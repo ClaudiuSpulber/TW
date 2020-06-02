@@ -2,7 +2,8 @@ html,body{
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color:#381D2A
+    background-color:#381D2A;
+    overflow-x: hidden;
   }
   
   /*header*/
@@ -179,8 +180,18 @@ html,body{
     font-weight: bold;
     color: #381D2A;
     width: 45%;
-    margin-top: 10%;
-    margin-left: 40%;
+    margin-left: 0 auto;
+    margin-right: 0 auto;
+    margin-top: 5%;
+  }
+
+  .section-2 .no-lists-found{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2em;
+    font-weight: bold;
+    color: #381D2A;
+    width: 100%;
+    
   }
 
   .section-2 {
@@ -255,11 +266,9 @@ html,body{
   
   .image-size {
       width:90%;
-      height:200px;
-      margin-top:10px;
-      margin-bottom:10px;
+      height:220px;
       border-radius:2px;
-      margin-left:10px;
+      margin-left: 38%;
   }
   
   .list-description {
@@ -280,19 +289,129 @@ html,body{
   }
 
  .buttoncard button {
+   border-radius: 6px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 100%;
     color: #FFA552;
-    border-width: 0.1em;
+    border: none;
     background-color: #381D2A;
-    margin-top: 15px;
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(66, 5, 66, 0.19);
     width: auto;
-    float: left;
+    cursor: pointer;
+    padding: 5px 12px;
+    margin-bottom: 2%;
+    
   }
 
-  @media all and (max-width: 1024px) {
-    .content2 {
-        height: 90%;
+  .stergere button{
+    border-radius: 6px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 100%;
+    color: #FFA552;
+    border: none;
+    background-color: #381D2A;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(66, 5, 66, 0.19);
+    width: auto;
+    cursor: pointer;
+    padding: 5px 12px;
+    margin-top: 0;
+  }
+
+  .buttoncard button:hover, .stergere button:hover{
+    background-color: #FFA552;
+    color: white;
+  }
+
+  #produs-lista {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+    margin: 0 auto;
+    font-size: 0.8em;
+    table-layout: auto;
+    width: 40%;
+  }
+  
+  #produs-lista td,  #produs-lista th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #produs-lista th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: grey;
+    color: white;
+  }
+
+  #produs-lista tr td{
+    background-color: white;
+  }
+
+  @media all and (max-width: 1000px){
+
+    h1.product-title{
+      font-size: 2em;
+    }
+
+    .section-2 .list-description .list-title {
+      font-size: 1.3em;
+    }
+
+    .section-2 .list-description .ingredients-title, .section-2 .list-description .list-ingredients{
+      font-size: 1em;
+    }
+
+    .list-description {
+      margin-left: 2%;
+    }
+  }
+
+  @media all and (max-width: 740px){
+
+    h1.product-title{
+      margin-bottom: 1%;
+    }
+    .card{
+      display: flex;
+      flex-direction: column;
+    }
+
+    .section-2 .no-lists-found{
+      font-size: 2em;
+      margin-top: 25%;
+    }
+    #cardbutton{
+      margin-bottom: 2%;
+    }
+
+    .image-size{
+      height: 100px;
+      margin-left: 8%;
+      margin-top: 5%;
+    }
+
+    .buttoncard button{
+      font-size: 0.7em;
+    }
+
+    .section-2{
+      margin-top: 0;
+    }
+
+    #produs-lista{
+      font-size: 0.8em;
+    }
+  }
+
+  @media all and (max-width: 600px){
+
+    .container .product-title{
+      font-size: 1.7em;
+    }
+    .section-2 .no-lists-found{
+      font-size: 1.5em;
+      margin-top: 25%;
     }
   }

@@ -191,7 +191,13 @@ html,body{
     margin-top: 10px;
     border-width: 0.3em;
     margin-bottom: 10px;
-  }
+    border: 1px solid #381D2A;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    display: inline-block;
+    border-radius: 6px;
+}
+  
 
   .add-button button {
     width: 25%;
@@ -200,6 +206,8 @@ html,body{
     border-radius: 6px;
     font-size: 1.2em;
     margin-left: 38%;
+    margin-bottom: 5%;
+    
   }
   
   .add-button button:hover{

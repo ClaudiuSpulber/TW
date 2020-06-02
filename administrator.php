@@ -187,22 +187,22 @@ if ($count) {
     <header style="background-color:#381D2A">
         <img class="logo" src="logo.jpg" style="width:10%;">
         <div class="search">
-            <form class="search" action="cautare.php">    
-                    <button type="submit" class="buttonsearch"><i class="fa fa-search"></i></button>
-                    <input type="text" class="searchbar" placeholder="Căutare..">
-            </form> 	
+            <form class="search" action="cautare.php">
+                <button type="submit" class="buttonsearch"><i class="fa fa-search"></i></button>
+                <input type="text" class="searchbar" placeholder="Căutare..">
+            </form>
         </div>
-            <a href="myAccount.html" class="blabla">
-                <img class="account" src="persoana.png">
-            </a>
-            <a href="Group.html" class="blabla">
-                <img class="grup" src="grup.png">
-            </a>
-            <a href="Lists.html" class="blabla">
-                <img class="list" src="list.png">
-            </a>
- 
-     </header>
+        <a href="myAccount.html" class="blabla">
+            <img class="account" src="persoana.png">
+        </a>
+        <a href="Group.html" class="blabla">
+            <img class="grup" src="grup.png">
+        </a>
+        <a href="Lists.html" class="blabla">
+            <img class="list" src="list.png">
+        </a>
+
+    </header>
     <div class="content2">
         <div class="menu">
             <div class="menu-element">
@@ -211,7 +211,7 @@ if ($count) {
                 </div>
                 <div class="submenu-claus-container">
                     <a href="carne.asp" class="menu-text">Preparate din carne</a>
-    
+
                     <div class="submenu-claus">
                         <div>
                             <a href="pui.asp" class="submenu-text">Pui</a>
@@ -269,62 +269,64 @@ if ($count) {
             </div>
         </div>
         <div class="container">
-        <h1 class="product-title">
-                    Administrator Homepage
-                </h1>
-                <div class="section-4">
-                    <a href="adduser.html"><img alt="adduser" class="image" src="adduser.png" /></a>
-                    <a href="addproduct.html"><img alt="addproduct" class="image" src="addprod.png" /></a>
-                    <a href="addgroup.html"><img alt="addgroup" class="image" src="addgroup.png" /></a>
-                    <div class="actions">
-                        <div class="title-csv">Exporting data</div>
-                        <form method="post">
+            <h1 class="product-title">
+                Administrator Homepage
+            </h1>
+            <div class="section-4">
+                
+                <a href="adduser.html"><img alt="adduser" class="image" src="adduser.png" /></a>
+                <a href="addproduct.html"><img alt="addproduct" class="image" src="addprod.png" /></a>
+                <a href="addgroup.html"><img alt="addgroup" class="image" src="addgroup.png" /></a>
+             
+                <div class="actions">
+                    <h1 class="title-csv">Exporting data</h1>
+                    <form method="post">
 
-                            <div class="csv-buttons">
-                                <button type="submit" name="products_lists">Top 10 products on Lists</button>
-                                <button type="submit" name="products_favorites">Top 10 products on Favorites</button><br>
-                                <button type="submit" name="export_products">Export products</button>
-                                <button type="submit" name="export_users">Export users</button>
-                            </div>
-                        </form>
-                        <div class="title-csv1">If you want to see the products added on a specific month you just need to type here the number of the month and then press the button below</div>
-                        <form method="post">
+                        <div class="csv-buttons">
+                            <button type="submit" name="products_lists">Top 10 products on Lists</button>
+                            <button type="submit" name="products_favorites">Top 10 products on Favorites</button><br>
+                            <button type="submit" name="export_products">Export products</button>
+                            <button type="submit" name="export_users">Export users</button>
+                        </div>
+                    </form>
+                    <h1 class="title-csv1">If you want to see the products added on a specific month you just need to type here the number of the month and then press the button below</h1>
+                    <form method="post">
 
-                            <div class="csv-buttons">
-                                <input type="text" id="nr_month" name="nr_month" class="form7" maxlength="2" placeholder="Number of month" required="required"><br>
-                                <button type="submit" name="csv_month" id="exp" value="CSV month">Export</button>
-                            </div>
-                        </form>
+                        <div class="csv-buttons">
+                            <input type="text" id="nr_month" name="nr_month" class="form7" maxlength="2" placeholder="Number of month" required="required"><br>
+                            <button type="submit" name="csv_month" id="exp" value="CSV month">Export</button>
+                        </div>
+                    </form>
 
-                        <div class="title-csv">See messages</div>
-                        <?php if ($ok == 0) { ?>
-                            <h1 class="title-csv2"> Sorry! You dont have any messages. </h1>
-                        <?php } else { ?>
-                            <div class="table">
-                                <table id="msg">
+                    <h1 class="title-csv">See messages</h1>
+                    <?php if ($ok == 0) { ?>
+                        <h1 class="title-csv2"> Sorry! You dont have any messages. </h1>
+                    <?php } else { ?>
+                        <div class="table">
+                            <table id="msg">
+                                <tr>
+                                    <th>ID user</th>
+                                    <th>Username</th>
+                                    <th>Email</th>
+                                    <th>Date</th>
+                                    <th>Message</th>
+                                </tr>
+                                <?php for ($i = 0; $i < $count; $i = $i + 1) { ?>
+
+
                                     <tr>
-                                        <th>ID user</th>
-                                        <th>Username</th>
-                                        <th>Email</th>
-                                        <th>Date</th>
-                                        <th>Message</th>
+                                        <td><?php echo $id_user[$i]; ?></td>
+                                        <td><?php echo $username[$i]; ?></td>
+                                        <td><?php echo $email[$i]; ?></td>
+                                        <td><?php echo $date[$i]; ?></td>
+                                        <td><?php echo $message[$i]; ?></td>
                                     </tr>
-                                    <?php for ($i = 0; $i < $count; $i = $i + 1) { ?>
-
-
-                                        <tr>
-                                            <td><?php echo $id_user[$i]; ?></td>
-                                            <td><?php echo $username[$i]; ?></td>
-                                            <td><?php echo $email[$i]; ?></td>
-                                            <td><?php echo $date[$i]; ?></td>
-                                            <td><?php echo $message[$i]; ?></td>
-                                        </tr>
-                                    <?php }; ?>
-                                </table>
-                            </div>
-                        <?php }; ?>
-                    </div>
+                                <?php }; ?>
+                            </table>
+                        </div>
+                    <?php }; ?>
                 </div>
+            </div>
         </div>
     </div>
 </body>

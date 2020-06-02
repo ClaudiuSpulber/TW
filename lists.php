@@ -25,7 +25,6 @@ if (isset($_POST['delete'])) {
     $userList->bindParam(2, $id_produs);
     $deleteList->bindParam(1, $user_id);
     $deleteList->bindParam(2, $id_produs);
-
     if ($userList->execute()) {
         try {
             if ($deleteList->execute()) {
@@ -41,6 +40,45 @@ if (isset($_POST['delete'])) {
     }
 }
 
+if(isset($_POST['stergere'])){
+    $ingredient = $_REQUEST['ingredient'];
+    $produs = $_REQUEST['produs'];
+    $var = $dbh->prepare( "SELECT ingredients from lists where id_client=? and id_product= ?");
+    $var->bindParam(1, $user_id);
+    $var->bindParam(2, $produs);
+    if($var->execute()){
+        try{
+            $row=$var->fetch();
+            $ingrediente=$row['ingredients'];
+            $spatiu=" ";
+            $ingrediente = str_replace(",","",$ingrediente);
+            $ingrediente = $ingrediente.$spatiu;
+            $ingredient = $ingredient.$spatiu;
+            $ingredientsnou = str_replace($ingredient,"", $ingrediente);
+            $ingredientsnou = substr($ingredientsnou, 0, -1);
+            $ingredientsnou = str_replace(" ",", ", $ingredientsnou);
+
+            $var = "UPDATE lists set ingredients='$ingredientsnou' where id_client='$user_id' and id_product='$produs'";
+            $sql = mysqli_query($db, $var);
+            $var1 = "SELECT ingredients from lists where id_client='$user_id' and id_product='$produs'";
+            $sql1 = mysqli_query($db, $var1);
+            $row = mysqli_fetch_array($sql1);
+            $ingrediente = $row['ingredients'];
+            if($ingrediente == ""){
+                $var = "DELETE from lists where id_client='$user_id' and id_product='$produs'";
+                $sql = mysqli_query($db, $var);
+            }
+            
+        } catch(PDOException $e) {
+            print "Error in deleting this ingredient!" .$e->getMessage() ."<br/>";
+            var_dump($e->getMessage());
+            die();
+        }
+    }
+
+
+}
+
 if ($userLists->execute(array($user_id))) {
     if (!$userLists->rowCount()) {
         $ok = 0;
@@ -54,26 +92,28 @@ if ($userLists->execute(array($user_id))) {
         while ($row = $userLists->fetch()) {
             $id_list = $row["id_list"];
             $id_client = $row["id_client"];
-            
             $id_product = $row["id_product"];
             $id_product2[] = $row["id_product"];
+            $ingredients1[] = $row["ingredients"];
             if ($productsList->execute(array($id_product))) {
                 while ($row2 = $productsList->fetch()) {
                     $product_name[] = $row2["product_name"];
                     $product_name2[] = strtolower(str_replace(" ", "", $row2["product_name"]));
-                    $ingredients1[] = $row2["ingredients"];
+                    
                 }
             }
         }
         $lista_ingrediente = array();
+        if($ingredients1[0] !== ""){
         for ($k = 0; $k < sizeof($ingredients1); $k = $k + 1) {
             $x = explode(',', $ingredients1[$k]);
             for ($a = 0; $a < sizeof($x); $a++) {
                 $lista_ingrediente[$k][$a] = $x[$a];
             }
         }
+        }
+        }
     }
-}
 
 ?>
 <!DOCTYPE html>
@@ -84,28 +124,29 @@ if ($userLists->execute(array($user_id))) {
     <title>Subcategory</title>
     <link rel="stylesheet" href="lists.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
 </head>
 
 <body style="background-color: #381D2A">
     <header style="background-color:#381D2A">
         <img class="logo" src="logo.jpg" style="width:10%;">
         <div class="search">
-            <form class="search" action="cautare.php">    
-                    <button type="submit" class="buttonsearch"><i class="fa fa-search"></i></button>
-                    <input type="text" class="searchbar" placeholder="Căutare..">
-            </form> 	
+            <form class="search" action="cautare.php">
+                <button type="submit" class="buttonsearch"><i class="fa fa-search"></i></button>
+                <input type="text" class="searchbar" placeholder="Căutare..">
+            </form>
         </div>
-            <a href="myAccount.html" class="blabla">
-                <img class="account" src="persoana.png">
-            </a>
-            <a href="Group.html" class="blabla">
-                <img class="grup" src="grup.png">
-            </a>
-            <a href="Lists.html" class="blabla">
-                <img class="list" src="list.png">
-            </a>
- 
-     </header>
+        <a href="myAccount.html" class="blabla">
+            <img class="account" src="persoana.png">
+        </a>
+        <a href="Group.html" class="blabla">
+            <img class="grup" src="grup.png">
+        </a>
+        <a href="Lists.html" class="blabla">
+            <img class="list" src="list.png">
+        </a>
+
+    </header>
     <div class="content2">
         <div class="menu">
             <div class="menu-element">
@@ -114,7 +155,7 @@ if ($userLists->execute(array($user_id))) {
                 </div>
                 <div class="submenu-claus-container">
                     <a href="carne.asp" class="menu-text">Preparate din carne</a>
-    
+
                     <div class="submenu-claus">
                         <div>
                             <a href="pui.asp" class="submenu-text">Pui</a>
@@ -172,43 +213,61 @@ if ($userLists->execute(array($user_id))) {
             </div>
         </div>
         <div class="container">
-        <h1 class="product-title">
-                    My lists
-                </h1>
-                <div class="section-2">
-                    <ul>
+            <h1 class="product-title">
+                My lists
+            </h1>
+            <div class="section-2">
+                <ul>
+                    <?php
+                    if ($ok == 0) {
+                    ?>
+                        <h1 class="no-lists-found"> Sorry! No lists found </h1>
                         <?php
-                        if ($ok == 0) {
-                        ?>
-                            <h1 class="product-title"> Sorry! No lists found </h1>
-                            <?php
-                        } else {
-                            $i = 0;
-                            foreach ($product_name as $value) { ?>
-                                <li class="card">
-                                    <div class="list-image">
-                                        <img alt ="photo" class="image-size" src="Images/<?php echo $product_name2[$i];?>.jpg">
-                                    </div>
-                                    <div class="list-description">
-                                        <div class="list-title"><?php echo $value; ?></div>
-                                        <div class="ingredients-title">Ingredients</div>
-                                        <div class="list-ingredients">
-                                            <?php echo $ingredients1[$i]; ?>
-                                        </div>
-                                        <form method="post" class="buttoncard" action="">
-                                            <input type="hidden" name="idprod" value="<?php echo $id_product2[$i];?>">
-                                            <button id="cardbutton" type="submit" name="delete">Delete from list</button>
-                                        </form>
-                                    </div>
-                                   
-        
-                                </li>
-                        <?php $i++;
-                            };
-                        }; ?>
+                    } else {
+                        $i = 0;
+                        foreach ($product_name as $value) { 
+                            if(sizeof($lista_ingrediente)>0){?>
+                            <li class="card">
+                                <div class="list-image">
+                                    <img alt="photo" class="image-size" src="Images/<?php echo $product_name2[$i]; ?>.jpg">
+                                </div>
+                                <div class="list-description">
+                                    <div class="list-title"><?php echo $value; ?></div>
+                                    <table id="produs-lista">
+                                        <tr>
+                                            <th>Ingredients</th>
+                                            <th>Delete this ingredient</th>
+                                        </tr>
+                                        <?php
+                                         if(sizeof($lista_ingrediente)>0){
+                                         for($j=0; $j<sizeof($lista_ingrediente[$i]); $j++){ 
+                                           ?>
+                                        <tr>
+                                            <td><?php echo $lista_ingrediente[$i][$j]; ?></td>
+                                            <td>
+                                                <form method="post" class="stergere" action="">
+                                                    <input type="hidden" name="ingredient" value="<?php echo $lista_ingrediente[$i][$j]; ?>">
+                                                    <input type="hidden" name="produs" value="<?php echo $id_product2[$i]; ?>">
+                                                    <button id="stergere" type="submit" name="stergere">Delete</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        <?php }; }; ?>
+                                    </table>
+                                    <form method="post" class="buttoncard" action="lists.php">
+                                        <input type="hidden" name="idprod" value="<?php echo $id_product2[$i]; ?>">
+                                        <button id="cardbutton" type="submit" name="delete">Delete from list</button>
+                                    </form>
+                                </div>
 
-                    </ul>
-                </div>
+
+                            </li>
+                                         <?php }; $i++;
+                        };
+                    }; ?>
+
+                </ul>
+            </div>
         </div>
     </div>
 </body>
