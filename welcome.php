@@ -1,9 +1,9 @@
-<?php include ('server.php') ?>
+<?php include('server.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="welcome.css">
     <link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,32 +11,26 @@
 </head>
 
 <body style="background-color: #381D2A">
-    <div class="center-content">
-        <div class="box2">
-            <div class="little-container">
-                <div class="section-1">
-                    <h1 class="welcome-text">welcome to</h1>
-                    <h1 class="welcome-text1"><b>FORG</b></h1>
+    <div class="content2">
+        <div class="section-1">
+            <h1 class="welcome-text">welcome to </h1>
+            <h1 class="welcome-text1">FORG</h1>
+        </div>
+        <h1 class="sign-in">Sign in</h1>
+        <div class="formular">
+            <form method="POST" action="welcome.php" name="formular">
+                <input type="text" id="username" name="username" class="form1" maxlength="255" placeholder="Username" required="required"><br>
+                <input type="password" id="password" name="password" class="form1" maxlength="255" placeholder="Password" required="required">
+                <br>
+                <div class="centerbutton">
+                    <button type="submit" name="login_user" value="Log in">Log in</button>
                 </div>
-                <div class="sign-in">Sign in</div>
-                <form method="POST" action="welcome.php" name="formular">
-                    <input type="text" id="username" name="username" class="form1" maxlength="255" placeholder="Username"
-                        required="required"><br>
-                    <input type="password" id="password" name="password" class="form1" maxlength="255" placeholder="Password"
-                        required="required">
-                    <br>
-                    <div class="centerbutton">
-                    <button type="submit"name="login_user" value="Log in">Log in</button></div>
-                </form>
-                <div class="word">or</div>
-                <form method="get" action="welcomeSignUp.php">
-                    <div class="centerbutton">
-                    <button type="submit" class="buttons" name="redirect" value="Sign up" >Sign up</button></div>
-                </form>
-                <?php if ($logok==1){?>
-                    <h1 style="text-align:center; margin-top:10px;">Username/password wrong</h1>
-                <?php } ?>
-            </div>
+            </form>
+            <p class="word">or</p>
+            <form method="get" action="welcomeSignUp.php">
+                <div class="centerbutton2">
+                    <button type="submit" name="redirect" value="Sign up">Sign up</button></div>
+            </form>
         </div>
     </div>
 </body>

@@ -40,23 +40,23 @@ if (isset($_POST['delete'])) {
     }
 }
 
-if(isset($_POST['stergere'])){
+if (isset($_POST['stergere'])) {
     $ingredient = $_REQUEST['ingredient'];
     $produs = $_REQUEST['produs'];
-    $var = $dbh->prepare( "SELECT ingredients from lists where id_client=? and id_product= ?");
+    $var = $dbh->prepare("SELECT ingredients from lists where id_client=? and id_product= ?");
     $var->bindParam(1, $user_id);
     $var->bindParam(2, $produs);
-    if($var->execute()){
-        try{
-            $row=$var->fetch();
-            $ingrediente=$row['ingredients'];
-            $spatiu=" ";
-            $ingrediente = str_replace(",","",$ingrediente);
-            $ingrediente = $ingrediente.$spatiu;
-            $ingredient = $ingredient.$spatiu;
-            $ingredientsnou = str_replace($ingredient,"", $ingrediente);
+    if ($var->execute()) {
+        try {
+            $row = $var->fetch();
+            $ingrediente = $row['ingredients'];
+            $spatiu = " ";
+            $ingrediente = str_replace(",", "", $ingrediente);
+            $ingrediente = $ingrediente . $spatiu;
+            $ingredient = $ingredient . $spatiu;
+            $ingredientsnou = str_replace($ingredient, "", $ingrediente);
             $ingredientsnou = substr($ingredientsnou, 0, -1);
-            $ingredientsnou = str_replace(" ",", ", $ingredientsnou);
+            $ingredientsnou = str_replace(" ", ", ", $ingredientsnou);
 
             $var = "UPDATE lists set ingredients='$ingredientsnou' where id_client='$user_id' and id_product='$produs'";
             $sql = mysqli_query($db, $var);
@@ -64,19 +64,16 @@ if(isset($_POST['stergere'])){
             $sql1 = mysqli_query($db, $var1);
             $row = mysqli_fetch_array($sql1);
             $ingrediente = $row['ingredients'];
-            if($ingrediente == ""){
+            if ($ingrediente == "") {
                 $var = "DELETE from lists where id_client='$user_id' and id_product='$produs'";
                 $sql = mysqli_query($db, $var);
             }
-            
-        } catch(PDOException $e) {
-            print "Error in deleting this ingredient!" .$e->getMessage() ."<br/>";
+        } catch (PDOException $e) {
+            print "Error in deleting this ingredient!" . $e->getMessage() . "<br/>";
             var_dump($e->getMessage());
             die();
         }
     }
-
-
 }
 
 if ($userLists->execute(array($user_id))) {
@@ -99,21 +96,20 @@ if ($userLists->execute(array($user_id))) {
                 while ($row2 = $productsList->fetch()) {
                     $product_name[] = $row2["product_name"];
                     $product_name2[] = strtolower(str_replace(" ", "", $row2["product_name"]));
-                    
                 }
             }
         }
         $lista_ingrediente = array();
-        if($ingredients1[0] !== ""){
-        for ($k = 0; $k < sizeof($ingredients1); $k = $k + 1) {
-            $x = explode(',', $ingredients1[$k]);
-            for ($a = 0; $a < sizeof($x); $a++) {
-                $lista_ingrediente[$k][$a] = $x[$a];
+        if ($ingredients1[0] !== "") {
+            for ($k = 0; $k < sizeof($ingredients1); $k = $k + 1) {
+                $x = explode(',', $ingredients1[$k]);
+                for ($a = 0; $a < sizeof($x); $a++) {
+                    $lista_ingrediente[$k][$a] = $x[$a];
+                }
             }
         }
-        }
-        }
     }
+}
 
 ?>
 <!DOCTYPE html>
@@ -128,148 +124,271 @@ if ($userLists->execute(array($user_id))) {
 </head>
 
 <body style="background-color: #381D2A">
-    <header style="background-color:#381D2A">
-        <img class="logo" src="logo.jpg" style="width:10%;">
-        <div class="search">
-            <form class="search" action="cautare.php">
-                <button type="submit" class="buttonsearch"><i class="fa fa-search"></i></button>
-                <input type="text" class="searchbar" placeholder="Căutare..">
-            </form>
-        </div>
-        <a href="myAccount.html" class="blabla">
-            <img class="account" src="persoana.png">
-        </a>
-        <a href="Group.html" class="blabla">
-            <img class="grup" src="grup.png">
-        </a>
-        <a href="Lists.html" class="blabla">
-            <img class="list" src="list.png">
-        </a>
+    <div class="page-wrapper">
+        <header class="header-web">
+            <div class="logo-wrapper">
+                <img class="logo" src="logo.jpg" alt="Logo">
+            </div>
+            <div class="search-wrapper">
+                <form class="search" action="cautare.php">
+                    <input type="text" class="searchbar" placeholder="Căutare..">
+                    <button type="submit" class="buttonsearch"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+            <div class="header-links-wrapper">
+                <a href="#" class="header-link">
+                    <img src="persoana.png" alt="persoana">
+                </a>
+                <a href="#" class="header-link">
+                    <img src="grup.png" alt="grup">
+                </a>
+                <a href="#" class="header-link">
+                    <img src="list.png" alt="list">
+                </a>
+            </div>
 
-    </header>
-    <div class="content2">
-        <div class="menu">
+            <div class="logout-wrapper">
+                <a href="/">Logout</a>
+                <i class="fa fa-sign-out"></i>
+            </div>
+        </header>
+        <div class="header-mobile">
+            <div class="header-mobile-burger" id="show-menu">
+                <i class="fa fa-bars"></i>
+            </div>
+            <div class="logo-mobile">
+                <img class="logo" src="logo.jpg" alt="logo">
+            </div>
+        </div>
+        <div class="subheader-mobile">
+            <div class="search-wrapper-mobile">
+                <form class="search" action="cautare.php">
+                    <input type="text" class="searchbar" placeholder="Căutare..">
+                    <button type="submit" class="buttonsearch"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+
+        <div class="mobile-menu" id="mobile-menu">
+            <div class="infos-wrapper">
+                <div class="close-menu-icon" id="close-menu">
+                    <i class="fa fa-times"></i>
+                </div>
+                <div class="logo-mobile">
+                    <img class="logo" src="logo.jpg" alt="logo">
+                </div>
+            </div>
             <div class="menu-element">
                 <div>
-                    <img class="menu-image" src="Pui.png">
+                    <img class="menu-image" src="Pui.png" alt="pui">
                 </div>
                 <div class="submenu-claus-container">
-                    <a href="carne.asp" class="menu-text">Preparate din carne</a>
+                    <a href="carne.asp" class="menu-text">Meat products</a>
 
                     <div class="submenu-claus">
                         <div>
-                            <a href="pui.asp" class="submenu-text">Pui</a>
+                            <a href="pui.asp" class="submenu-text">Chicken</a>
                         </div>
                         <div>
-                            <a href="vita.asp" class="submenu-text">Vita</a>
+                            <a href="vita.asp" class="submenu-text">Beef</a>
                         </div>
                         <div>
-                            <a href="rata.asp" class="submenu-text">Rata</a>
+                            <a href="rata.asp" class="submenu-text">Duck</a>
                         </div>
                         <div>
-                            <a href="curcan.asp" class="submenu-text">Curcan</a>
+                            <a href="curcan.asp" class="submenu-text">Turkey</a>
                         </div>
                         <div>
-                            <a href="porc.asp" class="submenu-text">Porc</a>
+                            <a href="porc.asp" class="submenu-text">Pork</a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="menu-element">
                 <div>
-                    <img class="menu-image" src="Vegetarian.png">
+                    <img class="menu-image" src="Vegetarian.png" alt="vegetarian">
                 </div>
-                <a href="vegetarian.asp" class="menu-text">Preparate vegetariene</a>
+                <a href="vegetarian.asp" class="menu-text">Vegetarian products</a>
             </div>
             <div class="menu-element">
                 <div>
-                    <img class="menu-image" src="Peste.png">
+                    <img class="menu-image" src="Peste.png" alt="peste">
                 </div>
-                <a href="peste.asp" class="menu-text">Peste si Fructe de mare</a>
+                <a href="peste.asp" class="menu-text">Fish and Seafood</a>
             </div>
             <div class="menu-element">
                 <div>
-                    <img class="menu-image" src="Ciorba.png">
+                    <img class="menu-image" src="Ciorba.png" alt="ciorba">
                 </div>
-                <a href="supe.asp" class="menu-text">Supe/Ciorbe</a>
+                <a href="supe.asp" class="menu-text">Soups</a>
             </div>
             <div class="menu-element">
                 <div>
-                    <img class="menu-image" src="garnituri.png">
+                    <img class="menu-image" src="garnituri.png" alt="garnituri">
                 </div>
-                <a href="Garnituri.asp" class="menu-text">Garnituri</a>
+                <a href="Garnituri.asp" class="menu-text">Sides</a>
             </div>
             <div class="menu-element">
                 <div>
-                    <img class="menu-image" src="Salata.png">
+                    <img class="menu-image" src="Salata.png" alt="salata">
                 </div>
-                <a href="salate.asp" class="menu-text">Salate</a>
+                <a href="salate.asp" class="menu-text">Salads</a>
             </div>
             <div class="menu-element">
                 <div>
-                    <img class="menu-image" src="Tort.png">
+                    <img class="menu-image" src="Tort.png" alt="tort">
                 </div>
-                <a href="desert.asp" class="menu-text">Desert</a>
+                <a href="desert.asp" class="menu-text">Dessert</a>
+            </div>
+            <div class="header-links-wrapper">
+                <a href="#" class="header-link">
+                    <img src="persoana.png" alt="persoana">
+                </a>
+                <a href="#" class="header-link">
+                    <img src="grup.png" alt="grup">
+                </a>
+                <a href="#" class="header-link">
+                    <img src="list.png" alt="list">
+                </a>
+            </div>
+            <div class="logout-wrapper">
+                <a href="/">Logout</a>
+                <i class="fa fa-sign-out"></i>
             </div>
         </div>
-        <div class="container">
-            <h1 class="product-title">
-                My lists
-            </h1>
-            <div class="section-2">
-                <ul>
-                    <?php
-                    if ($ok == 0) {
-                    ?>
-                        <h1 class="no-lists-found"> Sorry! No lists found </h1>
+        <div class="content2">
+            <div class="container">
+                <h1 class="product-title">
+                    My lists
+                </h1>
+                <div class="section-2">
+                    <ul>
                         <?php
-                    } else {
-                        $i = 0;
-                        foreach ($product_name as $value) { 
-                            if(sizeof($lista_ingrediente)>0){?>
-                            <li class="card">
-                                <div class="list-image">
-                                    <img alt="photo" class="image-size" src="Images/<?php echo $product_name2[$i]; ?>.jpg">
-                                </div>
-                                <div class="list-description">
-                                    <div class="list-title"><?php echo $value; ?></div>
-                                    <table id="produs-lista">
-                                        <tr>
-                                            <th>Ingredients</th>
-                                            <th>Delete this ingredient</th>
-                                        </tr>
-                                        <?php
-                                         if(sizeof($lista_ingrediente)>0){
-                                         for($j=0; $j<sizeof($lista_ingrediente[$i]); $j++){ 
-                                           ?>
-                                        <tr>
-                                            <td><?php echo $lista_ingrediente[$i][$j]; ?></td>
-                                            <td>
-                                                <form method="post" class="stergere" action="">
-                                                    <input type="hidden" name="ingredient" value="<?php echo $lista_ingrediente[$i][$j]; ?>">
-                                                    <input type="hidden" name="produs" value="<?php echo $id_product2[$i]; ?>">
-                                                    <button id="stergere" type="submit" name="stergere">Delete</button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                        <?php }; }; ?>
-                                    </table>
-                                    <form method="post" class="buttoncard" action="lists.php">
-                                        <input type="hidden" name="idprod" value="<?php echo $id_product2[$i]; ?>">
-                                        <button id="cardbutton" type="submit" name="delete">Delete from list</button>
-                                    </form>
-                                </div>
+                        if ($ok == 0) {
+                        ?>
+                            <h1 class="no-lists-found"> Sorry! No lists found </h1>
+                            <?php
+                        } else {
+                            $i = 0;
+                            foreach ($product_name as $value) {
+                                if (sizeof($lista_ingrediente) > 0) { ?>
+                                    <li class="card">
+                                        <div class="list-image">
+                                            <img alt="photo" class="image-size" src="Images/<?php echo $product_name2[$i]; ?>.jpg">
+                                        </div>
+                                        <div class="list-description">
+                                            <div class="list-title"><?php echo $value; ?></div>
+                                            <table id="produs-lista">
+                                                <tr>
+                                                    <th>Ingredients</th>
+                                                    <th>Delete this ingredient</th>
+                                                </tr>
+                                                <?php
+                                                if (sizeof($lista_ingrediente) > 0) {
+                                                    for ($j = 0; $j < sizeof($lista_ingrediente[$i]); $j++) {
+                                                ?>
+                                                        <tr>
+                                                            <td><?php echo $lista_ingrediente[$i][$j]; ?></td>
+                                                            <td>
+                                                                <form method="post" class="stergere" action="">
+                                                                    <input type="hidden" name="ingredient" value="<?php echo $lista_ingrediente[$i][$j]; ?>">
+                                                                    <input type="hidden" name="produs" value="<?php echo $id_product2[$i]; ?>">
+                                                                    <button id="stergere" type="submit" name="stergere">Delete</button>
+                                                                </form>
+                                                            </td>
+                                                        </tr>
+                                                <?php };
+                                                }; ?>
+                                            </table>
+                                            <form method="post" class="buttoncard" action="lists.php">
+                                                <input type="hidden" name="idprod" value="<?php echo $id_product2[$i]; ?>">
+                                                <button id="cardbutton" type="submit" name="delete">Delete from list</button>
+                                            </form>
+                                        </div>
 
 
-                            </li>
-                                         <?php }; $i++;
-                        };
-                    }; ?>
+                                    </li>
+                        <?php };
+                                $i++;
+                            };
+                        }; ?>
 
-                </ul>
+                    </ul>
+                </div>
+            </div>
+            <div class="menu">
+                <div class="menu-element">
+                    <div>
+                        <img class="menu-image" src="Pui.png" alt="pui">
+                    </div>
+                    <div class="submenu-claus-container">
+                        <a href="carne.asp" class="menu-text">Meat products</a>
+
+                        <div class="submenu-claus">
+                            <div>
+                                <a href="pui.asp" class="submenu-text">Chicken</a>
+                            </div>
+                            <div>
+                                <a href="vita.asp" class="submenu-text">Beef</a>
+                            </div>
+                            <div>
+                                <a href="rata.asp" class="submenu-text">Duck</a>
+                            </div>
+                            <div>
+                                <a href="curcan.asp" class="submenu-text">Turkey</a>
+                            </div>
+                            <div>
+                                <a href="porc.asp" class="submenu-text">Pork</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-element">
+                    <div>
+                        <img class="menu-image" src="Vegetarian.png" alt="vegetarian">
+                    </div>
+                    <a href="vegetarian.asp" class="menu-text">Vegetarian products</a>
+                </div>
+                <div class="menu-element">
+                    <div>
+                        <img class="menu-image" src="Peste.png" alt="peste">
+                    </div>
+                    <a href="peste.asp" class="menu-text">Fish and Seafood</a>
+                </div>
+                <div class="menu-element">
+                    <div>
+                        <img class="menu-image" src="Ciorba.png" alt="ciorba">
+                    </div>
+                    <a href="supe.asp" class="menu-text">Soups</a>
+                </div>
+                <div class="menu-element">
+                    <div>
+                        <img class="menu-image" src="garnituri.png" alt="garnituri">
+                    </div>
+                    <a href="Garnituri.asp" class="menu-text">Sides</a>
+                </div>
+                <div class="menu-element">
+                    <div>
+                        <img class="menu-image" src="Salata.png" alt="salata">
+                    </div>
+                    <a href="salate.asp" class="menu-text">Salads</a>
+                </div>
+                <div class="menu-element">
+                    <div>
+                        <img class="menu-image" src="Tort.png" alt="tort">
+                    </div>
+                    <a href="desert.asp" class="menu-text">Dessert</a>
+                </div>
             </div>
         </div>
+        <footer style="background-color:#381D2A">
+            <div class="contact">
+                <a href="contact.html" target="_blank">Contact</a>
+            </div>
+        </footer>
+
     </div>
+    <script src="./principal.js"></script>
 </body>
 
 </html>

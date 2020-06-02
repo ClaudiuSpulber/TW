@@ -63,145 +63,265 @@ if (isset($_POST['delete_user'])) {
 </head>
 
 <body style="background-color: #381D2A">
-    <header style="background-color:#381D2A">
-        <img class="logo" src="logo.jpg" style="width:10%;">
-        <div class="search">
-            <form class="search" action="cautare.php">    
-                    <button type="submit" class="buttonsearch"><i class="fa fa-search"></i></button>
-                    <input type="text" class="searchbar" placeholder="Căutare..">
-            </form> 	
+    <div class="page-wrapper">
+    <header class="header-web">
+        <div class="logo-wrapper">
+            <img class="logo" src="logo.jpg" alt="Logo">
         </div>
-            <a href="myAccount.html" class="blabla">
-                <img class="account" src="persoana.png">
+        <div class="search-wrapper">
+            <form class="search" action="cautare.php">
+                <input type="text" class="searchbar" placeholder="Căutare..">
+                <button type="submit" class="buttonsearch"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <div class="header-links-wrapper">
+            <a href="#" class="header-link">
+                <img src="persoana.png" alt="persoana">
             </a>
-            <a href="Group.html" class="blabla">
-                <img class="grup" src="grup.png">
+            <a href="#" class="header-link">
+                <img src="grup.png" alt="grup">
             </a>
-            <a href="Lists.html" class="blabla">
-                <img class="list" src="list.png">
+            <a href="#" class="header-link">
+                <img src="list.png" alt="list">
             </a>
- 
-     </header>
-    <div class="content2">
-        <div class="menu">
-            <div class="menu-element">
-                <div>
-                    <img class="menu-image" src="Pui.png">
-                </div>
-                <div class="submenu-claus-container">
-                    <a href="carne.asp" class="menu-text">Preparate din carne</a>
-    
-                    <div class="submenu-claus">
-                        <div>
-                            <a href="pui.asp" class="submenu-text">Pui</a>
-                        </div>
-                        <div>
-                            <a href="vita.asp" class="submenu-text">Vita</a>
-                        </div>
-                        <div>
-                            <a href="rata.asp" class="submenu-text">Rata</a>
-                        </div>
-                        <div>
-                            <a href="curcan.asp" class="submenu-text">Curcan</a>
-                        </div>
-                        <div>
-                            <a href="porc.asp" class="submenu-text">Porc</a>
-                        </div>
+        </div>
+
+        <div class="logout-wrapper">
+            <a href="/">Logout</a>
+            <i class="fa fa-sign-out"></i>
+        </div>
+    </header>
+    <div class="header-mobile">
+        <div class="header-mobile-burger" id="show-menu">
+            <i class="fa fa-bars"></i>
+        </div>
+        <div class="logo-mobile">
+            <img class="logo" src="logo.jpg" alt="logo">
+        </div>
+    </div>
+    <div class="subheader-mobile">
+        <div class="search-wrapper-mobile">
+            <form class="search" action="cautare.php">
+                <input type="text" class="searchbar" placeholder="Căutare..">
+                <button type="submit" class="buttonsearch"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="infos-wrapper">
+            <div class="close-menu-icon" id="close-menu">
+                <i class="fa fa-times"></i>
+            </div>
+            <div class="logo-mobile">
+                <img class="logo" src="logo.jpg" alt="logo">
+            </div>
+        </div>
+        <div class="menu-element">
+            <div>
+                <img class="menu-image" src="Pui.png" alt="pui">
+            </div>
+            <div class="submenu-claus-container">
+                <a href="carne.asp" class="menu-text">Meat products</a>
+
+                <div class="submenu-claus">
+                    <div>
+                        <a href="pui.asp" class="submenu-text">Chicken</a>
+                    </div>
+                    <div>
+                        <a href="vita.asp" class="submenu-text">Beef</a>
+                    </div>
+                    <div>
+                        <a href="rata.asp" class="submenu-text">Duck</a>
+                    </div>
+                    <div>
+                        <a href="curcan.asp" class="submenu-text">Turkey</a>
+                    </div>
+                    <div>
+                        <a href="porc.asp" class="submenu-text">Pork</a>
                     </div>
                 </div>
             </div>
-            <div class="menu-element">
-                <div>
-                    <img class="menu-image" src="Vegetarian.png">
-                </div>
-                <a href="vegetarian.asp" class="menu-text">Preparate vegetariene</a>
-            </div>
-            <div class="menu-element">
-                <div>
-                    <img class="menu-image" src="Peste.png">
-                </div>
-                <a href="peste.asp" class="menu-text">Peste si Fructe de mare</a>
-            </div>
-            <div class="menu-element">
-                <div>
-                    <img class="menu-image" src="Ciorba.png">
-                </div>
-                <a href="supe.asp" class="menu-text">Supe/Ciorbe</a>
-            </div>
-            <div class="menu-element">
-                <div>
-                    <img class="menu-image" src="garnituri.png">
-                </div>
-                <a href="Garnituri.asp" class="menu-text">Garnituri</a>
-            </div>
-            <div class="menu-element">
-                <div>
-                    <img class="menu-image" src="Salata.png">
-                </div>
-                <a href="salate.asp" class="menu-text">Salate</a>
-            </div>
-            <div class="menu-element">
-                <div>
-                    <img class="menu-image" src="Tort.png">
-                </div>
-                <a href="desert.asp" class="menu-text">Desert</a>
-            </div>
         </div>
+        <div class="menu-element">
+            <div>
+                <img class="menu-image" src="Vegetarian.png" alt="vegetarian">
+            </div>
+            <a href="vegetarian.asp" class="menu-text">Vegetarian products</a>
+        </div>
+        <div class="menu-element">
+            <div>
+                <img class="menu-image" src="Peste.png" alt="peste">
+            </div>
+            <a href="peste.asp" class="menu-text">Fish and Seafood</a>
+        </div>
+        <div class="menu-element">
+            <div>
+                <img class="menu-image" src="Ciorba.png" alt="ciorba">
+            </div>
+            <a href="supe.asp" class="menu-text">Soups</a>
+        </div>
+        <div class="menu-element">
+            <div>
+                <img class="menu-image" src="garnituri.png" alt="garnituri">
+            </div>
+            <a href="Garnituri.asp" class="menu-text">Sides</a>
+        </div>
+        <div class="menu-element">
+            <div>
+                <img class="menu-image" src="Salata.png" alt="salata">
+            </div>
+            <a href="salate.asp" class="menu-text">Salads</a>
+        </div>
+        <div class="menu-element">
+            <div>
+                <img class="menu-image" src="Tort.png" alt="tort">
+            </div>
+            <a href="desert.asp" class="menu-text">Dessert</a>
+        </div>
+        <div class="header-links-wrapper">
+            <a href="#" class="header-link">
+                <img src="persoana.png" alt="persoana">
+            </a>
+            <a href="#" class="header-link">
+                <img src="grup.png" alt="grup">
+            </a>
+            <a href="#" class="header-link">
+                <img src="list.png" alt="list">
+            </a>
+        </div>
+        <div class="logout-wrapper">
+            <a href="/">Logout</a>
+            <i class="fa fa-sign-out"></i>
+        </div>
+    </div>
+    <div class="content">
         <div class="container">
             <h1 class="product-title">
                 Add an user account
             </h1>
-            <form method="post" action="adduser.php">
+            <form method="post">
                 <input type="text" id="fullname" class="form5" maxlength="255" placeholder="Full name"
-                    required="required" name="full_name"><br>
+                    required="required"><br>
                 <input type="text" id="email" class="form5" maxlength="255" placeholder="E-mail"
-                    required="required" name="email"><br>
+                    required="required"><br>
                 <input type="text" id="phonenumber" class="form5" maxlength="255" placeholder="Phone number"
-                    required="required" name="phone_number"><br>
+                    required="required"><br>
                 <input type="text" id="username" class="form5" maxlength="255" placeholder="Username"
-                    required="required" name="username"><br> 
-                <input type="text" id="password" class="form5" maxlength="255"
-                    placeholder="Password" required="required" name="password">
-            
-            <div class="allergies">
-                <div class="check-left">
-                    <input type="checkbox" name="allergies[]" value="Gluten">
-                    <label> Gluten</label><br>
-                    <input type="checkbox" name="allergies[]" value="Shellfish">
-                    <label> Shellfish and derived products</label><br>
-                    <input type="checkbox" name="allergies[]" value="Eggs">
-                    <label> Eggs and derived products</label><br>
-                    <input type="checkbox" name="allergies[]" value="Fish">
-                    <label> Fish and derived products</label>
+                    required="required"><br> <input type="text" id="password" class="form5" maxlength="255"
+                    placeholder="Password" required="required">
+
+                <div class="allergies">
+                    <div class="check-left">
+                        <input type="checkbox">
+                        <label> Gluten</label><br>
+                        <input type="checkbox">
+                        <label> Shellfish and derived products</label><br>
+                        <input type="checkbox">
+                        <label> Eggs and derived products</label><br>
+                        <input type="checkbox">
+                        <label> Fish and derived products</label>
+                    </div>
+                    <div class="check-right">
+                        <input type="checkbox">
+                        <label> Peanuts</label><br>
+                        <input type="checkbox">
+                        <label> Soy and derived products</label><br>
+                        <input type="checkbox">
+                        <label> Milk and derived products</label><br>
+                        <input type="checkbox">
+                        <label> Tree nuts</label>
+                    </div>
                 </div>
-                <div class="check-right">
-                    <input type="checkbox" name="allergies[]" value="Peanuts">
-                    <label> Peanuts</label><br>
-                    <input type="checkbox" name="allergies[]" value="Soy">
-                    <label> Soy and derived products</label><br>
-                    <input type="checkbox" name="allergies[]" value="Milk">
-                    <label> Milk and derived products</label><br>
-                    <input type="checkbox" name="allergies[]" value="Tree">
-                    <label> Tree nuts</label>
+                <div class="add-button">
+                    <button type="button">Add an user
+                        account</button>
                 </div>
-            </div>
-            <div class="add-button">
-                <button type="submit" name="add_new_user">Add an user
-                    account</button>
-            </div>
-        </form>
+            </form>
             <h1 class="product-title">
                 Delete an user
             </h1>
-            <form method="post"  action="adduser.php">
+            <form method="post">
                 <input type="text" id="email2" class="form5" maxlength="255" placeholder="E-mail"
-                    required="required" name="email2"><br>
-                    <div class="add-button">
-                        <button type="submit" name="delete_user">Delete the user</button>
-                    </div>
+                    required="required"><br>
+                <div class="add-button">
+                    <button type="button">Delete the user</button>
+                </div>
             </form>
         </div>
+        <div class="menu">
+            <div class="menu-element">
+                <div>
+                    <img class="menu-image" src="Pui.png" alt="pui">
+                </div>
+                <div class="submenu-claus-container">
+                    <a href="carne.asp" class="menu-text">Meat products</a>
+
+                    <div class="submenu-claus">
+                        <div>
+                            <a href="pui.asp" class="submenu-text">Chicken</a>
+                        </div>
+                        <div>
+                            <a href="vita.asp" class="submenu-text">Beef</a>
+                        </div>
+                        <div>
+                            <a href="rata.asp" class="submenu-text">Duck</a>
+                        </div>
+                        <div>
+                            <a href="curcan.asp" class="submenu-text">Turkey</a>
+                        </div>
+                        <div>
+                            <a href="porc.asp" class="submenu-text">Pork</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-element">
+                <div>
+                    <img class="menu-image" src="Vegetarian.png" alt="vegetarian">
+                </div>
+                <a href="vegetarian.asp" class="menu-text">Vegetarian products</a>
+            </div>
+            <div class="menu-element">
+                <div>
+                    <img class="menu-image" src="Peste.png" alt="peste">
+                </div>
+                <a href="peste.asp" class="menu-text">Fish and Seafood</a>
+            </div>
+            <div class="menu-element">
+                <div>
+                    <img class="menu-image" src="Ciorba.png" alt="ciorba">
+                </div>
+                <a href="supe.asp" class="menu-text">Soups</a>
+            </div>
+            <div class="menu-element">
+                <div>
+                    <img class="menu-image" src="garnituri.png" alt="garnituri">
+                </div>
+                <a href="Garnituri.asp" class="menu-text">Sides</a>
+            </div>
+            <div class="menu-element">
+                <div>
+                    <img class="menu-image" src="Salata.png" alt="salata">
+                </div>
+                <a href="salate.asp" class="menu-text">Salads</a>
+            </div>
+            <div class="menu-element">
+                <div>
+                    <img class="menu-image" src="Tort.png" alt="tort">
+                </div>
+                <a href="desert.asp" class="menu-text">Dessert</a>
+            </div>
+        </div>
     </div>
+    <footer style="background-color:#381D2A">
+        <div class="contact">
+            <a href="contact.html" target="_blank">Contact</a>
+        </div>
+    </footer>
+
+</div>
+<script src="./principal.js"></script>
 </body>
 
 </html>
