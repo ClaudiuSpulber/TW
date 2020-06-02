@@ -97,52 +97,53 @@
             <h1 class="product-title">
                 Add an user account
             </h1>
-            <form method="post">
+            <form method="post" action="adduser.php">
                 <input type="text" id="fullname" class="form5" maxlength="255" placeholder="Full name"
-                    required="required"><br>
+                    required="required" name="full_name"><br>
                 <input type="text" id="email" class="form5" maxlength="255" placeholder="E-mail"
-                    required="required"><br>
+                    required="required" name="email"><br>
                 <input type="text" id="phonenumber" class="form5" maxlength="255" placeholder="Phone number"
-                    required="required"><br>
+                    required="required" name="phone_number"><br>
                 <input type="text" id="username" class="form5" maxlength="255" placeholder="Username"
-                    required="required"><br> <input type="text" id="password" class="form5" maxlength="255"
-                    placeholder="Password" required="required">
+                    required="required" name="username"><br> 
+                <input type="text" id="password" class="form5" maxlength="255"
+                    placeholder="Password" required="required" name="password">
             
             <div class="allergies">
                 <div class="check-left">
-                    <input type="checkbox">
+                    <input type="checkbox" name="allergies[]" value="Gluten">
                     <label> Gluten</label><br>
-                    <input type="checkbox">
+                    <input type="checkbox" name="allergies[]" value="Shellfish">
                     <label> Shellfish and derived products</label><br>
-                    <input type="checkbox">
+                    <input type="checkbox" name="allergies[]" value="Eggs">
                     <label> Eggs and derived products</label><br>
-                    <input type="checkbox">
+                    <input type="checkbox" name="allergies[]" value="Fish">
                     <label> Fish and derived products</label>
                 </div>
                 <div class="check-right">
-                    <input type="checkbox">
+                    <input type="checkbox" name="allergies[]" value="Peanuts">
                     <label> Peanuts</label><br>
-                    <input type="checkbox">
+                    <input type="checkbox" name="allergies[]" value="Soy">
                     <label> Soy and derived products</label><br>
-                    <input type="checkbox">
+                    <input type="checkbox" name="allergies[]" value="Milk">
                     <label> Milk and derived products</label><br>
-                    <input type="checkbox">
+                    <input type="checkbox" name="allergies[]" value="Tree">
                     <label> Tree nuts</label>
                 </div>
             </div>
             <div class="add-button">
-                <button type="button" >Add an user
+                <button type="submit" name="add_new_user">Add an user
                     account</button>
             </div>
         </form>
             <h1 class="product-title">
                 Delete an user
             </h1>
-            <form method="post">
+            <form method="post"  action="adduser.php">
                 <input type="text" id="email2" class="form5" maxlength="255" placeholder="E-mail"
-                    required="required"><br>
+                    required="required" name="email2"><br>
                     <div class="add-button">
-                        <button type="button" >Delete the user</button>
+                        <button type="submit" name="delete_user">Delete the user</button>
                     </div>
             </form>
         </div>
