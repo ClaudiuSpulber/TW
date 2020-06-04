@@ -2,14 +2,15 @@
    include('product-back.php');
     ?>
  <!DOCTYPE html>
- <html>
+ <html lang="en">
 
  <head>
      <meta charset="utf-8">
      <title>Subcategory</title>
-     <link rel="stylesheet" href="productPage.css">
+     <link rel="stylesheet" href="style/productPage.css">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
      <link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
+     <script type="text/javascript" src="javascript/functions.js"></script>
  </head>
 
  <body style="background-color: #381D2A">
@@ -173,11 +174,11 @@
                          </div>
 
                          <div class="actions">
-                             <form method="post" action="">
-                                 <button type="submit" name="all">Add all ingredients to list</button>
-                                 <button type="submit" name="favorites">Add to favorite</button>
-                             </form>
+                                 <button type="submit" name="all" value="1" onclick="add(this.value)">Add all ingredients to list</button>
+                                 <button type="submit" name="favorites" value="2" onclick="add(this.value)">Add to favorite</button>
+                                 <p id="succes"></p>
                          </div>
+                        
 
                      </div>
 

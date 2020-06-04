@@ -2,12 +2,12 @@
 include('lists-back.php');
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
     <title>Subcategory</title>
-    <link rel="stylesheet" href="lists.css">
+    <link rel="stylesheet" href="style/lists.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
 </head>
@@ -179,7 +179,7 @@ include('lists-back.php');
                                                         <tr>
                                                             <td><?php echo $lista_ingrediente[$i][$j]; ?></td>
                                                             <td>
-                                                                <form method="post" class="stergere" action="">
+                                                                <form method="post" class="stergere" action="lists.php">
                                                                     <input type="hidden" name="ingredient" value="<?php echo $lista_ingrediente[$i][$j]; ?>">
                                                                     <input type="hidden" name="produs" value="<?php echo $id_product2[$i]; ?>">
                                                                     <button id="stergere" type="submit" name="stergere">Delete</button>
