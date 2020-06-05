@@ -98,7 +98,7 @@ if (isset($_POST['login_user'])) {
                 if($raw['id']==1){
                 $_SESSION['admin']=true;
                 }
-                header('Location: html/principal.html', true, 307); //cod de raspuns 
+                header('Location: principal.html', true, 307); //cod de raspuns 
             } else {
                 array_push($errors, "Wrong username/password");
                 $logok = 1;
