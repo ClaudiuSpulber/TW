@@ -1,0 +1,307 @@
+html,body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color:#381D2A
+  }
+  
+  /*header*/
+  header{
+    width: 100%;
+    display:flex;
+    align-items: center;
+    background-color:#381D2A;
+  }
+  header .logo{
+    margin-right: auto;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  .search{
+    background-color:transparent;
+    width:80%;
+    float:right;
+    height:100px;
+  }
+  .searchbar[type=text]{
+    float: right;
+    margin-top:50px;
+    font-family:'Raleway';
+    padding: 0.5%;
+    border: 1px solid rgb(66, 3, 56);
+    border-radius:20px;
+    font-size: 17px;
+    color:#001A33;
+  }
+  .buttonsearch{
+    float: right;
+    margin-right:5px;
+    padding-top:0.6%;
+    padding-bottom:0.6%;
+    background: rgba(95, 0, 63, 0.479);
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-radius:15px;
+    cursor: pointer;
+    margin-top:50px;
+  }
+  header .blabla{
+    width: 50px;
+    height: 50px;
+  }
+  header .blabla .account{
+    width: 100%;
+    height: 100%;
+  }
+  header .blabla .grup{
+    width: 100%;
+    height: 100%;
+  }
+  header .blabla .list{
+    width: 100%;
+    height: 100%;
+    margin-right: 10px;
+  }
+
+  
+  .menu {
+  margin: 0;
+  padding: 0;
+  width: fit-content;
+    background-color:#381D2A
+  }
+  
+  .submenu-claus-container {
+    position: relative;
+    width: 197px;
+  }
+  
+  .submenu-claus {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0px;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .submenu-text {
+    color:rgb(255, 255, 255);
+    text-decoration: none;
+  }
+  div.menu > div > div:nth-child(2):hover > .submenu-claus{
+    display: block;
+  }
+  .menu {
+    margin: 0;
+    width:18%;
+  padding: 0;
+    background-color:#381D2A
+  }
+  
+  .submenu-claus-container {
+    position: relative;
+    width: 197px;
+  }
+  
+  .submenu-claus {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0px;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .submenu-text {
+    color:rgb(255, 255, 255);
+    text-decoration: none;
+  }
+  div.menu > div > div:nth-child(2):hover > .submenu-claus{
+    display: block;
+  }
+  
+  .menu-element{
+  display: flex;
+  padding: 8px 16px;
+  }
+  .menu-image {
+    color: #000;
+    width: 50px;
+    height: 40px;
+    max-width: 220px;
+    padding-right: 12%;
+  }
+  .menu-text {
+    color:rgb(255, 255, 255);
+    padding-top:5px;
+    text-decoration: none;
+    display: none;
+  }
+  .menu:hover .menu-text{
+    display: initial;
+  }
+  .menu-text:hover{
+    background-color: #555;
+  color: white;
+  }
+
+  .content2{/* container cu tot cu meniu */
+    width: 100%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    display: flex;
+  }
+
+  .container {
+    width: 80%;
+    background-color: white; 
+    border-radius: 25px;
+    margin-right: 50px;
+  }
+
+  h1.product-title {
+    display: block;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: auto;
+  }
+  
+  
+  .product-title {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 300%;
+    display: inline-block;
+    font-weight: bold;
+    color: #381D2A;
+    width: 45%;
+    margin-top: 10%;
+    margin-left: 40%;
+  }
+
+  .middle-section-container { /* partea de sus cu imaginea, pana la butoane */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .section-image {/* imaginea */
+    width: 45%;
+    margin-right: 25px;
+    margin-left: 25px;
+    box-shadow: 0 4px 50px 0 rgba(20, 13, 65, 0.2);
+  }
+  /*.middle-section-container .section-image .image {
+    width: 220px;
+    height: 220px;
+  }*/
+  
+  
+  .c {
+    clear: both;
+  }
+  .image {
+    max-height: 100%;
+    max-width: 100%;
+    width: 25%;
+    height: 220px;
+   float: left;
+   margin-left: 20px;
+  }
+  
+  .section-description .title { /* parte din middle section care contine descrierea produsului */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 120%;
+    font-weight: bold;
+    color: #381D2A;
+  }
+  
+  .section-description .content {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 120%;
+    color: #381D2A;
+    margin: 0 auto;
+    word-wrap: normal;
+  }
+  
+  .section-description button {
+    width: auto;
+    margin: 0;
+  }
+  
+  .section-description {
+    float: left;
+    height: 220px;
+    width: 75%;
+  }
+  
+  .section-description .price,
+  .section-description .actions {
+    margin-top: 20px;
+  }
+  
+  .description , .price, .actions {
+    float: left;
+    width: 90%;
+    margin-left: 3%;
+  }
+  
+  .description {
+    margin-top: 20px;
+    margin-right : 20px;
+  }
+  
+  .section-3 { /* partea cu informatiile de jos */
+    color: #381D2A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 120%;
+  }
+  
+  .section-3 ul li {
+    margin-top: 30px;
+  }
+  
+  .section-3 .menu-item {
+    font-weight: bold;
+    font-size: 120%;
+    margin-bottom: 5px;
+  }
+
+  .content {
+    font-size: 150%;
+    margin-left: 170px;
+    margin-right: 100px;
+    margin-bottom: 4px;
+    word-wrap: break-word;
+  }
+  
+  ol,
+ul {
+  list-style: none;
+}
+
+.actions button {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 100%;
+    color: #FFA552;
+    border-width: 0.1em;
+    background-color: #381D2A;
+    margin-top: 15px;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(66, 5, 66, 0.19);
+    width: auto;
+    float: left;
+  }
+
+  @media all and (max-width: 1024px) {
+    .content2 {
+        height: 90%;
+    }
+  }

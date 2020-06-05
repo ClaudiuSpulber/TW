@@ -8,8 +8,6 @@ $uploadOk = 1;
 
 if (isset($_POST['add_new_product'])) { 
 
-	echo($target_dir);
-
 	$target_file = $target_dir . basename($_FILES["productFile"]["name"]);
 
 	$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
