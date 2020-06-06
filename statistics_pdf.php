@@ -1,24 +1,127 @@
 <?php include('server.php') ?>
+<?php include_once('fpdf182/fpdf.php') ?>
+
 <?php
-if(!empty($_POST["send"])) {
-	$name = $_POST["userName"];
-	$email = $_POST["userEmail"];
-	$subject = $_POST["subject"];
-	$content = $_POST["content"];
-	
-	$insert = $dbh->prepare("INSERT INTO tblcontact (user_name, user_email,subject,content) VALUES ('" . $name. "', '" . $email. "','" . $subject. "','" . $content. "')");
-	//$insert = $dbh->prepare("INSERT INTO tblcontact (user_name, user_email,subject,content) VALUES (?, ?, ?, ?)");
-	//$insert->bindParam(1, '"' . $name. '"');
-	//$insert->bindParam(2, '"' . $email. '"');
-	//$insert->bindParam(3, '"' . $subject. '"');
-	if ($insert->execute()) {
-		echo ("succes");
-	} else {
-		echo("cant insert");
+
+class PDF extends FPDF
+{
+	// Page header
+	function Header()
+	{
+		// Logo
+		$this->Image('logo.png',10,-1,70);
+		$this->SetFont('Arial','B',13);
+		// Move to the right
+		$this->Cell(80);
+		// Title
+		$this->Cell(80,10,'Statistics',1,0,'C');
+		// Line break
+		$this->Ln(20);
+	}
+
+	// Page footer
+	function Footer()
+	{
+		// Position at 1.5 cm from bottom
+		$this->SetY(-15);
+		// Arial italic 8
+		$this->SetFont('Arial','I',8);
+		// Page number
+		$this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
 	}
 }
 
+if(!empty($_POST["download_pdf_statistics"])) {
+	
+	
+	$select = $dbh->prepare("SELECT COUNT(*) AS user_number FROM users");
+	if ($select->execute()) {
+		if ($raw = $select->fetch()) {
+			$user_number = $raw['user_number'];
+		}
+	}
+	
+	$stack = array();
+	$select = $dbh->prepare("SELECT product_name FROM `favorites` LIMIT 5");
+	if ($select->execute()) {
+		while ($raw = $select->fetch()) {
+			array_push($stack, $raw['product_name']);
+		}
+	}
+	
+	$select = $dbh->prepare("SELECT COUNT(*) AS allergic_users FROM `users` WHERE `allergies` IS NULL OR `allergies` = ''");
+	if ($select->execute()) {
+		if ($raw = $select->fetch()) {
+			$allergic_users = $raw['allergic_users'];
+		} else {
+			$allergic_users = 0;
+		}
+	}
+	
+	$select = $dbh->prepare("SELECT COUNT(*) AS not_allergic_users FROM `users` WHERE `allergies` IS NOT NULL OR `allergies` != ''");
+	if ($select->execute()) {
+		if ($raw = $select->fetch()) {
+			$not_allergic_users = $raw['not_allergic_users'];
+		} else {
+			$not_allergic_users = 0;
+		}
+	} 
+	
+	$select = $dbh->prepare("SELECT COUNT(*) AS allergic_products FROM `products` WHERE `allergens` IS NULL OR `allergens` = ''");
+	if ($select->execute()) {
+		if  ($raw = $select->fetch()) {
+			$allergic_products = $raw['allergic_products'];
+		} else {
+			$allergic_products = 0;
+		}
+	}
+	
+	$select = $dbh->prepare("SELECT COUNT(*) AS not_allergic_products FROM `products` WHERE `allergens` IS NOT NULL OR `allergens` != ''");
+	if ($select->execute()) {
+		if ($raw = $select->fetch()) {
+			$not_allergic_products = $raw['not_allergic_products'];
+		} else {
+			$not_allergic_products = 0;
+		}
+	}
+	
+	$pdf = new PDF();
+	//header
+	$pdf->AddPage();
+	//foter page
+	$pdf->AliasNbPages();
+	$pdf->SetFont('Arial','B',12);
+
+	$pdf->Ln(20);
+
+	$pdf->Cell(60,12,"NoAllergicUsers",1);
+	$pdf->Cell(60,12,"NoNotAllergicUsers",1);
+	$pdf->Cell(60,12,"NoAllergensProducts",1);
+	$pdf->Ln(12);
+	$pdf->Cell(60,12,$allergic_users,1);
+	$pdf->Cell(60,12,$not_allergic_users,1);
+	$pdf->Cell(60,12,$allergic_products,1);
+	
+	$pdf->Ln(20);
+	
+	$pdf->Cell(60,12,"NoNotAllergensProducts",1);
+	$pdf->Cell(60,12,"NoUsers",1);
+	$pdf->Ln(12);
+	$pdf->Cell(60,12,$not_allergic_products,1);
+	$pdf->Cell(60,12,$user_number,1);
+	
+	$pdf->Ln(30);
+	$pdf->Cell(60,12,"Top5FavoriteProducts",1);
+	foreach ($stack as &$value) {
+		$pdf->Ln(12);
+		$pdf->Cell(60,12,$value,1);
+	}
+	
+
+	$pdf->Output();
+}
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -164,50 +267,10 @@ if(!empty($_POST["send"])) {
         </div>
         <div class="content">
             <div class="container">
-                <div class="contact-form">
-                        <h1 class="contact-text">Contact Forg</h1>
-                        <p class="address">Bulevardul Metalurgiei, Nr.99</p>
-                        <p>
-                            "Phone: "
-                            <a href="tel:0753 694 317">0753694317</a>
-                        </p>
-                        <p>Monday-Sunday: 10:00-20:00</p>
-                    </div>
-                    <form name="frmContact" id="" frmContact="" method="post" action="" enctype="multipart/form-data"
-                        onsubmit="return validateContactForm()">
-
-                        <div class="input-row">
-                            <label style="padding-top: 20px;">Name</label> <span id="userName-info"
-                                class="info"></span><br /> <input type="text" class="input-field" name="userName"
-                                id="userName" />
-                        </div>
-                        <div class="input-row">
-                            <label>Email</label> <span id="userEmail-info" class="info"></span><br /> <input type="text"
-                                class="input-field" name="userEmail" id="userEmail" />
-                        </div>
-                        <div class="input-row">
-                            <label>Subject</label> <span id="subject-info" class="info"></span><br /> <input type="text"
-                                class="input-field" name="subject" id="subject" />
-                        </div>
-                        <div class="input-row">
-                            <label>Message</label> <span id="userMessage-info" class="info"></span><br />
-                            <textarea name="content" id="content" class="input-field" cols="60" rows="6"></textarea>
-                        </div>
-                        <div>
-                            <input type="submit" name="send" class="btn-submit" value="Send" />
-
-
-                            <div id="statusMessage">
-                                <?php
-                                if (! empty($message)) {
-                                    ?>
-                                <p class='<?php echo $type; ?>Message'><?php echo $message; ?></p>
-                                <?php
-                                }
-                                ?>
-                            </div>
-                        </div>
-                    </form>
+				<span class="text-center descriere-principal">Descriere pompoasa despre statistici. Mai jos puteti downlaoda numarul de utilizatori, numarul de produse ce nu au alergeni, numarul de produse ce au alergeni, numarul de persoane alergice, top 5 produse favorite.</span>
+				<form class="search" action="statistics_pdf.php" method="post">
+                    <input style="width:100%;" type="submit" class="buttonsearch" name="download_pdf_statistics" value="Donwload PDF Statistics"></button>
+                </form>
 
             </div>
             <div class="menu">
@@ -289,46 +352,3 @@ if(!empty($_POST["send"])) {
 
 
 </html>
-
-
-<script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
-<script type="text/javascript">
-	function validateContactForm() {
-		var valid = true;
-
-		$(".info").html("");
-		$(".input-field").css('border', '#e0dfdf 1px solid');
-		var userName = $("#userName").val();
-		var userEmail = $("#userEmail").val();
-		var subject = $("#subject").val();
-		var content = $("#content").val();
-
-		if (userName == "") {
-			$("#userName-info").html("Required.");
-			$("#userName").css('border', '#e66262 1px solid');
-			valid = false;
-		}
-		if (userEmail == "") {
-			$("#userEmail-info").html("Required.");
-			$("#userEmail").css('border', '#e66262 1px solid');
-			valid = false;
-		}
-		if (!userEmail.match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)) {
-			$("#userEmail-info").html("Invalid Email Address.");
-			$("#userEmail").css('border', '#e66262 1px solid');
-			valid = false;
-		}
-
-		if (subject == "") {
-			$("#subject-info").html("Required.");
-			$("#subject").css('border', '#e66262 1px solid');
-			valid = false;
-		}
-		if (content == "") {
-			$("#userMessage-info").html("Required.");
-			$("#content").css('border', '#e66262 1px solid');
-			valid = false;
-		}
-		return valid;
-	}
-</script>

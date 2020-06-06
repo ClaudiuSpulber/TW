@@ -153,7 +153,7 @@
 
 					$select = $dbh->prepare("SELECT * FROM products WHERE product_name LIKE ? ");
 					$select->bindParam(1, '%' . $searched_product . '%');
-					if ($query->execute()) {
+					if ($select->execute()) {
 						echo "<table style=\"border: 1px solid black;\">";
 						echo "<tr> <th>#</th> <th>Name</th> <th>Description</th> <th>Price</th> <th>Category</th> <th>Ingredients</th> <th>Allergens</th> <th>Perishable</th> <th>Location</th> <th>Season</th> <th>Date</th> <th>Link</th> </tr>";
 						while ($raw = $query->fetch()) {

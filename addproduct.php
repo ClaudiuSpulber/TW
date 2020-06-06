@@ -61,11 +61,11 @@ if (isset($_POST['add_new_product'])) {
         echo("Sorry, your file was not uploaded.");
         // if everything is ok, try to upload file
     } else {
-    if (move_uploaded_file($_FILES["productFile"]["tmp_name"], $target_file)) {
-        echo("The file ". basename( $_FILES["productFile"]["name"]). " has been uploaded.");
-    } else {
-        echo("Sorry, there was an error uploading your file.");
-    }
+		if (move_uploaded_file($_FILES["productFile"]["tmp_name"], $target_file)) {
+			echo("The file ". basename( $_FILES["productFile"]["name"]). " has been uploaded.");
+		} else {
+			echo("Sorry, there was an error uploading your file.");
+		}
     }
 
     $insert = $dbh->prepare("INSERT INTO products(product_name, `description`, price, category, ingredients, allergens, perishable, locations, season, product_date, file_path) VALUES(?,?,?,?,?,?,?,?,?,?,?)");
@@ -94,7 +94,7 @@ if (isset($_POST['delete_product'])) {
 	if ($delete->execute()) {
 		echo ("succes");
 	} else {
-		echo("cant insert");
+		echo("cant delete");
 	}
 }
 ?>
