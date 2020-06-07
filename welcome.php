@@ -1,4 +1,7 @@
-<?php include('server.php') ?>
+<?php include('server.php');
+if(isset($_SESSION['loggedin'])){
+    header('Location: principal.php', true, 307);
+}?>
 <!DOCTYPE html>
 <html lang="en">
 
