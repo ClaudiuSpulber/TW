@@ -10,7 +10,8 @@ if(!empty($_POST["send"])) {
 	//$insert = $dbh->prepare("INSERT INTO tblcontact (user_name, user_email,subject,content) VALUES (?, ?, ?, ?)");
 	//$insert->bindParam(1, '"' . $name. '"');
 	//$insert->bindParam(2, '"' . $email. '"');
-	//$insert->bindParam(3, '"' . $subject. '"');
+    //$insert->bindParam(3, '"' . $subject. '"');
+    // echo ($insert);
 	if ($insert->execute()) {
 		echo ("succes");
 	} else {
@@ -173,8 +174,8 @@ if(!empty($_POST["send"])) {
                         </p>
                         <p>Monday-Sunday: 10:00-20:00</p>
                     </div>
-                    <form name="frmContact" id="" frmContact="" method="post" action="" enctype="multipart/form-data"
-                        onsubmit="return validateContactForm()">
+                    <form name="frmContact" id="formContact" frmContact="" method="post" action="" enctype="multipart/form-data"
+                        >
 
                         <div class="input-row">
                             <label style="padding-top: 20px;">Name</label> <span id="userName-info"
@@ -194,7 +195,8 @@ if(!empty($_POST["send"])) {
                             <textarea name="content" id="content" class="input-field" cols="60" rows="6"></textarea>
                         </div>
                         <div>
-                            <input type="submit" name="send" class="btn-submit" value="Send" />
+                            <input type="submit" name="send" value="SEND" class="btn-submit" id="submit-form"/>
+                            <!-- </button> -->
 
 
                             <div id="statusMessage">
@@ -291,44 +293,77 @@ if(!empty($_POST["send"])) {
 </html>
 
 
-<script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
 <script type="text/javascript">
-	function validateContactForm() {
+    let submitForm = document.getElementById('submit-form')
+    let formContact = document.getElementById('formContact')
+    console.log(submitForm)
+
+    
+    formContact.addEventListener('submit', 
+    function submitFormFunc(event){
 		var valid = true;
+        let info = document.querySelector('.info')
+        let inputField = document.querySelector('.input-field')
+        inputField.style.border = '#e0dfdf 1px solid'
+        let userName = document.getElementById('userName')
+        let userEmail = document.getElementById('userEmail')
+        let subject = document.getElementById('subject')
+        let content = document.getElementById('content')
+		// $(".info").html("");
+		// $(".input-field").css('border0', '#e0dfdf 1px solid');
+		// var userName = $("#userName").val();
+		// var userEmail = $("#userEmail").val();
+		// var subject = $("#subject").val();
+		// var content = $("#content").val();
 
-		$(".info").html("");
-		$(".input-field").css('border', '#e0dfdf 1px solid');
-		var userName = $("#userName").val();
-		var userEmail = $("#userEmail").val();
-		var subject = $("#subject").val();
-		var content = $("#content").val();
+            let userNameInfos = document.getElementById('userName-info')
+		if (userName.value == "") {
+            userNameInfos.innerHTML ='required'
+            userName.style.border='#e66262 1px solid'
+			valid = false;
+		} else {
+            userNameInfos.innerHTML = ''
+            userName.style.border = '1px solid black'
+        }
+			let userEmailInfos = document.getElementById('userEmail-info')
+		if (userEmail.value == "") {
+            console.log('gwgwga',userEmail.value)
+            userEmailInfos.innerHTML='required'
+            userEmail.style.border = '#e66262 1px solid'
+			valid = false;
+		} else {
+            userEmailInfos.innerHTML = ''
+            userEmail.style.border = '1px solid black'
+        }
+		if (!userEmail.value.match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)) {
+            let userEmailInfos = document.getElementById('userEmail-info').innerHTML='Invalid Email Address.'
+            userEmail.style.border='#e66262 1px solid'
+			valid = false;
+		}
 
-		if (userName == "") {
-			$("#userName-info").html("Required.");
-			$("#userName").css('border', '#e66262 1px solid');
+            let subjectInfos = document.getElementById('subject-info')
+		if (subject.value == "") {
+            subjectInfos.innerHTML = 'required'
+            subject.style.border = '#e66262 1px solid'
 			valid = false;
-		}
-		if (userEmail == "") {
-			$("#userEmail-info").html("Required.");
-			$("#userEmail").css('border', '#e66262 1px solid');
+		} else {
+            subject.style.border = '1px solid black'
+            subjectInfos.innerHTML = ''
+        }
+            let userMsgInfo = document.getElementById('userMessage-info')
+		if (content.value == "") {
+            userMsgInfo.innerHTML = 'required'
+            content.style.border = '#e66262 1px solid'
 			valid = false;
-		}
-		if (!userEmail.match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)) {
-			$("#userEmail-info").html("Invalid Email Address.");
-			$("#userEmail").css('border', '#e66262 1px solid');
-			valid = false;
-		}
+		} else {
+            content.style.border = '1px solid black'
+            userMsgInfo.innerHTML = ''
+        }
+        if(!valid) {
+            event.preventDefault()
 
-		if (subject == "") {
-			$("#subject-info").html("Required.");
-			$("#subject").css('border', '#e66262 1px solid');
-			valid = false;
-		}
-		if (content == "") {
-			$("#userMessage-info").html("Required.");
-			$("#content").css('border', '#e66262 1px solid');
-			valid = false;
-		}
+        }
 		return valid;
-	}
+    })
+
 </script>
