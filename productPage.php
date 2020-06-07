@@ -1,5 +1,8 @@
  <?php
    include('product-back.php');
+   if(!isset($_SESSION['loggedin'])){
+    header('Location: welcome.php', true, 307);
+}
     ?>
  <!DOCTYPE html>
  <html lang="en">

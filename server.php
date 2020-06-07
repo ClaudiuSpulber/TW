@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 //initializez variabile
 $full_name = "";
 $email = "";
@@ -11,10 +10,10 @@ $allergies = "";
 $errors = array();
 
 //conectare la baza de date
-$db = mysqli_connect('localhost', 'root', '', 'forg');
+$db = mysqli_connect('localhost', 'root', '', 'forg1');
 
 try {
-    $dbh = new PDO('mysql:host=localhost;dbname=forg', 'root', '');
+    $dbh = new PDO('mysql:host=localhost;dbname=forg1', 'root', '');
 } catch (PDOException $e) {
     print "Error!: " . $e->getMessage() . "<br/>";
     die();
@@ -64,7 +63,12 @@ if (isset($_POST['register_user'])) {
             echo ("succes");
             $_SESSION['username'] = $username;
             $_SESSION['id'] = $raw['id'];
-            header('Location: principal.html', true, 307);
+            if($_SESSION['id']==1){
+            $_SESSION['admin']=true;
+            }else{
+                $_SESSION['admin']=false;
+            }
+            header('Location: principal.php', true, 307);
         } else {
             array_push($errors, "cant insert");
         }
@@ -95,10 +99,13 @@ if (isset($_POST['login_user'])) {
             if ($raw = $query->fetch()) {
                 $_SESSION['username'] = $username;
                 $_SESSION['id'] = $raw['id'];
+                $_SESSION['loggedin']=true;
                 if($raw['id']==1){
                 $_SESSION['admin']=true;
+                }else{
+                    $_SESSION['admin']=false;
                 }
-                header('Location: principal.html', true, 307); //cod de raspuns 
+                header('Location: principal.php', true, 307); //cod de raspuns 
             } else {
                 array_push($errors, "Wrong username/password");
                 $logok = 1;
@@ -107,7 +114,7 @@ if (isset($_POST['login_user'])) {
     }
 } else {
     if (isset($_POST['redirect'])) {
-        header('Location: php/welcomeSignUp.php', true, 307);
+        header('Location: welcomeSignUp.php', true, 307);
     }
 } 
 ?>

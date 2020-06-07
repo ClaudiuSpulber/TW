@@ -24,7 +24,7 @@ if ($count) {
 }
 }
 else{
-    header('Location: html/principal.html', true, 307);
+    header('Location: principal.php', true, 307);
 }
 
 ?>
