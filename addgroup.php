@@ -1,10 +1,17 @@
+<?php include('server.php') ?>
 <?php
-// Diana//
-include "server.php";
-if (isset($_POST['addgrup'])) {
-    $var = "INSERT INTO groups(group_name, group_description) VALUES ('".$_POST["groupname"]."','".$_POST["description"]."')";
-    $sql = mysqli_query($db, $var);
-
+if (isset($_POST["addgrup"])) {
+	$group_name = $_POST["groupname"]; 
+	$desc = $_POST["description"];
+	
+    $insert = $dbh->prepare("INSERT INTO groups(group_name, group_description) VALUES (?, ?)");
+	$insert->bindParam(1, $group_name);
+	$insert->bindParam(2, $desc);
+	if ($insert->execute()) {
+		echo ("succes");
+	} else {
+		echo("cant insert");
+	}
 }
 
 ?>

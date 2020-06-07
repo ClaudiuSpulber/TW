@@ -155,7 +155,6 @@
                     large group of friends which all have access to that list and they can also add or remove items
                     from the list.
                 </span>
-
             </div>
             <div class="menu">
                 <div class="menu-element">
