@@ -12,7 +12,7 @@ if (!$db) {
   
     
     if($_SESSION['admin']==true){
-        header('Location: addgroup.php', true, 307);}
+        header('Location: administrator.php', true, 307);}
         else
         if($_SESSION['loggedin']==true){
  $userId = $_SESSION['user'];
@@ -26,7 +26,6 @@ if($groupId[0] != 0){
    
     header('Location: createGroup.php', true, 307);  
 }
-
         }
         
 ?>
