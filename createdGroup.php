@@ -2,8 +2,8 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Subcategory</title>
-        <link rel="stylesheet" href="Subcategory.css">
+		<title>Your Group</title>
+        <link rel="stylesheet" href="Group.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	</head>
    <body>
@@ -161,165 +161,119 @@
             </div>
         </div>
         <div class="content">
-       
-     <?php
-    $userId = 1;
-    $link = mysqli_connect('localhost', 'root', '');
-    if (!$link) {
-        die('Not connected : ' . mysqli_error());
-    }
-
-
-    $db = mysqli_select_db($link, 'forg');
-    if (!$db) {
-        die ('Cannot connect to database ' . mysqli_error());}
-
-        $category = $_GET['subcategory'];
-        if (isset($_POST['favorite'])){
-            $sql = "SELECT * from favorites where client_id = '".$userId."' and product_id = '".$_POST['favorite']."';";
-            $query = mysqli_query($link,$sql);
-            $count = mysqli_num_rows($query);
-            if ($count>0){
-                $sql = "DELETE from favorites where client_id = '".$userId."' and product_id = '".$_POST['favorite']."';";
-                $query = mysqli_query($link,$sql);
-                unset($_POST['favorite']);
-            }
-            else {
-                $sql = "INSERT into favorites (client_id, product_id) VALUES ('".$userId."', '".$_POST['favorite']."');";
-                $query = mysqli_query($link,$sql);
-            }
-        }
-
-        if (isset($_POST['list'])){
-            $sql = "SELECT * from lists where id_client = '".$userId."' and id_product = '".$_POST['list']."';";
-            $query = mysqli_query($link,$sql);
-            $count = mysqli_num_rows($query);
-            if ($count>0){
-                $sql = "DELETE from favorites where id_client = '".$userId."' and id_product = '".$_POST['list']."';";
-                $query = mysqli_query($link,$sql);
-                unset($_POST['list']);
-            }
-            else {
-                $sql = "SELECT product_name from products where id = '".$_POST['list']."';";
-                $query = mysqli_query($link,$sql);
-                $product_name =  mysqli_fetch_array($query);
-                $query = mysqli_query($link,$sql);
-                $sql = "INSERT into lists (client_id, product_id, product_name) VALUES ('".$userId."', '".$_POST['list']."', '".$product_name[0].");";
-                $query = mysqli_query($link,$sql);          
-            }
-        }
-
-    ?>
-
-     <div class="content2">
-       
-        <div class="posts"><p class="postsP">
-            <?php echo ucfirst($category)?>
-        </p>
-        
-        <?php
-        $sql = "SELECT * from favorites where client_id = '".$userId."';";
-        $query = mysqli_query($link,$sql);
-        $sql = "SELECT * from products where category = '".$category."';";
-        $query2 = mysqli_query($link,$sql);
-        $sql = "SELECT * from lists where id_client = '".$userId."';";
-        $query3 = mysqli_query($link,$sql);
-        $favArray = [];
-        $listArray = [];
-        while($row = mysqli_fetch_row($query)) {array_push($favArray, $row[2]);}
-        while($row3 = mysqli_fetch_row($query3)) {array_push($listArray, $row3[2]);}
-
-        if($query2){echo '<div class="groups"> <ul class="groupsList" style="list-style-type:none;">';
-            $k = 1;
-            while($row2 = mysqli_fetch_row($query2)){
-                $fButton = "Add to favorites";
-                $lButton = "Add to shopping list";
-                if(in_array($row2[0],$favArray)) $fButton = "Remove from favorites";
-                if(in_array($row2[0],$listArray)) $lButton = "Remove from shopping list";
-                $file = strtolower(str_replace(' ', '', $row2[1]));
-                echo '
-                <li class="li1">
-                <p class=favoriteParagraph>';echo$row2[1];echo'</p>
-                <img src="Images/'.$file.'.jpg" alt="'.$row2[1].'">
-                <div class="buttons">
-                <form action="productPage.php" method="get">
-                  <button class="productButton" type="submit" name = "product" value = '.$row2[0].' method = "get">View Product</button></form>
-                  <form action="Subcategory.php" method="post">
-                  <button class="productButton" type="submit" name = "favorite" value = '.$row2[0].' method = "post">'.$fButton.'</button>
-                  <button class="productButton" type="submit" name = "list" value = '.$row2[0].' method = "post">'.$lButton.'</button>
-              </form>
-              </li>
-                ';
-                $k = $k+1;
-               if ($k == 4){
-                    echo '</ul> </div>';
-                    echo '<div class="groups"> <ul class="groupsList" style="list-style-type:none;">';
-                    $k=1;
-
-               } 
-            }
-            echo '</ul> </div>';
-         
-        }
-        ?></div>
-
-            <?php /*<ul class="groupsList" style="list-style-type:none;">
-                <li class="li1">
-                  <p class=favoriteParagraph>Tiramisu</p>
-                  <img src="Images/tiramisu.jpg" alt="Tiramisu">
-                  <div class="buttons">
-                    <button class="productButton" type="submit" >View Product</button>
-                    <button class="productButton" type="submit" >Add to favorites</button>
-                    <button class="productButton" type="submit" >Add to shopping list</button>
-                
-				</li>
-				<li class="li1">
-					<p class=favoriteParagraph>Tiramisu</p>
-                    <img src="Images/tiramisu.jpg" alt="Tiramisu">
-                    <div class="buttons">
-                        <button class="productButton" type="submit" >View Product</button>
-                        <button class="productButton" type="submit" >Add to favorites</button>
-                        <button class="productButton" type="submit" >Add to shopping list</button>
-                    </div>
-				  </li>
-				  <li class="li1">
-					<p class=favoriteParagraph>Tiramisu</p>
-                    <img src="Images/tiramisu.jpg" alt="Tiramisu">
-                    <div class="buttons">
-                        <button class="productButton" type="submit" >View Product</button>
-                        <button class="productButton" type="submit" >Add to favorites</button>
-                        <button class="productButton" type="submit" >Add to shopping list</button>
-                    </div>
-				  </li>
-              </ul>
            
-			</div>
-			<div class="groups">
-				<ul class="groupsList" style="list-style-type:none;">
-					<li class="li1">
-					  <p class=favoriteParagraph>Tiramisu</p>
-                      <img src="Images/tiramisu.jpg" alt="Tiramisu">
-                      <div class="buttons">
-                        <button class="productButton" type="submit" >View Product</button>
-                        <button class="productButton" type="submit" >Add to favorites</button>
-                        <button class="productButton" type="submit" >Add to shopping list</button>
-                    </div>
-					</li>
-					<li class="li1">
-						<p class=favoriteParagraph>Tiramisu</p>
-                        <img src="Images/tiramisu.jpg" alt="Tiramisu">
-                        <div class="buttons">
-                            <button class="productButton" type="submit" >View Product</button>
-                            <button class="productButton" type="submit" >Add to favorites</button>
-                            <button class="productButton" type="submit" >Add to shopping list</button>
-                        </div>
-					  </li>
-				
-				  </ul>
-			   
-				</div>
-    </div>*/?>
+        <?php
+                   $userId = 1;
+                   
+                   $link = mysqli_connect('localhost', 'root', '');
+                   if (!$link) {
+                       die('Not connected : ' . mysqli_error());
+                   }
+
+                   $db = mysqli_select_db($link, 'forg');
+                   if (!$db) {
+                       die ('Cannot connect to database ' . mysqli_error());}
+                      
+                    $sql = "Select group_id from users where id = '".$userId."';";
+                    $query = mysqli_query($link,$sql);
+                    $groupId = mysqli_fetch_row($query);
+                     
+                    $sql = "Select full_name from users where id = '".$userId."';";
+                    $query = mysqli_query($link,$sql);
+                    $row = mysqli_fetch_row($query);
+
+                    $sql2 = "Select full_name from users where id <> '".$userId."' and group_id = '".$groupId[0]."';";
+                    $query2 = mysqli_query($link,$sql2);
+                    
+                       
+                       ?>
+
+            <div class="members">
+                <p>Group Members</p>
+                <div class="memberList">
+                    <ul>
+                        <li><?php echo $row[0]?> (You)</li>
+                        <?php
+                        while($row2 = mysqli_fetch_row($query2)){
+                            echo "<li>".$row2[0]."</li>";
+                        }
+                        ?>
+                    </ul>
+              
+                        <button class="invite" type="submit" formaction="Invite.html">Invite new member</button>
+                </div></div>
+  <div class="posts"><p class="postsP">
+    Group description here
+  </p>
+  <div class="groups">
+    <ul class="groupsList" style="list-style-type:none;">
+    <?php
+          $sql = "Select * from plans where group_id= '".$groupId[0]."';";
+          $query = mysqli_query($link,$sql);
+          $k=1;
+          while($row = mysqli_fetch_row($query)){
+            if ($k==1) echo '<li class="li1">';
+            $sql2 = "Select * from plan_details where plan_id= '".$row[0]."';";
+            $query2 = mysqli_query($link,$sql2);
+            echo '<div class="plan">';
+            echo '<p>'.date('D, d. m', strtotime($row[1])).'</p><ul>';
+            while($row2 = mysqli_fetch_row($query2)){
+                $sql3 = "Select product_name from products where id = '".$row2[2]."';";
+                $query3 = mysqli_query($link,$sql3);
+                $row3 = mysqli_fetch_row($query3);
+                echo '<li>'.'<form action="productPage.php" method="get">
+                <button class="productButton" type="submit" name = "product" value = '.$row2[2].' method = "get">'.$row3[0].'</button></form>'.'</li>';
+            }
+            echo'</ul></div>';
+            $k = $k+1;
+            if ($k == 5){
+                echo '</li>';
+                $k = 1;
+            }
+          }
+      /*  <li class="li1">
+          <div class="plan">
+              <p>Monday, 08.06</p>
+              <ul>
+                  <li>Ceasar Salad</li>
+                  <li>Tiramisu</li>
+              </ul>
+          </div>
+          <div class="plan">
+            <p>Monday, 08.06</p>
+            <ul>
+                <li>Ceasar Salad</li>
+                <li>Tiramisu</li>
+            </ul>
+        </div>
+        <div class="plan">
+            <p>Monday, 08.06</p>
+            <ul>
+                <li>Ceasar Salad</li>
+                <li>Tiramisu</li>
+            </ul>
+        </div>
+        <div class="plan">
+            <p>Monday, 08.06</p>
+            <ul>
+                <li>Ceasar Salad</li>
+                <li>Tiramisu</li>
+            </ul>
+        </div>
+        <div class="plan">
+            <p>Monday, 08.06</p>
+            <ul>
+                <li>Ceasar Salad</li>
+                <li>Tiramisu</li>
+            </ul>
+        </div>
+        </li>
+        
+    </ul>*/?>
     </div>
+    
+  
+  </div>    
     <div class="menu">
                 <div class="menu-element">
                     <div>
@@ -408,8 +362,12 @@
             </div>
         </div>
         </div>
+        </div>
       </div>
         </div>
+
+        
+
         </div>
                   </div>
                   <footer style="background-color:#381D2A">

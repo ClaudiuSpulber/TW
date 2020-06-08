@@ -14,7 +14,8 @@
     <div class="page-wrapper">
         <header class="header-web">
             <div class="logo-wrapper">
-                <img class="logo" src="logo.jpg">
+                <a href="principal.php">
+                <img class="logo" src="logo.jpg"></a>
             </div>
             <div class="search-wrapper">
                 <form class="search" action="cautare.php">
@@ -26,16 +27,17 @@
                 <a href="semafor.php" class="header-link">
                     <img src="persoana.png">
                 </a>
-                <a href="Group.php" class="header-link">
+                <a href="group.php" class="header-link">
+            
                     <img src="grup.png">
                 </a>
-                <a href="#" class="header-link">
+                <a href="semafor_liste.php" class="header-link">
                     <img src="list.png">
                 </a>
             </div>
 
             <div class="logout-wrapper">
-                <a href="/">Logout</a>
+                <a href="logout.php">Logout</a>
                 <i class="fa fa-sign-out"></i>
             </div>
         </header>
@@ -177,6 +179,8 @@
                     It can also be helpful when it comes to organize a party because you can share a list with a
                     large group of friends which all have access to that list and they can also add or remove items
                     from the list.
+                    <a href="logout.php">Inchide</a>
+                
                 </span>
             </div>
             <div class="menu">
