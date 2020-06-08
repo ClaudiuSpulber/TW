@@ -32,7 +32,7 @@ if(!isset($_SESSION['loggedin'])){
                 <a href="#" class="header-link">
                     <img src="grup.png">
                 </a>
-                <a href="#" class="header-link">
+                <a href="semafor_liste.php" class="header-link">
                     <img src="list.png">
                 </a>
             </div>
@@ -180,6 +180,7 @@ if(!isset($_SESSION['loggedin'])){
                     It can also be helpful when it comes to organize a party because you can share a list with a
                     large group of friends which all have access to that list and they can also add or remove items
                     from the list.
+                    <a href="logout.php">Inchide</a>
                 
                 </span>
             </div>
