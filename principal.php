@@ -1,7 +1,4 @@
 <?php session_start();
-if(!isset($_SESSION['loggedin'])){
-    header('Location: welcome.php', true, 307);
-}
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,7 +26,7 @@ if(!isset($_SESSION['loggedin'])){
                 <a href="semafor.php" class="header-link">
                     <img src="persoana.png">
                 </a>
-                <a href="#" class="header-link">
+                <a href="Group.php" class="header-link">
                     <img src="grup.png">
                 </a>
                 <a href="#" class="header-link">
@@ -72,7 +69,7 @@ if(!isset($_SESSION['loggedin'])){
                         <img class="menu-image" src="Pui.png">
                     </div>
                     <div class="submenu-claus-container">
-                        <a href="carne.asp" class="menu-text">Meat products</a>
+                        <p>Meat products</p>
 
                         <div class="submenu-claus">
                             <div>
@@ -163,7 +160,7 @@ if(!isset($_SESSION['loggedin'])){
                 </a>
             </div>
             <div class="logout-wrapper">
-                <a href="#">Logout</a>
+                <a href="/">Logout</a>
                 <i class="fa fa-sign-out"></i>
             </div>
         </div>
@@ -180,7 +177,6 @@ if(!isset($_SESSION['loggedin'])){
                     It can also be helpful when it comes to organize a party because you can share a list with a
                     large group of friends which all have access to that list and they can also add or remove items
                     from the list.
-                
                 </span>
             </div>
             <div class="menu">
@@ -189,7 +185,7 @@ if(!isset($_SESSION['loggedin'])){
                         <img class="menu-image" src="Pui.png">
                     </div>
                     <div class="submenu-claus-container">
-                        <a href="carne.asp" class="menu-text">Meat products</a>
+                        <p class="menu-text">Meat products</p>
 
                         <div class="submenu-claus">
                             <div>
@@ -274,7 +270,7 @@ if(!isset($_SESSION['loggedin'])){
 
         <footer style="background-color:#381D2A">
             <div class="contact">
-                <a href="contact.html" target="_blank">Contact</a>
+                <a href="contact.php" target="_blank">Contact</a>
             </div>
         </footer>
     </div>
