@@ -66,7 +66,10 @@ if (isset($_POST['delete_user'])) {
 <div class="page-wrapper">
         <header class="header-web">
             <div class="logo-wrapper">
+                
+            <a href="principal.php">
                 <img class="logo" src="logo.jpg" alt="Logo">
+            </a>
             </div>
             <div class="search-wrapper">
                 <form class="search" action="cautare.php">
@@ -78,7 +81,7 @@ if (isset($_POST['delete_user'])) {
                 <a href="semafor.php" class="header-link">
                     <img src="persoana.png" alt="persoana">
                 </a>
-                <a href="#" class="header-link">
+                <a href="group.php" class="header-link">
                     <img src="grup.png" alt="grup">
                 </a>
                 <a href="semafor_liste.php"class="header-link">

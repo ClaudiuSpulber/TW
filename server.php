@@ -10,10 +10,10 @@ $allergies = "";
 $errors = array();
 
 //conectare la baza de date
-$db = mysqli_connect('localhost', 'root', '', 'forg1');
+$db = mysqli_connect('localhost', 'root', '', 'forg');
 
 try {
-    $dbh = new PDO('mysql:host=localhost;dbname=forg1', 'root', '');
+    $dbh = new PDO('mysql:host=localhost;dbname=forg', 'root', '');
 } catch (PDOException $e) {
     print "Error!: " . $e->getMessage() . "<br/>";
     die();
