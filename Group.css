@@ -173,6 +173,8 @@ padding: 0;
 .submenu-text {
   color:rgb(255, 255, 255);
   text-decoration: none;
+  background-color: transparent;
+  border-color: #381D2A;
 }
 div.menu > div > div:nth-child(2):hover > .submenu-claus{
   display: block;
@@ -195,6 +197,8 @@ display: flex;
   padding-top:5px;
   text-decoration: none;
   display: none;
+  background-color: transparent;
+  border-color: #381D2A;
 }
 .menu:hover .menu-text{
   display: initial;
@@ -349,6 +353,7 @@ footer{
     width: 100%;
     
   }
+
 }
   .members{
 
@@ -362,6 +367,10 @@ footer{
   margin-top: 5%;
   }
 
+  .mailInput{
+    width: 80%;
+  margin: 8%;
+  }
   .members p{
    text-align: center;
    font-size: 150%;
@@ -379,11 +388,11 @@ footer{
 
   .memberList li{
     padding-top: 7%;
-    font-size: 150%;
+    font-size: 125%;
   }
 
   .posts{
-    width: 70%;
+    width: 80%;
     background-color: white; 
     border-radius: 25px;
     margin-top:5%;
@@ -395,7 +404,7 @@ footer{
     text-align: center;
   }
 
-  .invite{
+  .invite, .addNewPlan, .productButton, .xButton{
     background-color: purple;
     color: white;
     padding: 5%;
@@ -409,9 +418,39 @@ footer{
     margin-left: 15%;
   }
 
+  .addNewPlan{
+    width: 100%;
+   
+    margin: 0 auto;
+    margin-top: 3%;
+  }
+
+  .productButton{
+    width: 150%;
+    font-size: 50%;
+  }
+
+  .invite{
+    font-size: 70%;
+  }
+
+  .xButton{
+    margin-left: 70%;
+    height: 20px;
+    font-size: 5%;
+    margin-top: 5%;
+  }
+
+  .xButton button{
+    font-size: xx-small;
+    background-color: transparent;
+    color: white;
+    margin-top: 10%;
+  }
   .groupsList{
     display: flex;
     justify-content: center;
+    flex-direction: column;
   }
 
   .li1 { 
@@ -434,13 +473,16 @@ footer{
     background-color: white;
   }
 
-  .plan ul{ list-style-type: none;}
+  .plan ul{ 
+    list-style-type: none;}
 
   .plan ul li{
     text-align: left;
-    width: 90%;
-    margin-right: 0.2%;
+    width: 50%;
+  margin-left: -10%;
     margin-bottom: 1%;
+    display: flex;
+    flex-flow: row;
   }
 
   .favorites{
@@ -452,3 +494,165 @@ footer{
     color: purple;
   }
 
+  .addPlan{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 2%;
+  }
+
+  .plan ul li form input{
+    width: 160%;
+  }
+
+  @media only screen and (max-width: 1750px) {
+
+    .memberList li{
+      font-size: 130%;
+    }
+
+    .plan ul li form input{
+      width: 160%;
+    }
+
+  }
+
+  .pageContent{
+    display: flex;
+    flex-direction: row-reverse;
+    width: calc(100% - 100px);
+  }
+  @media only screen and (max-width: 1500px) {
+
+    .memberList li{
+      font-size: 90%;
+    }
+
+
+    .plan ul li form input{
+      width: 120%;
+    }
+
+    .pageContent{
+      flex-direction: column-reverse;
+    }
+
+    .posts{
+      width: 90%;
+    }
+    .members{
+      margin: 0 auto;
+      margin-top: 5%;
+      width: 30%;
+    }
+
+    .productButton{
+      width: 120%;
+      margin-left: -30%;
+    }
+
+    .xButton{
+      margin-left: 0;
+    }
+
+  }
+
+
+  @media only screen and (max-width: 1810px) {
+  
+
+    .productButton{
+      margin-left: 40%;
+      width: 200%;
+    }}
+
+      @media only screen and (max-width: 1300px) {
+    .li1{
+      flex-direction: column;
+    }
+
+    .plan ul li form input{
+      margin-left: 110%;
+    }
+
+    .plan {
+      width: 80%;
+      margin: 0 auto;
+      margin-top:5%;
+    }
+
+    .productButton{
+      margin-left: 500%;
+      width: 280%;
+    }
+
+  }
+
+  @media only screen and (max-width: 1100px) {
+    .li1{
+      flex-direction: column;
+    }
+
+    .plan ul li form input{
+      margin-left: 65%;
+    }
+
+    .plan {
+      width: 80%;
+      margin: 0 auto;
+      margin-top:5%;
+    }
+
+    .productButton{
+      margin-left: 300%;
+      width: 280%;
+    }
+
+  }
+  
+  @media only screen and (max-width: 1000px) {
+   
+
+    .plan ul li form input{
+      margin-left: 60%;
+    }
+
+    .productButton{
+      margin-left: 300%;
+      width: 220%;
+    }}
+
+    @media only screen and (max-width: 700px) {
+   
+
+  
+      .productButton{
+        margin-left: 130%;
+        width: 150%;
+      }
+      .li1{
+        width:70%;
+      }}
+
+      @media only screen and (max-width: 500px) {
+   
+
+  
+        .productButton{
+          margin-left: -10%;
+          width: 150%;
+        }
+      .li1{
+        width:70%;
+      }
+
+      .memberList ul{
+        margin-left: -30%;
+      }
+      .memberList ul li{
+        font-size: 65%;
+    
+      }
+      
+      }
+  

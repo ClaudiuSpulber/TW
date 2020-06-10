@@ -1,3 +1,4 @@
+<?php include "server.php"; ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -9,7 +10,9 @@
    <body>
    <header class="header-web">
             <div class="logo-wrapper">
+                <a href="principal.php">
                 <img class="logo" src="logo.jpg">
+</a>
             </div>
             <div class="search-wrapper">
                 <form class="search" action="cautare.php">
@@ -18,19 +21,19 @@
                 </form>
             </div>
             <div class="header-links-wrapper">
-                <a href="#" class="header-link">
+                <a href="semafor.php" class="header-link">
                     <img src="persoana.png">
                 </a>
-                <a href="#" class="header-link">
+                <a href="Group.php" class="header-link">
                     <img src="grup.png">
                 </a>
-                <a href="#" class="header-link">
+                <a href="semafor_liste.php" class="header-link">
                     <img src="list.png">
                 </a>
             </div>
 
             <div class="logout-wrapper">
-                <a href="/">Logout</a>
+                <a href="logout.php">Logout</a>
                 <i class="fa fa-sign-out"></i>
             </div>
         </header>
@@ -67,73 +70,94 @@
                     <a href="carne.asp" class="menu-text">Meat products</a>
 
                     <div class="submenu-claus">
-                        <div>
-                            <a href="pui.asp" class="submenu-text">Chicken</a>
-                        </div>
-                        <div>
-                            <a href="vita.asp" class="submenu-text">Beef</a>
-                        </div>
-                        <div>
-                            <a href="rata.asp" class="submenu-text">Duck</a>
-                        </div>
-                        <div>
-                            <a href="curcan.asp" class="submenu-text">Turkey</a>
-                        </div>
-                        <div>
-                            <a href="porc.asp" class="submenu-text">Pork</a>
-                        </div>
+                    <form action="Subcategory.php" method="get">
+                                <button class="submenu-text" name="subcategory" value="chicken">Chicken</button>
+                            </form>
+                            </div>
+                            <div>
+                            <form action="Subcategory.php" method="get">
+                                <button name="subcategory" value="beef" class="submenu-text">Beef</button>
+                            </form> 
+                            </div>
+                            <div>
+                            <form action="Subcategory.php" method="get">
+                                <button name="subcategory" value="duck" class="submenu-text">Duck</button>
+                            </form>
+                            </div>
+                            <div>
+                                <form action="Subcategory.php" method="get">
+                                <button name="subcategory" value="turkey" class="submenu-text">Turkey</button>
+                            </form>
+                            </div>
+                            <div>
+                            <form action="Subcategory.php" method="get">
+                                <button name="subcategory" value="pork" class="submenu-text">Pork</button>
+                            </form>
+                            
                     </div>
                 </div>
             </div>
             <div class="menu-element">
-                <div>
-                    <img class="menu-image" src="Vegetarian.png">
+                    <div>
+                        <img class="menu-image" src="Vegetarian.png">
+                    </div>
+                    <form action="Subcategory.php" method="get">
+                    <button name="subcategory" value="vegetarian" class="menu-text">Vegetarian products</button>
+</form>
                 </div>
-                <a href="vegetarian.asp" class="menu-text">Vegetarian products</a>
-            </div>
-            <div class="menu-element">
-                <div>
-                    <img class="menu-image" src="Peste.png">
+                <div class="menu-element">
+                    <div>
+                        <img class="menu-image" src="Peste.png">
+                    </div>
+                    <form action="Subcategory.php" method="get">
+                    <button name="subcategory" value="fish" class="menu-text">Fish and Seafood</button>
+                    </form>
                 </div>
-                <a href="peste.asp" class="menu-text">Fish and Seafood</a>
-            </div>
-            <div class="menu-element">
-                <div>
-                    <img class="menu-image" src="Ciorba.png">
+                <div class="menu-element">
+                    <div>
+                        <img class="menu-image" src="Ciorba.png">
+                    </div>
+                    <form action="Subcategory.php" method="get">
+                    <button name="subcategory" value="soups" class="menu-text">Soups</button>
+</form>
                 </div>
-                <a href="supe.asp" class="menu-text">Soups</a>
-            </div>
-            <div class="menu-element">
-                <div>
-                    <img class="menu-image" src="garnituri.png">
+                <div class="menu-element">
+                    <div>
+                        <img class="menu-image" src="garnituri.png">
+                    </div>
+                    <form action="Subcategory.php" method="get">
+                    <button name="subcategory" value="sides" class="menu-text">Sides</button>
+                    </form>
                 </div>
-                <a href="Garnituri.asp" class="menu-text">Sides</a>
-            </div>
-            <div class="menu-element">
-                <div>
-                    <img class="menu-image" src="Salata.png">
+                <div class="menu-element">
+                    <div>
+                        <img class="menu-image" src="Salata.png">
+                    </div>
+                    <form action="Subcategory.php" method="get">
+                    <button name="subcategory" value="salads" class="menu-text">Salads</button>
+                    </form>
                 </div>
-                <a href="salate.asp" class="menu-text">Salads</a>
-            </div>
-            <div class="menu-element">
-                <div>
-                    <img class="menu-image" src="Tort.png">
+                <div class="menu-element">
+                    <div>
+                        <img class="menu-image" src="Tort.png">
+                    </div>
+                    <form action="Subcategory.php" method="get">
+                    <button name="subcategory" value="desserts" class="menu-text">Dessert</button>
+</form>
                 </div>
-                <a href="desert.asp" class="menu-text">Dessert</a>
-            </div>
             <div class="header-links-wrapper">
-                <a href="#" class="header-link">
+                <a href="semafor.php" class="header-link">
                     <img src="persoana.png">
                 </a>
-                <a href="#" class="header-link">
+                <a href="Group.php" class="header-link">
                     <img src="grup.png">
                 </a>
-                <a href="#" class="header-link">
+                <a href="semafor_list.php" class="header-link">
                     <img src="list.png">
                 </a>
             </div>
             <div class="logout-wrapper">
-                <a href="/">Logout</a>
+                <a href="logout.php">Logout</a>
                 <i class="fa fa-sign-out"></i>
             </div>
         </div>
@@ -142,35 +166,46 @@
     <div class="content">
 		          
                   <?php
-                   $userId = 1;
-                   $link = mysqli_connect('localhost', 'root', '');
+                
+                   $userId = $_SESSION['id'];
+                 /*  $link = mysqli_connect('localhost', 'root', '');
                    if (!$link) {
                        die('Not connected : ' . mysqli_error());
                    }
 
-                   $db = mysqli_select_db($link, 'tw');
+                   $db = mysqli_select_db($link, 'forg');
                    if (!$db) {
-                       die ('Cannot connect to database ' . mysqli_error());}
+                       die ('Cannot connect to database ' . mysqli_error());} */
 
                        if (isset($_POST['nameEdit'])){
-                        $sql = "UPDATE users SET full_name = '".$_POST['nameEdit']."' where id = '".$userId."';";
-                        $query = mysqli_query($link,$sql);
+                      /*  $sql = "UPDATE users SET full_name = '".$_POST['nameEdit']."' where id = '".$userId."';";
+                        $query = mysqli_query($db,$sql);
 
                     
                         $sql = "UPDATE users SET email = '".$_POST['emailEdit']."' where id = '".$userId."';";
-                        $query = mysqli_query($link,$sql);
+                        $query = mysqli_query($db,$sql);
 
                         $sql = "UPDATE users SET phone_number = '".$_POST['phoneEdit']."' where id = '".$userId."';";
-                        $query = mysqli_query($link,$sql);
+                        $query = mysqli_query($db,$sql);*/
 
-                    
-                        $sql = "UPDATE users SET allergies = '".$_POST['ingredientsEdit']."' where id = '".$userId."';";
-                        $query = mysqli_query($link,$sql);
+                        $phone = strval($_POST['phoneEdit']);
+                        $stmt = $dbh->prepare("Update users set full_name = ?, email = ?, phone_number = ? where id = ?");
+                       // $stmt->bindparam("sssi", $_POST['nameEdit'], $_POST['emailEdit'], $phone, $userId);
+
+                        $stmt->bindParam(1, $_POST['nameEdit'], PDO::PARAM_STR);
+                        $stmt->bindParam(2, $_POST['emailEdit'], PDO::PARAM_STR);
+                        $stmt->bindParam(3, $phone, PDO::PARAM_STR);
+                        $stmt->bindParam(4, $userId, PDO::PARAM_STR);
+
+                        $stmt->execute();
+
+
+
 
                     }
 
                        $sql = "SELECT * from users where id = '".$userId."';";
-                       $query = mysqli_query($link,$sql);
+                       $query = mysqli_query($db,$sql);
                        $row = mysqli_fetch_row($query);
                   ?>
                <div class="menu">
@@ -182,21 +217,32 @@
                         <a href="carne.asp" class="menu-text">Meat products</a>
 
                         <div class="submenu-claus">
-                            <div>
-                                <a href="pui.asp" class="submenu-text">Chicken</a>
+                        <div>
+                            <form action="Subcategory.php" method="get">
+                                <button class="submenu-text" name="subcategory" value="chicken">Chicken</button>
+                            </form>
                             </div>
                             <div>
-                                <a href="vita.asp" class="submenu-text">Beef</a>
+                            <form action="Subcategory.php" method="get">
+                                <button name="subcategory" value="beef" class="submenu-text">Beef</button>
+                            </form> 
                             </div>
                             <div>
-                                <a href="rata.asp" class="submenu-text">Duck</a>
+                            <form action="Subcategory.php" method="get">
+                                <button name="subcategory" value="duck" class="submenu-text">Duck</button>
+                            </form>
                             </div>
                             <div>
-                                <a href="curcan.asp" class="submenu-text">Turkey</a>
+                                <form action="Subcategory.php" method="get">
+                                <button name="subcategory" value="turkey" class="submenu-text">Turkey</button>
+                            </form>
                             </div>
                             <div>
-                                <a href="porc.asp" class="submenu-text">Pork</a>
+                            <form action="Subcategory.php" method="get">
+                                <button name="subcategory" value="pork" class="submenu-text">Pork</button>
+                            </form>
                             </div>
+                        
                         </div>
                     </div>
                 </div>
@@ -204,37 +250,49 @@
                     <div>
                         <img class="menu-image" src="Vegetarian.png">
                     </div>
-                    <a href="vegetarian.asp" class="menu-text">Vegetarian products</a>
+                    <form action="Subcategory.php" method="get">
+                    <button name="subcategory" value="vegetarian" class="menu-text">Vegetarian products</button>
+</form>
                 </div>
                 <div class="menu-element">
                     <div>
                         <img class="menu-image" src="Peste.png">
                     </div>
-                    <a href="peste.asp" class="menu-text">Fish and Seafood</a>
+                    <form action="Subcategory.php" method="get">
+                    <button name="subcategory" value="fish" class="menu-text">Fish and Seafood</button>
+                    </form>
                 </div>
                 <div class="menu-element">
                     <div>
                         <img class="menu-image" src="Ciorba.png">
                     </div>
-                    <a href="supe.asp" class="menu-text">Soups</a>
+                    <form action="Subcategory.php" method="get">
+                    <button name="subcategory" value="soups" class="menu-text">Soups</button>
+</form>
                 </div>
                 <div class="menu-element">
                     <div>
                         <img class="menu-image" src="garnituri.png">
                     </div>
-                    <a href="Garnituri.asp" class="menu-text">Sides</a>
+                    <form action="Subcategory.php" method="get">
+                    <button name="subcategory" value="sides" class="menu-text">Sides</button>
+                    </form>
                 </div>
                 <div class="menu-element">
                     <div>
                         <img class="menu-image" src="Salata.png">
                     </div>
-                    <a href="salate.asp" class="menu-text">Salads</a>
+                    <form action="Subcategory.php" method="get">
+                    <button name="subcategory" value="salads" class="menu-text">Salads</button>
+                    </form>
                 </div>
                 <div class="menu-element">
                     <div>
                         <img class="menu-image" src="Tort.png">
                     </div>
-                    <a href="desert.asp" class="menu-text">Dessert</a>
+                    <form action="Subcategory.php" method="get">
+                    <button name="subcategory" value="desserts" class="menu-text">Dessert</button>
+</form>
                 </div>
            
                 </div>
@@ -260,16 +318,12 @@
                             </TR>
                             <TR ALIGN="center">
                                <TD><p>E-mail</p>
-                               <TD><input type="text" size="50" maxlength="25" name="emailEdit" value="'.$row[2].'" /></TD>
+                               <TD><input type="email" size="50" maxlength="25" name="emailEdit" value="'.$row[2].'" /></TD>
                             </TR>
                             <TR ALIGN="center">
                                 <TD>Phone number</TD>
-                                <TD><input type="text" size="50" maxlength="25" name="phoneEdit" value="'.$row[5].'" /></TD>
+                                <TD><input type="tel" pattern="[0-9]*" size="50" maxlength="25" name="phoneEdit" value="'.$row[5].'" /></TD>
                              </TR>
-                            <TR ALIGN="center">
-                                <TD>Avoided ingredients</TD>
-                                <<TD><input type="text" size="50" maxlength="25" name="ingredientsEdit" value="'.$row[6].'" /></TD>
-                            </TR>
                             </table>
                             </form>
                         </div>
@@ -283,10 +337,6 @@
                                 <div class="editeazaDatele">
                                 <form id="editButton" action="myAccount.php" method="post">
                                             <button type="submit" name="edit" method="post">Edit details</button></form>
-                                </div>
-                                <div class="editeazaDatele">
-                                    <form id="editButton">
-                                            <button type="submit">Change password</button>
                                 </div>
                                </TH>
                             </TR>
@@ -302,13 +352,16 @@
                                 <TD>Phone number</TD>
                                 <TD>'.$row[5].'</TD>
                              </TR>
-                            <TR ALIGN="center">
-                                <TD>Avoided ingredients</TD>
-                                <TD>'.$row[6].'</TD>
-                            </TR>
                             </table>
                         </div>
-                  </div>';}?>
+                  </div>';}
+                  
+                  if (isset($_POST['remove'])){
+                    $sql = "DELETE from favorites where id_user = '".$_SESSION['id']."' and id_product = '".$_POST['remove']."';";
+                    $query = mysqli_query($db,$sql);
+                  }
+                  
+                  ?>
                       </div>
         
                 <div class="content2">
@@ -318,19 +371,21 @@
             
             <div class="content3">
             <?php
-                  $sql = "SELECT * from products where id in (SELECT product_id from favorites where client_id = '".$userId."');";
-                  $query = mysqli_query($link,$sql);
+                  $sql = "SELECT * from products where id in (SELECT id_product from favorites where id_user = '".$userId."');";
+                  $query = mysqli_query($db,$sql);
                     $k=1;
                     echo '<div class="groups"> <ul class="groupsList" style="list-style-type:none;">';
                   while($row = mysqli_fetch_row($query)){
                       
                     $file = strtolower(str_replace(' ', '', $row[1]));
                     echo '<li class="li1">
-                    <p class=favoriteParagraph>'.$row[1].'</p>
+                    <form action="productPage.php" method="get">
+                  <button class="favoriteParagraph" type="submit" name = "id" value = "'.$row[0].'" method = "get">'.$row[1].'</button></form>
                     <img src="Images/'.$file.'.jpg" alt="'.$row[1].'">
+                    <div class= "removeButton">
                     <form action="myAccount.php" method="post">
-                    <button class="productButton" type="submit" name = "remove" value = '.$row[1].' method = "post">Remove</button>
-                </form>
+                    <button class="productButton" type="submit" name = "remove" value = '.$row[0].' method = "post">Remove</button>
+                </form></div>
                   </li>';
                   $k=$k+1;
                   if ($k == 4){
@@ -381,7 +436,13 @@
                         </div>*/
                ?>
                     </div>
-
+                    <footer style="background-color:#381D2A">
+            <div class="contact">
+                <a href="contact.php">Contact</a>
+            </div>
+        </footer>
+    </div>
+    <script src="./principal.js"></script>
 		</body>
 		</html>
 		

@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -10,7 +12,9 @@
     
     <header class="header-web">
             <div class="logo-wrapper">
+            <a href="principal.php">
                 <img class="logo" src="logo.jpg">
+</a>
             </div>
             <div class="search-wrapper">
                 <form class="search" action="cautare.php">
@@ -19,19 +23,19 @@
                 </form>
             </div>
             <div class="header-links-wrapper">
-                <a href="#" class="header-link">
+                <a href="semafor.php" class="header-link">
                     <img src="persoana.png">
                 </a>
-                <a href="#" class="header-link">
+                <a href="group.php" class="header-link">
                     <img src="grup.png">
                 </a>
-                <a href="#" class="header-link">
+                <a href="semafor_liste.php" class="header-link">
                     <img src="list.png">
                 </a>
             </div>
 
             <div class="logout-wrapper">
-                <a href="/">Logout</a>
+                <a href="logout.php">Logout</a>
                 <i class="fa fa-sign-out"></i>
             </div>
         </header>
@@ -145,25 +149,25 @@
 </form>
                 </div>
             <div class="header-links-wrapper">
-                <a href="#" class="header-link">
+                <a href="semafor.php" class="header-link">
                     <img src="persoana.png">
                 </a>
-                <a href="#" class="header-link">
+                <a href="group.php" class="header-link">
                     <img src="grup.png">
                 </a>
-                <a href="#" class="header-link">
+                <a href="semafor_liste.php" class="header-link">
                     <img src="list.png">
                 </a>
             </div>
             <div class="logout-wrapper">
-                <a href="/">Logout</a>
+                <a href="logout.php">Logout</a>
                 <i class="fa fa-sign-out"></i>
             </div>
         </div>
         <div class="content">
-           
+        <script src="./groupScript.js"></script>
         <?php
-                   $userId = 1;
+                   $userId = $_SESSION['id'];
                    
                    $link = mysqli_connect('localhost', 'root', '');
                    if (!$link) {
@@ -173,21 +177,63 @@
                    $db = mysqli_select_db($link, 'forg');
                    if (!$db) {
                        die ('Cannot connect to database ' . mysqli_error());}
-                      
-                    $sql = "Select group_id from users where id = '".$userId."';";
+                    
+                    $sql = "Select groups from users where id = '".$userId."';";
                     $query = mysqli_query($link,$sql);
                     $groupId = mysqli_fetch_row($query);
-                     
+                 
+
+                    $sql = "Select name from groups where id = '".$groupId[0]."';";
+                    $query = mysqli_query($link,$sql);
+                    $groupName = mysqli_fetch_row($query);
+                      
+
                     $sql = "Select full_name from users where id = '".$userId."';";
                     $query = mysqli_query($link,$sql);
                     $row = mysqli_fetch_row($query);
 
-                    $sql2 = "Select full_name from users where id <> '".$userId."' and group_id = '".$groupId[0]."';";
+                    if (isset($_POST['usersMail'])){
+
+                        $sql = "Update users set groups = '".$groupId[0]."' where email = '".$_POST['usersMail']."';";
+                        $query = mysqli_query($link,$sql);
+                    }
+                    
+                    $sql2 = "Select full_name from users where id <> '".$userId."' and groups = '".$groupId[0]."';";
                     $query2 = mysqli_query($link,$sql2);
                     
-                       
-                       ?>
+                    if (isset($_POST['planDate'])){
+                       /* $sql = "Insert into plans (date, group_id) values ('".$_POST['planDate']."','".$groupId[0]."');";
+                        $query = mysqli_query($link,$sql);*/
 
+                    $stmt = $link->prepare("Insert into plans (date, group_id) VALUES (?, ?)");
+                    $stmt->bind_param("ii", $_POST['planDate'], $groupId[0]);
+                    $stmt->execute();
+                    }
+                       
+                    if (isset($_POST['product']) && isset($_POST['groupId'])){
+                        $sql = "Select id from products where product_name='".$_POST['product']."';";
+                        $query = mysqli_query($link,$sql);
+                        $rowTemp=mysqli_fetch_row($query);
+                        if($rowTemp!=NULL){
+                        $sql = "Insert into plan_details (plan_id, product_id) values ('".$_POST['groupId']."','".$rowTemp[0]."');";
+                        $query = mysqli_query($link,$sql);}
+                    }
+
+                    if (isset($_POST['deletePlan'])){
+                        $sql = "Delete from plans where id = '".$_POST['deletePlan']."';";
+                        $query = mysqli_query($link,$sql);
+
+                        $sql = "Delete from plan_details where group_id = '".$_POST['deletePlan']."';";
+                        $query = mysqli_query($link,$sql);
+                    }
+
+                    
+                    if (isset($_POST['deleteProduct']) && isset($_POST['deleteFromPlan'])){
+                        $sql = "Delete from plan_details where plan_id = '".$_POST['deleteFromPlan']."' and product_id='".$_POST['deleteProduct']."';";
+                        $query = mysqli_query($link,$sql);
+                    }
+                       ?>
+    <div class="pageContent">
             <div class="members">
                 <p>Group Members</p>
                 <div class="memberList">
@@ -199,13 +245,22 @@
                         }
                         ?>
                     </ul>
-              
-                        <button class="invite" type="submit" formaction="Invite.html">Invite new member</button>
+                        <form action="createdGroup.php" method="POST">
+                        <input class="mailInput" type="email" name="usersMail" placeholder="user`s mail"></input>
+                        <input class="invite" type="submit" name="invite" value="Invite new member"></input>
+                        </form>
+                        
                 </div></div>
   <div class="posts"><p class="postsP">
-    Group description here
+    <?php echo $groupName[0]; ?>
   </p>
   <div class="groups">
+  <div class="addPlan">
+  <form action="createdGroup.php" method="POST">
+            <div class="addPlan"><input type="date" name="planDate"></input>
+            <button class="addNewPlan" type="submit" name="invite">Add new plan</button></div>
+                        </form>
+        </div>
     <ul class="groupsList" style="list-style-type:none;">
     <?php
           $sql = "Select * from plans where group_id= '".$groupId[0]."';";
@@ -217,17 +272,23 @@
             $query2 = mysqli_query($link,$sql2);
             echo '<div class="plan">';
             echo '<p>'.date('D, d. m', strtotime($row[1])).'</p><ul>';
+            echo '<li><form action="createdGroup.php" method="POST"> <input type="text" onkeyup="findProduct(this.value)" name="product"></input>';
+            echo '<input type="hidden" name="groupId" value="'.$row[0].'"></input>';
+            echo '<div id="livesearch"></div></form>';
+
             while($row2 = mysqli_fetch_row($query2)){
                 $sql3 = "Select product_name from products where id = '".$row2[2]."';";
                 $query3 = mysqli_query($link,$sql3);
                 $row3 = mysqli_fetch_row($query3);
                 echo '<li>'.'<form action="productPage.php" method="get">
-                <button class="productButton" type="submit" name = "product" value = '.$row2[2].' method = "get">'.$row3[0].'</button></form>'.'</li>';
-            }
+                <button class="productButton" type="submit" name = "id" value = '.$row2[2].' method = "get">'.$row3[0].'</button></form>';
+            } echo '<li>';
+            echo '<li>'.'<form action="createdGroup.php" method="post">
+            <button class="productButton" type="submit" name = "deletePlan" method = "post" value="'.$row[0].'">Delete</button></form>'.'</li>';
             echo'</ul></div>';
             $k = $k+1;
             if ($k == 5){
-                echo '</li>';
+                echo '</li><br>';
                 $k = 1;
             }
           }
@@ -271,8 +332,7 @@
         
     </ul>*/?>
     </div>
-    
-  
+        </div>
   </div>    
     <div class="menu">
                 <div class="menu-element">
@@ -372,7 +432,7 @@
                   </div>
                   <footer style="background-color:#381D2A">
             <div class="contact">
-                <a href="contact.html" target="_blank">Contact</a>
+                <a href="contact.php">Contact</a>
             </div>
         </footer>
     </div>

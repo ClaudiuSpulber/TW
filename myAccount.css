@@ -1,12 +1,5 @@
-html,body{
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background-color:#381D2A;
-  overflow-x: hidden;
-}
+/* CSS CLAUDIA */
 
-/*header*/
 .page-wrapper {
   width: 100%;
   height: 100vh;
@@ -109,64 +102,24 @@ html,body{
   padding: 0;
   background-color:#381D2A
 }
-.content{
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  padding: 0 30px;
-  box-sizing: border-box;
-}
 
-.content2{
-  width: 100%;
-}
-.container{
-  /* width: 77%; */
-  /* margin-right:5%; */
-  background-color:rgb(255, 255, 255);
-  width:calc(100% - 100px);
-  box-sizing: border-box;
-  padding: 30px 0;
-  display: flex;
-  flex-direction: column;
-  background-image:url('imagine2.png');
-  background-size: cover;
-  align-items: center;
-}
-
-.text-center{
-  float:left;
-  font-size:30px;
-  background-color:rgba(255, 255, 255, 0.678);
-  color:black;
-  text-decoration:wavy;
-}
-.descriere-principal{
-  background-color:white;
-  color:black;
-  opacity: 0.8;
-  font-size: large;
-  max-width: 60%;
-  margin-bottom: auto;
-  margin-top: auto;
-}
 .menu {
   margin: 0;
   width:18%;
 padding: 0;
-  background-color:#381D2A
+  background-color:#381D2A;
+  display: flex;
+  flex-direction: column;
 }
 
 .submenu-claus-container {
-  position: relative;
   width: 197px;
+  margin-top: 10px;
+
 }
 
 .submenu-claus {
   display: none;
-  position: absolute;
-  top: 0;
-  right: 0px;
   text-decoration: none;
   color: white;
 }
@@ -174,9 +127,8 @@ padding: 0;
 .submenu-text {
   color:rgb(255, 255, 255);
   text-decoration: none;
-}
-div.menu > div > div:nth-child(2):hover > .submenu-claus{
-  display: block;
+  background-color: transparent;
+  border-color: #381D2A;
 }
 
 .menu-element{
@@ -196,6 +148,8 @@ display: flex;
   padding-top:5px;
   text-decoration: none;
   display: none;
+  background-color: transparent;
+  border-color: #381D2A;
 }
 .menu:hover .menu-text{
   display: initial;
@@ -203,6 +157,9 @@ display: flex;
 .menu-text:hover{
   background-color: #555;
 color: white;
+}
+.menu:hover .submenu-claus-container .submenu-claus {
+  display: inline;
 }
 footer{
   text-align:left;
@@ -223,133 +180,19 @@ footer{
 .mobile-menu {
   display: none;
 }
-@media only screen and (max-width: 800px) {
- 
- .header-web {
-     display: none;
- }
- .header-mobile {
-      display: flex;
-      align-items:center;
-      padding: 20px 15px;
-      box-sizing: border-box;
- }
- .menu {
-     display: none;
- }
- .logo-mobile {
-      margin-left: auto;
-      margin-right: auto;
-      width: 70px;
-      height: auto;
- }
- .header-mobile-burger {
-     width: auto;
-     height: auto;
- }
- .header-mobile-burger i{
-      color: white;
-      font-size: 26px;
-  }
-  .content{
-      width: 100%;
-      display: flex;
-      padding: 10px 20px;
-      box-sizing: border-box;
-  }
-  .container{
-      width: 100%;
-      margin-right: 0;
-  }
-  .mobile-menu{
-      position: absolute;
-      width: 100%;
-      height: 100vh;
-      top: 0;
-      background: white;
-      z-index: 5;
-      display: flex;
-      padding: 20px 15px;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      display: none;
-  }
-  .show-mobile-menu {
-      display: block;
-  }
-  .infos-wrapper {
-      display: flex;
-      align-items: center;
-      width: 100%;
-      height: fit-content;
-      padding-bottom: 10px;
-      border-bottom: 1px solid black;
-  }
-  .close-menu-icon i{
-      color: black;
-      font-size: 26px;
-  }
-  .menu-text {
-      display: block;
-      color: black;
-      font-size: 16px;
-      font-weight: bold;
-  }
-  .submenu-claus-container {
-      position: relative;
-      width: 197px;
-  }
-  
-  .submenu-claus {
-      display: none;
-      position: relative;
-      /* top: 0; */
-      /* right: 0px; */
-      text-decoration: none;
-      color: black;
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-  }
-  .submenu-claus div {
-      align-self: center;
-  }
-  .submenu-text {
-      color:black;
-      text-decoration: none;
-  }
-  .header-links-wrapper {
-      width: 100%;
-      justify-content: center;
-      margin-left: 0;
-  }
-  .logout-wrapper {
-      width: 100%;
-      justify-content: center;
-  }
-  .logout-wrapper a {
-      color: black;
-  }
-  .logout-wrapper i {
-      color: black;
-  }
-  .subheader-mobile {
-      width: 100%;
-      height: fit-content;
-      display: flex;
-      justify-content: center;
-  }
-  .search-wrapper-mobile {
-      display: block;
-      width: fit-content;
-  }
 
-  .posts{
-    margin: 0 auto;
-    width: 100%;
-  }
+.content{
+  width: 100%;
+  display: flex;
+  
+  padding: 0 30px;
+  box-sizing: border-box;
 }
+
+.content2{
+  width: calc(100%-100px);
+}
+
 
 
 .editeazaDatele{
@@ -448,10 +291,170 @@ th, td {
 
 }
 
+.removeButton{
+  display: flex;
+  flex-direction: column;
+}
+
+.productButton, .favoriteParagraph{
+  width: 50%;
+  margin: 0 auto;
+  background-color: orange;
+  border-radius: 10px;
+}
+
+/* CSS CLAUDIA */
+@media only screen and (max-width: 800px) {
+     
+  .header-web {
+      display: none;
+  }
+  .header-mobile {
+       display: flex;
+       align-items:center;
+       padding: 20px 15px;
+       box-sizing: border-box;
+  }
+  .menu {
+      display: none;
+  }
+  .logo-mobile {
+       margin-left: auto;
+       margin-right: auto;
+       width: 70px;
+       height: auto;
+  }
+  .header-mobile-burger {
+      width: auto;
+      height: auto;
+  }
+  .header-mobile-burger i{
+       color: white;
+       font-size: 26px;
+   }
+   .content{
+       width: 100%;
+       display: flex;
+       padding: 10px 20px;
+       box-sizing: border-box;
+      
+   }
+   .container{
+       width: 100%;
+       margin-right: 0;
+   }
+   .mobile-menu{
+       position: absolute;
+       width: 100%;
+       height: 100vh;
+       top: 0;
+       background: white;
+       z-index: 5;
+       display: flex;
+       padding: 20px 15px;
+       box-sizing: border-box;
+       display: flex;
+       flex-direction: column;
+       display: none;
+   }
+   .show-mobile-menu {
+       display: block;
+   }
+   .infos-wrapper {
+       display: flex;
+       align-items: center;
+       width: 100%;
+       height: fit-content;
+       padding-bottom: 10px;
+       border-bottom: 1px solid black;
+   }
+   .close-menu-icon i{
+       color: black;
+       font-size: 26px;
+   }
+   .menu-text {
+       display: block;
+       color: black;
+       font-size: 16px;
+       font-weight: bold;
+   }
+   .submenu-claus-container {
+       position: relative;
+       width: 197px;
+   }
+   
+   .submenu-claus {
+       display: none;
+       position: relative;
+       /* top: 0; */
+       /* right: 0px; */
+       text-decoration: none;
+       color: black;
+       display: flex;
+       flex-direction: column;
+       width: 100%;
+   }
+   .submenu-claus div {
+       align-self: center;
+   }
+   .submenu-text {
+       color:black;
+       text-decoration: none;
+   }
+   .header-links-wrapper {
+       width: 100%;
+       justify-content: center;
+       margin-left: 0;
+   }
+   .logout-wrapper {
+       width: 100%;
+       justify-content: center;
+   }
+   .logout-wrapper a {
+       color: black;
+   }
+   .logout-wrapper i {
+       color: black;
+   }
+   .subheader-mobile {
+       width: 100%;
+       height: fit-content;
+       display: flex;
+       justify-content: center;
+   }
+   .search-wrapper-mobile {
+       display: block;
+       width: fit-content;
+   }
+}   
+
+
 @media all and (max-width: 600px){
   .groupsList{
     flex-direction: column;
     align-items: center;
+  }
+  .li1{
+    width: 50%;
+  }
+
+}
+
+
+  @media all and (max-width: 700px){
+   .productButton{
+     font-size: 42%;
+   }
+
+   .favoriteParagraph{
+     font-size: 70%;
+   }
+
+}
+
+@media all and (max-width: 700px){
+  td input{
+    width: 100%;
   }
 
 }

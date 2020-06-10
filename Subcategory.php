@@ -1,3 +1,4 @@
+<?php  include "server.php"; ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -10,7 +11,9 @@
     
     <header class="header-web">
             <div class="logo-wrapper">
-                <img class="logo" src="logo.jpg">
+            <a href="principal.php">
+                <img class="logo" src="logo.jpg" alt ="logo">
+</a>
             </div>
             <div class="search-wrapper">
                 <form class="search" action="cautare.php">
@@ -19,19 +22,19 @@
                 </form>
             </div>
             <div class="header-links-wrapper">
-                <a href="#" class="header-link">
-                    <img src="persoana.png">
+                <a href="semafor.php" class="header-link">
+                    <img src="persoana.png" alt ="persoana">
                 </a>
-                <a href="#" class="header-link">
-                    <img src="grup.png">
+                <a href="group.php" class="header-link">
+                    <img src="grup.png" alt ="grup">
                 </a>
-                <a href="#" class="header-link">
-                    <img src="list.png">
+                <a href="semafor_liste.php" class="header-link">
+                    <img src="list.png" alt ="list">
                 </a>
             </div>
 
             <div class="logout-wrapper">
-                <a href="/">Logout</a>
+                <a href="logout.php">Logout</a>
                 <i class="fa fa-sign-out"></i>
             </div>
         </header>
@@ -40,7 +43,7 @@
                 <i class="fa fa-bars"></i>
             </div>
             <div class="logo-mobile">
-                <img class="logo" src="logo.jpg">
+                <img class="logo" src="logo.jpg" alt ="logo">
             </div>
         </div>
         <div class="subheader-mobile">
@@ -57,12 +60,12 @@
                     <i class="fa fa-times"></i>
                 </div>
                 <div class="logo-mobile">
-                    <img class="logo" src="logo.jpg">
+                    <img class="logo" src="logo.jpg" alt ="logo">
                 </div>
             </div>
             <div class="menu-element">
                 <div>
-                    <img class="menu-image" src="Pui.png">
+                    <img class="menu-image" src="Pui.png" alt ="pui">
                 </div>
                 <div class="submenu-claus-container">
                     <p class="menu-text">Meat products</p>
@@ -98,7 +101,7 @@
             </div>
             <div class="menu-element">
                     <div>
-                        <img class="menu-image" src="Vegetarian.png">
+                        <img class="menu-image" src="Vegetarian.png" alt ="Vegetarian">
                     </div>
                     <form action="Subcategory.php" method="get">
                     <button name="subcategory" value="vegetarian" class="menu-text">Vegetarian products</button>
@@ -106,7 +109,7 @@
                 </div>
                 <div class="menu-element">
                     <div>
-                        <img class="menu-image" src="Peste.png">
+                        <img class="menu-image" src="Peste.png" alt ="Peste">
                     </div>
                     <form action="Subcategory.php" method="get">
                     <button name="subcategory" value="fish" class="menu-text">Fish and Seafood</button>
@@ -114,7 +117,7 @@
                 </div>
                 <div class="menu-element">
                     <div>
-                        <img class="menu-image" src="Ciorba.png">
+                        <img class="menu-image" src="Ciorba.png" alt ="Ciorba">
                     </div>
                     <form action="Subcategory.php" method="get">
                     <button name="subcategory" value="soups" class="menu-text">Soups</button>
@@ -122,7 +125,7 @@
                 </div>
                 <div class="menu-element">
                     <div>
-                        <img class="menu-image" src="garnituri.png">
+                        <img class="menu-image" src="garnituri.png" alt ="garnituri">
                     </div>
                     <form action="Subcategory.php" method="get">
                     <button name="subcategory" value="sides" class="menu-text">Sides</button>
@@ -130,7 +133,7 @@
                 </div>
                 <div class="menu-element">
                     <div>
-                        <img class="menu-image" src="Salata.png">
+                        <img class="menu-image" src="Salata.png" alt ="Salata">
                     </div>
                     <form action="Subcategory.php" method="get">
                     <button name="subcategory" value="salads" class="menu-text">Salads</button>
@@ -138,33 +141,36 @@
                 </div>
                 <div class="menu-element">
                     <div>
-                        <img class="menu-image" src="Tort.png">
+                        <img class="menu-image" src="Tort.png" alt ="Tort">
                     </div>
                     <form action="Subcategory.php" method="get">
                     <button name="subcategory" value="desserts" class="menu-text">Dessert</button>
 </form>
                 </div>
             <div class="header-links-wrapper">
-                <a href="#" class="header-link">
-                    <img src="persoana.png">
+                <a href="semafor.php" class="header-link">
+                    <img src="persoana.png" alt ="persoana">
                 </a>
-                <a href="#" class="header-link">
-                    <img src="grup.png">
+                <a href="group.php" class="header-link">
+                    <img src="grup.png" alt ="grup">
                 </a>
-                <a href="#" class="header-link">
-                    <img src="list.png">
+                <a href="semafor_liste.php" class="header-link">
+                    <img src="list.png" alt ="list">
                 </a>
             </div>
             <div class="logout-wrapper">
-                <a href="/">Logout</a>
+                <a href="logout.php">Logout</a>
                 <i class="fa fa-sign-out"></i>
             </div>
         </div>
         <div class="content">
        
      <?php
-    $userId = 1;
-    $link = mysqli_connect('localhost', 'root', '');
+     
+   
+    $userId=$_SESSION['id'];
+    
+    /*$link = mysqli_connect('localhost', 'root', '');
     if (!$link) {
         die('Not connected : ' . mysqli_error());
     }
@@ -172,45 +178,46 @@
 
     $db = mysqli_select_db($link, 'forg');
     if (!$db) {
-        die ('Cannot connect to database ' . mysqli_error());}
+        die ('Cannot connect to database ' . mysqli_error());}*/
 
         $category = $_GET['subcategory'];
-        if (isset($_POST['favorite'])){
-            $sql = "SELECT * from favorites where client_id = '".$userId."' and product_id = '".$_POST['favorite']."';";
-            $query = mysqli_query($link,$sql);
+      /*  if (isset($_POST['favorite'])){
+            $sql = "SELECT * from favorites where id_user = '".$userId."' and id_product = '".$_POST['favorite']."';";
+            $query = mysqli_query($db,$sql);
             $count = mysqli_num_rows($query);
             if ($count>0){
-                $sql = "DELETE from favorites where client_id = '".$userId."' and product_id = '".$_POST['favorite']."';";
-                $query = mysqli_query($link,$sql);
+                $sql = "DELETE from favorites where id_user= '".$userId."' and id_product = '".$_POST['favorite']."';";
+                $query = mysqli_query($db,$sql);
                 unset($_POST['favorite']);
             }
             else {
                 $sql = "INSERT into favorites (client_id, product_id) VALUES ('".$userId."', '".$_POST['favorite']."');";
-                $query = mysqli_query($link,$sql);
+                $query = mysqli_query($db,$sql);
             }
         }
 
         if (isset($_POST['list'])){
             $sql = "SELECT * from lists where id_client = '".$userId."' and id_product = '".$_POST['list']."';";
-            $query = mysqli_query($link,$sql);
+            $query = mysqli_query($db,$sql);
             $count = mysqli_num_rows($query);
             if ($count>0){
                 $sql = "DELETE from favorites where id_client = '".$userId."' and id_product = '".$_POST['list']."';";
-                $query = mysqli_query($link,$sql);
+                $query = mysqli_query($db,$sql);
                 unset($_POST['list']);
             }
             else {
                 $sql = "SELECT product_name from products where id = '".$_POST['list']."';";
-                $query = mysqli_query($link,$sql);
+                $query = mysqli_query($db,$sql);
                 $product_name =  mysqli_fetch_array($query);
-                $query = mysqli_query($link,$sql);
+                $query = mysqli_query($db,$sql);
                 $sql = "INSERT into lists (client_id, product_id, product_name) VALUES ('".$userId."', '".$_POST['list']."', '".$product_name[0].");";
-                $query = mysqli_query($link,$sql);          
+                $query = mysqli_query($db,$sql);          
             }
-        }
+        }*/
 
     ?>
 
+<script src="./subcategoryScript.js"></script>
      <div class="content2">
        
         <div class="posts"><p class="postsP">
@@ -218,24 +225,24 @@
         </p>
         
         <?php
-        $sql = "SELECT * from favorites where client_id = '".$userId."';";
-        $query = mysqli_query($link,$sql);
+        $sql = "SELECT * from favorites where id_user = '".$userId."';";
+        $query = mysqli_query($db,$sql);
         $sql = "SELECT * from products where category = '".$category."';";
-        $query2 = mysqli_query($link,$sql);
+        $query2 = mysqli_query($db,$sql);
         $sql = "SELECT * from lists where id_client = '".$userId."';";
-        $query3 = mysqli_query($link,$sql);
-        $favArray = [];
-        $listArray = [];
-        while($row = mysqli_fetch_row($query)) {array_push($favArray, $row[2]);}
-        while($row3 = mysqli_fetch_row($query3)) {array_push($listArray, $row3[2]);}
+        $query3 = mysqli_query($db,$sql);
+       // $favArray = [];
+      //  $listArray = [];
+    //    while($row = mysqli_fetch_row($query)) {array_push($favArray, $row[2]);}
+     //   while($row3 = mysqli_fetch_row($query3)) {array_push($listArray, $row3[2]);}
 
         if($query2){echo '<div class="groups"> <ul class="groupsList" style="list-style-type:none;">';
             $k = 1;
             while($row2 = mysqli_fetch_row($query2)){
                 $fButton = "Add to favorites";
                 $lButton = "Add to shopping list";
-                if(in_array($row2[0],$favArray)) $fButton = "Remove from favorites";
-                if(in_array($row2[0],$listArray)) $lButton = "Remove from shopping list";
+               // if(in_array($row2[0],$favArray)) $fButton = "Remove from favorites";
+               // if(in_array($row2[0],$listArray)) $lButton = "Remove from shopping list";
                 $file = strtolower(str_replace(' ', '', $row2[1]));
                 echo '
                 <li class="li1">
@@ -243,11 +250,9 @@
                 <img src="Images/'.$file.'.jpg" alt="'.$row2[1].'">
                 <div class="buttons">
                 <form action="productPage.php" method="get">
-                  <button class="productButton" type="submit" name = "product" value = '.$row2[0].' method = "get">View Product</button></form>
-                  <form action="Subcategory.php" method="post">
-                  <button class="productButton" type="submit" name = "favorite" value = '.$row2[0].' method = "post">'.$fButton.'</button>
-                  <button class="productButton" type="submit" name = "list" value = '.$row2[0].' method = "post">'.$lButton.'</button>
-              </form>
+                  <button class="productButton" type="submit" name = "id" value = '.$row2[0].' method = "get">View Product</button></form>                  
+                  <button class="productButton" type="submit" name = "favorite" value = '.$row2[0].' onclick="favorite('.$row2[0].','.$userId.')">'.$fButton.'</button>
+                  <button class="productButton" type="submit" name = "list" value = '.$row2[0].' onclick="list('.$row2[0].','.$userId.')">'.$lButton.'</button>
               </li>
                 ';
                 $k = $k+1;
@@ -359,7 +364,7 @@
                 </div>
                 <div class="menu-element">
                     <div>
-                        <img class="menu-image" src="Vegetarian.png">
+                        <img class="menu-image" src="Vegetarian.png" alt ="Vegetarian">
                     </div>
                     <form action="Subcategory.php" method="get">
                     <button name="subcategory" value="vegetarian" class="menu-text">Vegetarian products</button>
@@ -367,7 +372,7 @@
                 </div>
                 <div class="menu-element">
                     <div>
-                        <img class="menu-image" src="Peste.png">
+                        <img class="menu-image" src="Peste.png" alt ="Peste">
                     </div>
                     <form action="Subcategory.php" method="get">
                     <button name="subcategory" value="fish" class="menu-text">Fish and Seafood</button>
@@ -375,7 +380,7 @@
                 </div>
                 <div class="menu-element">
                     <div>
-                        <img class="menu-image" src="Ciorba.png">
+                        <img class="menu-image" src="Ciorba.png" alt ="Ciorba">
                     </div>
                     <form action="Subcategory.php" method="get">
                     <button name="subcategory" value="soups" class="menu-text">Soups</button>
@@ -383,7 +388,7 @@
                 </div>
                 <div class="menu-element">
                     <div>
-                        <img class="menu-image" src="garnituri.png">
+                        <img class="menu-image" src="garnituri.png" alt ="garnituri">
                     </div>
                     <form action="Subcategory.php" method="get">
                     <button name="subcategory" value="sides" class="menu-text">Sides</button>
@@ -391,7 +396,7 @@
                 </div>
                 <div class="menu-element">
                     <div>
-                        <img class="menu-image" src="Salata.png">
+                        <img class="menu-image" src="Salata.png" alt ="Salata">
                     </div>
                     <form action="Subcategory.php" method="get">
                     <button name="subcategory" value="salads" class="menu-text">Salads</button>
@@ -399,7 +404,7 @@
                 </div>
                 <div class="menu-element">
                     <div>
-                        <img class="menu-image" src="Tort.png">
+                        <img class="menu-image" src="Tort.png" alt ="Tort">
                     </div>
                     <form action="Subcategory.php" method="get">
                     <button name="subcategory" value="desserts" class="menu-text">Dessert</button>
@@ -414,7 +419,7 @@
                   </div>
                   <footer style="background-color:#381D2A">
             <div class="contact">
-                <a href="contact.html" target="_blank">Contact</a>
+                <a href="contact.php">Contact</a>
             </div>
         </footer>
     </div>
