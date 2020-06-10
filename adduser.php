@@ -1,5 +1,49 @@
 <?php include('server.php') ?>
 <?php
+/* DIANA */
+if (isset($_POST['add_new_admin'])) {
+    $full_name =  $_POST['full_name'];
+    $email = $_POST['email'];
+    $phone_number =  $_POST['phone_number'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $isadmin = 1;
+
+    $user_check_query = $dbh->prepare("SELECT * FROM users WHERE username= ? OR email= ? LIMIT 1");
+    $user_check_query->bindParam(1, $username);
+    $user_check_query->bindParam(2, $email);
+
+    if ($user_check_query->execute()) {
+        while ($row = $user_check_query->fetch()) {
+            if ($row['username'] === $username) {
+                array_push($errors, "Username already exists");
+            }
+            if ($row['email'] === $email) {
+                array_push($errors, "Email already exists");
+            }
+        }
+    }
+
+    if (count($errors) == 0) {
+       
+        $insert = $dbh->prepare("INSERT INTO users (full_name, email, phone_number, username, password, isadmin) VALUES ( ?, ?, ?, ?, ?, ?)");
+        $insert->bindParam(1, $full_name);
+        $insert->bindParam(2, $email);
+        $insert->bindParam(3, $phone_number);
+        $insert->bindParam(4, $username);
+        $password=md5($password);
+        $insert->bindParam(5, $password);
+        $insert->bindParam(6, $isadmin);
+        if ($insert->execute()) {
+            /*echo ("succes");*/
+        } else {
+            array_push($errors, "cant insert");
+        }
+    }
+}
+
+/* DIANA */
+
 if (isset($_POST['add_new_user'])) {
     $full_name =  $_POST['full_name'];
     $email = $_POST['email'];
@@ -24,15 +68,16 @@ if (isset($_POST['add_new_user'])) {
     }
 
     if (count($errors) == 0) {
+       
         $insert = $dbh->prepare("INSERT INTO users (full_name, email, phone_number, username, password, allergies) VALUES ( ?, ?, ?, ?, ?, ?)");
         $insert->bindParam(1, $full_name);
         $insert->bindParam(2, $email);
         $insert->bindParam(3, $phone_number);
         $insert->bindParam(4, $username);
-        $insert->bindParam(5, $password);
+        $insert->bindParam(5, md5($password));
         $insert->bindParam(6, $allergies);
         if ($insert->execute()) {
-            echo ("succes");
+           /* echo ("succes"); */
         } else {
             array_push($errors, "cant insert");
         }
@@ -44,7 +89,7 @@ if (isset($_POST['delete_user'])) {
 	$delete = $dbh->prepare("DELETE FROM users WHERE email=?");
 	$delete->bindParam(1, $email2);
 	if ($delete->execute()) {
-		echo ("succes");
+		/*echo ("succes");*/
 	} else {
 		array_push($errors, "cant insert");
 	}
@@ -90,7 +135,7 @@ if (isset($_POST['delete_user'])) {
             </div>
 
             <div class="logout-wrapper">
-                <a href="/">Logout</a>
+                <a href="logout.php">Logout</a>
                 <i class="fa fa-sign-out"></i>
             </div>
         </header>
@@ -205,18 +250,18 @@ if (isset($_POST['delete_user'])) {
 </form>
             </div>
             <div class="header-links-wrapper">
-                <a href="#" class="header-link">
+                <a href="semafor.php" class="header-link">
                     <img src="persoana.png" alt="persoana">
                 </a>
-                <a href="#" class="header-link">
+                <a href="group.php" class="header-link">
                     <img src="grup.png" alt="grup">
                 </a>
-                <a href="#" class="header-link">
+                <a href="semafor_liste.php" class="header-link">
                     <img src="list.png" alt="list">
                 </a>
             </div>
             <div class="logout-wrapper">
-                <a href="/">Logout</a>
+                <a href="logout.php">Logout</a>
                 <i class="fa fa-sign-out"></i>
             </div>
         </div>
@@ -234,7 +279,7 @@ if (isset($_POST['delete_user'])) {
                     required="required" name="phone_number"><br>
                 <input type="text" id="username" class="form5" maxlength="255" placeholder="Username"
                     required="required" name="username"><br> 
-                <input type="text" id="password" class="form5" maxlength="255"
+                <input type="password"" id="password" class="form5" maxlength="255"
                     placeholder="Password" required="required" name="password">
             
             <div class="allergies">
@@ -262,6 +307,22 @@ if (isset($_POST['delete_user'])) {
             <div class="add-button">
                 <button type="submit" name="add_new_user">Add an user
                     account</button>
+            </div>
+        </form>
+        <h1 class="product-title">Add an administrator account</h1>
+        <form method="post" action="adduser.php">
+                <input type="text" id="fullname" class="form5" maxlength="255" placeholder="Full name"
+                    required="required" name="full_name"><br>
+                <input type="text" id="email" class="form5" maxlength="255" placeholder="E-mail"
+                    required="required" name="email"><br>
+                <input type="text" id="phonenumber" class="form5" maxlength="255" placeholder="Phone number"
+                    required="required" name="phone_number"><br>
+                <input type="text" id="username" class="form5" maxlength="255" placeholder="Username"
+                    required="required" name="username"><br> 
+                <input type="password" id="password" class="form5" maxlength="255"
+                    placeholder="Password" required="required" name="password">
+            <div class="add-button">
+                <button type="submit" name="add_new_admin">Add an administrator account</button>
             </div>
         </form>
             <h1 class="product-title">
@@ -364,7 +425,7 @@ if (isset($_POST['delete_user'])) {
     </div>
     <footer style="background-color:#381D2A">
             <div class="contact">
-                <a href="contact.html" target="_blank">Contact</a>
+                <a href="contact.php" target="_blank">Contact</a>
             </div>
         </footer>
 

@@ -30,7 +30,7 @@ if (isset($_POST['register_user'])) {
     $phone_number =  $_POST['phone_number'];
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $okallergens = $_POST['allergens'];
+    $okallergens = $_POST['allergies'];
     if($okallergens){
     $allergies = implode(",", $okallergens); //dintr-un vector am facut un string cu virgula intre ele EXPLODE
     }
@@ -63,12 +63,10 @@ if (isset($_POST['register_user'])) {
             echo ("succes");
             $_SESSION['username'] = $username;
             $_SESSION['id'] = $raw['id'];
-            if($_SESSION['id']==1){
-            $_SESSION['admin']=true;
-            }else{
-                $_SESSION['admin']=false;
-            }
-            header('Location: principal.php', true, 307);
+            $_SESSION['loggedin']=true;
+            $_SESSION['admin']=false;
+            
+           header('Location: principal.php', true, 307);
         } else {
             array_push($errors, "cant insert");
         }
@@ -100,7 +98,7 @@ if (isset($_POST['login_user'])) {
                 $_SESSION['username'] = $username;
                 $_SESSION['id'] = $raw['id'];
                 $_SESSION['loggedin']=true;
-                if($raw['id']==1){
+                if($raw['isadmin']==1){
                 $_SESSION['admin']=true;
                 }else{
                     $_SESSION['admin']=false;

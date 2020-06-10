@@ -1,9 +1,7 @@
 <?php
 if (isset($_GET['id'])) {
         include "server.php";   
-
         $idclient = $_SESSION['id'];
-
         /* Construieste vectorul cu alergeni ai clientului din sesiune */
 
         $variable = "SELECT * FROM users where id='$idclient'";

@@ -1,6 +1,6 @@
  <?php
-   include('product-back.php');
-   if(!isset($_SESSION['loggedin'])){
+    include('product-back.php');
+  if(!isset($_SESSION['loggedin'])){
     header('Location: welcome.php', true, 307);
 }
     ?>
@@ -43,7 +43,7 @@
              </div>
 
              <div class="logout-wrapper">
-                 <a href="/">Logout</a>
+                 <a href="logout.php">Logout</a>
                  <i class="fa fa-sign-out"></i>
              </div>
          </header>
@@ -158,18 +158,18 @@
 </form>
             </div>
              <div class="header-links-wrapper">
-                 <a href="#" class="header-link">
+                 <a href="semafor.php" class="header-link">
                      <img src="persoana.png" alt="persoana">
                  </a>
-                 <a href="#" class="header-link">
+                 <a href="group.php" class="header-link">
                      <img src="grup.png" alt="grup">
                  </a>
-                 <a href="#" class="header-link">
+                 <a href="semafor_liste.php" class="header-link">
                      <img src="list.png" alt="list">
                  </a>
              </div>
              <div class="logout-wrapper">
-                 <a href="/">Logout</a>
+                 <a href="logout.php">Logout</a>
                  <i class="fa fa-sign-out"></i>
              </div>
          </div>
@@ -178,11 +178,11 @@
                  <h1 class="product-title">
                      <?php echo $product_name; ?>
                  </h1>
-
+                <div class="test">
                  <div class="middle-section-container">
 
 
-                     <img alt="Tiramisu" class="image" src="Images/<?php echo $product_name3; ?>.jpg">
+                     <img alt="image" class="image" src="Images/<?php echo $product_name3; ?>.jpg">
 
 
 
@@ -199,12 +199,13 @@
                              <div class="title">Price</div>
                              <div class="content"><?php echo $price; ?> RON</div>
                          </div>
-
+                        <?php if(!$_SESSION['admin']){ ?>
                          <div class="actions">
                                  <button type="submit" name="all" value="1" onclick="add(this.value)">Add all ingredients to list</button>
                                  <button type="submit" name="favorites" value="2" onclick="add(this.value)">Add to favorite</button>
                                  <p id="succes"></p>
                          </div>
+                        <?php }; ?>
                         
 
                      </div>
@@ -243,6 +244,7 @@
                              <div class="menu-item-details"><?php echo $season; ?></div>
                          </li>
                      </ul>
+                 </div>
                  </div>
              </div>
 
@@ -335,7 +337,7 @@
          </div>
          <footer style="background-color:#381D2A">
             <div class="contact">
-                <a href="contact.html" target="_blank">Contact</a>
+                <a href="contact.php" target="_blank">Contact</a>
             </div>
         </footer>
 

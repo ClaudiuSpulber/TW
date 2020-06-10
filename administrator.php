@@ -1,6 +1,6 @@
 <?php
 include('administrator-back.php');
-if(!isset($_SESSION['loggedin'])){
+if (!isset($_SESSION['loggedin'])) {
     header('Location: welcome.php', true, 307);
 }
 ?>
@@ -20,9 +20,9 @@ if(!isset($_SESSION['loggedin'])){
     <div class="page-wrapper">
         <header class="header-web">
             <div class="logo-wrapper">
-            <a href="principal.php">
-                <img class="logo" src="logo.jpg" alt="Logo">
-</a>
+                <a href="principal.php">
+                    <img class="logo" src="logo.jpg" alt="Logo">
+                </a>
             </div>
             <div class="search-wrapper">
                 <form class="search" action="cautare.php">
@@ -43,7 +43,7 @@ if(!isset($_SESSION['loggedin'])){
             </div>
 
             <div class="logout-wrapper">
-                <a href="/">Logout</a>
+                <a href="logout.php">Logout</a>
                 <i class="fa fa-sign-out"></i>
             </div>
         </header>
@@ -82,29 +82,29 @@ if(!isset($_SESSION['loggedin'])){
 
                     <div class="submenu-claus">
                         <div>
-                        <form action="Subcategory.php" method="get">
-                            <button name="subcategory" value="chicken" class="submenu-text">Chicken</button>
-</form>
+                            <form action="Subcategory.php" method="get">
+                                <button name="subcategory" value="chicken" class="submenu-text">Chicken</button>
+                            </form>
                         </div>
                         <div>
-                        <form action="Subcategory.php" method="get">
-                            <button name="subcategory" value="beef" class="submenu-text">Beef</button>
-</form>
+                            <form action="Subcategory.php" method="get">
+                                <button name="subcategory" value="beef" class="submenu-text">Beef</button>
+                            </form>
                         </div>
                         <div>
-                        <form action="Subcategory.php" method="get">
-                            <button name="subcategory" value="duck" class="submenu-text">Duck</button>
-</form>
+                            <form action="Subcategory.php" method="get">
+                                <button name="subcategory" value="duck" class="submenu-text">Duck</button>
+                            </form>
                         </div>
                         <div>
-                        <form action="Subcategory.php" method="get">
-                            <button name="subcategory" value="turkey" class="submenu-text">Turkey</button>
-</form>
+                            <form action="Subcategory.php" method="get">
+                                <button name="subcategory" value="turkey" class="submenu-text">Turkey</button>
+                            </form>
                         </div>
                         <div>
-                        <form action="Subcategory.php" method="get">
-                            <button name="subcategory" value="pork" class="submenu-text">Pork</button>
-</form>
+                            <form action="Subcategory.php" method="get">
+                                <button name="subcategory" value="pork" class="submenu-text">Pork</button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -114,62 +114,62 @@ if(!isset($_SESSION['loggedin'])){
                     <img class="menu-image" src="Vegetarian.png" alt="vegetarian">
                 </div>
                 <form action="Subcategory.php" method="get">
-                <button name="subcategory" value="vegetarian" class="menu-text">Vegetarian products</button>
-</form>
+                    <button name="subcategory" value="vegetarian" class="menu-text">Vegetarian products</button>
+                </form>
             </div>
             <div class="menu-element">
                 <div>
                     <img class="menu-image" src="Peste.png" alt="peste">
                 </div>
                 <form action="Subcategory.php" method="get">
-                <button name="subcategory" value="fish" class="menu-text">Fish and Seafood</button>
-</form>
+                    <button name="subcategory" value="fish" class="menu-text">Fish and Seafood</button>
+                </form>
             </div>
             <div class="menu-element">
                 <div>
                     <img class="menu-image" src="Ciorba.png" alt="ciorba">
                 </div>
                 <form action="Subcategory.php" method="get">
-                <button name="subcategory" value="soups" class="menu-text">Soups</button>
-</form>
+                    <button name="subcategory" value="soups" class="menu-text">Soups</button>
+                </form>
             </div>
             <div class="menu-element">
                 <div>
                     <img class="menu-image" src="garnituri.png" alt="garnituri">
                 </div>
                 <form action="Subcategory.php" method="get">
-                <button name="subcategory" value="sides" class="menu-text">Sides</button>
-</form>
+                    <button name="subcategory" value="sides" class="menu-text">Sides</button>
+                </form>
             </div>
             <div class="menu-element">
                 <div>
                     <img class="menu-image" src="Salata.png" alt="salata">
                 </div>
                 <form action="Subcategory.php" method="get">
-                <button name="subcategory" value="salads" class="menu-text">Salads</button>
-</form>
+                    <button name="subcategory" value="salads" class="menu-text">Salads</button>
+                </form>
             </div>
             <div class="menu-element">
                 <div>
                     <img class="menu-image" src="Tort.png" alt="tort">
                 </div>
                 <form action="Subcategory.php" method="get">
-                <button name="subcategory" value="desserts" class="menu-text">Desserts</a>
-</form>
+                    <button name="subcategory" value="desserts" class="menu-text">Desserts</a>
+                </form>
             </div>
             <div class="header-links-wrapper">
-                <a href="#" class="header-link">
+                <a href="semafor.php" class="header-link">
                     <img src="persoana.png" alt="persoana">
                 </a>
-                <a href="#" class="header-link">
+                <a href="group.php" class="header-link">
                     <img src="grup.png" alt="grup">
                 </a>
-                <a href="#" class="header-link">
+                <a href="semafor_liste.php" class="header-link">
                     <img src="list.png" alt="list">
                 </a>
             </div>
             <div class="logout-wrapper">
-                <a href="/">Logout</a>
+                <a href="logout.php">Logout</a>
                 <i class="fa fa-sign-out"></i>
             </div>
         </div>
@@ -180,27 +180,44 @@ if(!isset($_SESSION['loggedin'])){
                 </h1>
                 <div class="section-4">
 
-                    <a href="adduser.html"><img alt="adduser" class="image" src="adduser.png" /></a>
-                    <a href="addproduct.html"><img alt="addproduct" class="image" src="addprod.png" /></a>
-                    <a href="addgroup.html"><img alt="addgroup" class="image" src="addgroup.png" /></a>
+                    <a href="adduser.php"><img alt="adduser" class="image" src="adduser.png" /></a>
+                    <a href="addproduct.php"><img alt="addproduct" class="image" src="addprod.png" /></a>
+                    <a href="addgroup.php"><img alt="addgroup" class="image" src="addgroup.png" /></a>
 
                     <div class="actions">
-                        <h1 class="title-csv">Exporting data</h1>
+                        <h1 class="title-csv">Exporting data in CSV</h1>
                         <div class="csv-buttons">
-                        <button type="submit" name="products_lists" value="1" onclick="showTable(this.value)">Top 10 products on Lists</button>
-                        <button type="submit" name="products_favorites" value="2" onclick="showTable(this.value)">Top 10 products on Favorites</button><br>
-                        <button type="submit" name="export_products" value="3" onclick="showTable(this.value)">Export products</button>
-                        <button type="submit" name="export_users" value="4" onclick="showTable(this.value)">Export users</button>
+                            <button type="submit" name="products_lists" value="1" onclick="showTable(this.value)">Top 10 products on Lists</button>
+                            <button type="submit" name="products_favorites" value="2" onclick="showTable(this.value)">Top 10 products on Favorites</button><br>
+                            <button type="submit" name="export_products" value="3" onclick="showTable(this.value)">Export products</button>
+                            <button type="submit" name="export_users" value="4" onclick="showTable(this.value)">Export users</button>
                         </div>
                         <div id="show-table"></div>
                         <h1 class="title-csv1">If you want to see the products added on a specific month you just need to type here the number of the month and then press the button below</h1>
+
+                            <form method="post">
+                                <div class="csv-buttons">
+                                    <input type="number" id="nr_month" name="nr_month" class="form7" min="1" max="12" maxlength="2" placeholder="Number of month" required="required"><br>
+                                    <button type="submit" name="csv_month" id="exp">Export</button> 
+                                </div>
+                            </form>
+
                         
-                        <form method="post">
-                            <div class="csv-buttons">
-                                <input type="text" id="nr_month" name="nr_month" class="form7" maxlength="2" placeholder="Number of month" required="required"><br>
-                                <button type="submit" name="csv_month" id="exp" value="CSV month">Export</button>
-                            </div>
+                        <h1 class="title-csv">Exporting data in PDF</h1>
+                        <div class="csv-buttons">
+                        <form action="statistics_pdf.php" method="post">
+                            <button type="submit" name="download_pdf_statistics" value="Download PDF Statistics">Download PDF statistics</button>
                         </form>
+
+                        </div>
+                        <h1 class="title-csv"> RSS </h1>
+                        <a href="RSS.php">
+                            <div class="csv-buttons">
+                                <button type="submit">See RSS </button>
+                            </div>
+                        </a>
+
+                        
 
                         <h1 class="title-csv">See messages</h1>
                         <?php if ($ok == 0) { ?>
@@ -214,6 +231,7 @@ if(!isset($_SESSION['loggedin'])){
                                         <th>Email</th>
                                         <th>Date</th>
                                         <th>Message</th>
+                                        <th>Subject</th>
                                     </tr>
                                     <?php for ($i = 0; $i < $count; $i = $i + 1) { ?>
 
@@ -224,6 +242,7 @@ if(!isset($_SESSION['loggedin'])){
                                             <td><?php echo $email[$i]; ?></td>
                                             <td><?php echo $date[$i]; ?></td>
                                             <td><?php echo $message[$i]; ?></td>
+                                            <td><?php echo $subject[$i]; ?></td>
                                         </tr>
                                     <?php }; ?>
                                 </table>
@@ -233,95 +252,95 @@ if(!isset($_SESSION['loggedin'])){
                 </div>
             </div>
             <div class="menu">
-            <div class="menu-element">
-                <div>
-                    <img class="menu-image" src="Pui.png" alt="pui">
-                </div>
-                <div class="submenu-claus-container">
-                    <a href="carne.asp" class="menu-text">Meat products</a>
+                <div class="menu-element">
+                    <div>
+                        <img class="menu-image" src="Pui.png" alt="pui">
+                    </div>
+                    <div class="submenu-claus-container">
+                        <a href="carne.asp" class="menu-text">Meat products</a>
 
-                    <div class="submenu-claus">
-                        <div>
-                        <form action="Subcategory.php" method="get">
-                            <button name="subcategory" value="chicken" class="submenu-text">Chicken</button>
-</form>
-                        </div>
-                        <div>
-                        <form action="Subcategory.php" method="get">
-                            <button name="subcategory" value="beef" class="submenu-text">Beef</button>
-</form>
-                        </div>
-                        <div>
-                        <form action="Subcategory.php" method="get">
-                            <button name="subcategory" value="duck" class="submenu-text">Duck</button>
-</form>
-                        </div>
-                        <div>
-                        <form action="Subcategory.php" method="get">
-                            <button name="subcategory" value="turkey" class="submenu-text">Turkey</button>
-</form>
-                        </div>
-                        <div>
-                        <form action="Subcategory.php" method="get">
-                            <button name="subcategory" value="pork" class="submenu-text">Pork</button>
-</form>
+                        <div class="submenu-claus">
+                            <div>
+                                <form action="Subcategory.php" method="get">
+                                    <button name="subcategory" value="chicken" class="submenu-text">Chicken</button>
+                                </form>
+                            </div>
+                            <div>
+                                <form action="Subcategory.php" method="get">
+                                    <button name="subcategory" value="beef" class="submenu-text">Beef</button>
+                                </form>
+                            </div>
+                            <div>
+                                <form action="Subcategory.php" method="get">
+                                    <button name="subcategory" value="duck" class="submenu-text">Duck</button>
+                                </form>
+                            </div>
+                            <div>
+                                <form action="Subcategory.php" method="get">
+                                    <button name="subcategory" value="turkey" class="submenu-text">Turkey</button>
+                                </form>
+                            </div>
+                            <div>
+                                <form action="Subcategory.php" method="get">
+                                    <button name="subcategory" value="pork" class="submenu-text">Pork</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="menu-element">
-                <div>
-                    <img class="menu-image" src="Vegetarian.png" alt="vegetarian">
+                <div class="menu-element">
+                    <div>
+                        <img class="menu-image" src="Vegetarian.png" alt="vegetarian">
+                    </div>
+                    <form action="Subcategory.php" method="get">
+                        <button name="subcategory" value="vegetarian" class="menu-text">Vegetarian products</button>
+                    </form>
                 </div>
-                <form action="Subcategory.php" method="get">
-                <button name="subcategory" value="vegetarian" class="menu-text">Vegetarian products</button>
-</form>
-            </div>
-            <div class="menu-element">
-                <div>
-                    <img class="menu-image" src="Peste.png" alt="peste">
+                <div class="menu-element">
+                    <div>
+                        <img class="menu-image" src="Peste.png" alt="peste">
+                    </div>
+                    <form action="Subcategory.php" method="get">
+                        <button name="subcategory" value="fish" class="menu-text">Fish and Seafood</button>
+                    </form>
                 </div>
-                <form action="Subcategory.php" method="get">
-                <button name="subcategory" value="fish" class="menu-text">Fish and Seafood</button>
-</form>
-            </div>
-            <div class="menu-element">
-                <div>
-                    <img class="menu-image" src="Ciorba.png" alt="ciorba">
+                <div class="menu-element">
+                    <div>
+                        <img class="menu-image" src="Ciorba.png" alt="ciorba">
+                    </div>
+                    <form action="Subcategory.php" method="get">
+                        <button name="subcategory" value="soups" class="menu-text">Soups</button>
+                    </form>
                 </div>
-                <form action="Subcategory.php" method="get">
-                <button name="subcategory" value="soups" class="menu-text">Soups</button>
-</form>
-            </div>
-            <div class="menu-element">
-                <div>
-                    <img class="menu-image" src="garnituri.png" alt="garnituri">
+                <div class="menu-element">
+                    <div>
+                        <img class="menu-image" src="garnituri.png" alt="garnituri">
+                    </div>
+                    <form action="Subcategory.php" method="get">
+                        <button name="subcategory" value="sides" class="menu-text">Sides</button>
+                    </form>
                 </div>
-                <form action="Subcategory.php" method="get">
-                <button name="subcategory" value="sides" class="menu-text">Sides</button>
-</form>
-            </div>
-            <div class="menu-element">
-                <div>
-                    <img class="menu-image" src="Salata.png" alt="salata">
+                <div class="menu-element">
+                    <div>
+                        <img class="menu-image" src="Salata.png" alt="salata">
+                    </div>
+                    <form action="Subcategory.php" method="get">
+                        <button name="subcategory" value="salads" class="menu-text">Salads</button>
+                    </form>
                 </div>
-                <form action="Subcategory.php" method="get">
-                <button name="subcategory" value="salads" class="menu-text">Salads</button>
-</form>
-            </div>
-            <div class="menu-element">
-                <div>
-                    <img class="menu-image" src="Tort.png" alt="tort">
+                <div class="menu-element">
+                    <div>
+                        <img class="menu-image" src="Tort.png" alt="tort">
+                    </div>
+                    <form action="Subcategory.php" method="get">
+                        <button name="subcategory" value="desserts" class="menu-text">Desserts</a>
+                    </form>
                 </div>
-                <form action="Subcategory.php" method="get">
-                <button name="subcategory" value="desserts" class="menu-text">Desserts</a>
-</form>
-            </div>
             </div>
         </div>
         <footer style="background-color:#381D2A">
             <div class="contact">
-                <a href="contact.html" target="_blank">Contact</a>
+                <a href="contact.php" target="_blank">Contact</a>
             </div>
         </footer>
     </div>
