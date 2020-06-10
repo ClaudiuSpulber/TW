@@ -769,3 +769,15 @@ width: 30%;
   }
   
 }
+
+
+@media all and (max-width: 500px){
+  .productButton{
+    font-size: 10px;
+   
+  }
+
+  .favoriteParagraph{
+    font-size: 16px;
+  }
+}
