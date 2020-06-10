@@ -128,6 +128,8 @@
   .submenu-text {
     color:rgb(255, 255, 255);
     text-decoration: none;
+    background-color: transparent;
+    border-color: #381D2A;
   }
   
   .menu-element{
@@ -147,6 +149,8 @@
     padding-top:5px;
     text-decoration: none;
     display: none;
+    background-color: transparent;
+    border-color: #381D2A;
   }
   .menu:hover .menu-text{
     display: initial;

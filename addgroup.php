@@ -52,7 +52,7 @@ if (isset($_POST["addgrup"])) {
             </div>
 
             <div class="logout-wrapper">
-                <a href="/">Logout</a>
+                <a href="logout.php">Logout</a>
                 <i class="fa fa-sign-out"></i>
             </div>
         </header>
@@ -167,18 +167,18 @@ if (isset($_POST["addgrup"])) {
 </form>
             </div>
             <div class="header-links-wrapper">
-                <a href="#" class="header-link">
+                <a href="semafor.php" class="header-link">
                     <img src="persoana.png" alt="persoana">
                 </a>
-                <a href="#" class="header-link">
+                <a href="group.php" class="header-link">
                     <img src="grup.png" alt="grup">
                 </a>
-                <a href="#" class="header-link">
+                <a href="semafor_liste.php" class="header-link">
                     <img src="list.png" alt="list">
                 </a>
             </div>
             <div class="logout-wrapper">
-                <a href="/">Logout</a>
+                <a href="logout.php">Logout</a>
                 <i class="fa fa-sign-out"></i>
             </div>
         </div>
@@ -288,7 +288,7 @@ if (isset($_POST["addgrup"])) {
 
     <footer style="background-color:#381D2A">
             <div class="contact">
-                <a href="contact.html" target="_blank">Contact</a>
+                <a href="contact.php" target="_blank">Contact</a>
             </div>
         </footer>
 

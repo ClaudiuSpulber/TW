@@ -195,19 +195,19 @@ if (!isset($_SESSION['loggedin'])) {
                         <div id="show-table"></div>
                         <h1 class="title-csv1">If you want to see the products added on a specific month you just need to type here the number of the month and then press the button below</h1>
 
-                            <form method="post">
-                                <div class="csv-buttons">
-                                    <input type="number" id="nr_month" name="nr_month" class="form7" min="1" max="12" maxlength="2" placeholder="Number of month" required="required"><br>
-                                    <button type="submit" name="csv_month" id="exp">Export</button> 
-                                </div>
-                            </form>
+                        <form method="post">
+                            <div class="csv-buttons">
+                                <input type="number" id="nr_month" name="nr_month" class="form7" min="1" max="12" maxlength="2" placeholder="Number of month" required="required"><br>
+                                <button type="submit" name="csv_month" id="exp">Export</button>
+                            </div>
+                        </form>
 
-                        
+
                         <h1 class="title-csv">Exporting data in PDF</h1>
                         <div class="csv-buttons">
-                        <form action="statistics_pdf.php" method="post">
-                            <button type="submit" name="download_pdf_statistics" value="Download PDF Statistics">Download PDF statistics</button>
-                        </form>
+                            <form action="statistics_pdf.php" method="post">
+                                <button type="submit" name="download_pdf_statistics" value="Download PDF Statistics">Download PDF statistics</button>
+                            </form>
 
                         </div>
                         <h1 class="title-csv"> RSS </h1>
@@ -217,7 +217,7 @@ if (!isset($_SESSION['loggedin'])) {
                             </div>
                         </a>
 
-                        
+
 
                         <h1 class="title-csv">See messages</h1>
                         <?php if ($ok == 0) { ?>
@@ -232,6 +232,7 @@ if (!isset($_SESSION['loggedin'])) {
                                         <th>Date</th>
                                         <th>Message</th>
                                         <th>Subject</th>
+                                        <th>Delete</th>
                                     </tr>
                                     <?php for ($i = 0; $i < $count; $i = $i + 1) { ?>
 
@@ -243,6 +244,13 @@ if (!isset($_SESSION['loggedin'])) {
                                             <td><?php echo $date[$i]; ?></td>
                                             <td><?php echo $message[$i]; ?></td>
                                             <td><?php echo $subject[$i]; ?></td>
+                                            <td>
+                                                <form method="post" class="stergeremsg" action="administrator.php">
+
+                                                    <input type="hidden" name="mesaj" value="<?php echo $idmesaj[$i]; ?>">
+                                                    <button id="stergeremsg" type="submit" name="stergeremsg">Delete</button>
+                                                </form>
+                                            </td>
                                         </tr>
                                     <?php }; ?>
                                 </table>

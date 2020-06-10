@@ -136,7 +136,7 @@ if (isset($_POST['delete_product'])) {
             </div>
 
             <div class="logout-wrapper">
-                <a href="/">Logout</a>
+                <a href="logout.php">Logout</a>
                 <i class="fa fa-sign-out"></i>
             </div>
         </header>
@@ -251,18 +251,18 @@ if (isset($_POST['delete_product'])) {
 </form>
             </div>
             <div class="header-links-wrapper">
-                <a href="#" class="header-link">
+                <a href="semafor.php" class="header-link">
                     <img src="persoana.png" alt="persoana">
                 </a>
-                <a href="#" class="header-link">
+                <a href="group.php" class="header-link">
                     <img src="grup.png" alt="grup">
                 </a>
-                <a href="#" class="header-link">
+                <a href="semafor_liste.php" class="header-link">
                     <img src="list.png" alt="list">
                 </a>
             </div>
             <div class="logout-wrapper">
-                <a href="/">Logout</a>
+                <a href="logout.php">Logout</a>
                 <i class="fa fa-sign-out"></i>
             </div>
         </div>
@@ -290,7 +290,7 @@ if (isset($_POST['delete_product'])) {
                 <form method="post" id="formular" action="addproduct.php" enctype="multipart/form-data">
                     <input type="text" id="productname" class="form5" maxlength="255" placeholder="Product name"
                         required="required" name="product_name"><br>
-                    <input type="text" id="description" class="form5" maxlength="255" placeholder="Product description"
+                    <input type="text" id="description" class="form5" maxlength="200" placeholder="Product description"
                         required="required" name="description"><br>
                     <input type="text" id="price" class="form5" maxlength="255" placeholder="Product price"
                         required="required" name="price"><br>
@@ -416,7 +416,7 @@ if (isset($_POST['delete_product'])) {
     </div>
     <footer style="background-color:#381D2A">
             <div class="contact">
-                <a href="contact.html" target="_blank">Contact</a>
+                <a href="contact.php" target="_blank">Contact</a>
             </div>
         </footer>
 

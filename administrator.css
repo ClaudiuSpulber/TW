@@ -127,6 +127,8 @@ padding: 0;
 .submenu-text {
   color:rgb(255, 255, 255);
   text-decoration: none;
+  background-color: transparent;
+  border-color: #381D2A;
 }
 
 .menu-element{
@@ -146,6 +148,8 @@ display: flex;
   padding-top:5px;
   text-decoration: none;
   display: none;
+  background-color: transparent;
+  border-color: #381D2A;
 }
 .menu:hover .menu-text{
   display: initial;
@@ -229,7 +233,18 @@ footer{
     background-color: #381D2A;
     color: white;
   }
+
+  .stergeremsg button{
+    background-color: grey;
+    color: black;
+    border-radius: 6px;
+    margin: 0 auto;
+  }
   
+  .stergeremsg button:hover{
+    background-color: #381D2A;
+    color: white;
+  }
   h1.title-csv1{
     font-size: 1em;
     text-align: center;
@@ -455,7 +470,7 @@ footer{
      }
  }   
 
-  @media all and (max-width: 550px){
+  @media all and (max-width: 900px){
 
     h1.product-title{
       font-size: 1.2em;
