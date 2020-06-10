@@ -1,4 +1,7 @@
 <?php session_start();
+if (!isset($_SESSION['loggedin'])) {
+    header('Location: welcome.php', true, 307);
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,7 +18,7 @@
         <header class="header-web">
             <div class="logo-wrapper">
                 <a href="principal.php">
-                <img class="logo" src="logo.jpg"></a>
+                    <img class="logo" src="logo.jpg"></a>
             </div>
             <div class="search-wrapper">
                 <form class="search" action="cautare.php">
@@ -28,7 +31,6 @@
                     <img src="persoana.png">
                 </a>
                 <a href="group.php" class="header-link">
-            
                     <img src="grup.png">
                 </a>
                 <a href="semafor_liste.php" class="header-link">
@@ -67,102 +69,102 @@
                 </div>
             </div>
             <div class="menu-element">
-                    <div>
-                        <img class="menu-image" src="Pui.png">
-                    </div>
-                    <div class="submenu-claus-container">
-                        <p>Meat products</p>
+                <div>
+                    <img class="menu-image" src="Pui.png">
+                </div>
+                <div class="submenu-claus-container">
+                    <a href="carne.asp" class="menu-text">Meat products</a>
 
-                        <div class="submenu-claus">
-                            <div>
+                    <div class="submenu-claus">
+                        <div>
                             <form action="Subcategory.php" method="get">
                                 <button class="submenu-text" name="subcategory" value="chicken">Chicken</button>
                             </form>
-                            </div>
-                            <div>
+                        </div>
+                        <div>
                             <form action="Subcategory.php" method="get">
                                 <button name="subcategory" value="beef" class="submenu-text">Beef</button>
-                            </form> 
-                            </div>
-                            <div>
+                            </form>
+                        </div>
+                        <div>
                             <form action="Subcategory.php" method="get">
                                 <button name="subcategory" value="duck" class="submenu-text">Duck</button>
                             </form>
-                            </div>
-                            <div>
-                                <form action="Subcategory.php" method="get">
+                        </div>
+                        <div>
+                            <form action="Subcategory.php" method="get">
                                 <button name="subcategory" value="turkey" class="submenu-text">Turkey</button>
                             </form>
-                            </div>
-                            <div>
+                        </div>
+                        <div>
                             <form action="Subcategory.php" method="get">
                                 <button name="subcategory" value="pork" class="submenu-text">Pork</button>
                             </form>
-                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="menu-element">
-                    <div>
-                        <img class="menu-image" src="Vegetarian.png">
-                    </div>
-                    <form action="Subcategory.php" method="get">
+            </div>
+            <div class="menu-element">
+                <div>
+                    <img class="menu-image" src="Vegetarian.png">
+                </div>
+                <form action="Subcategory.php" method="get">
                     <button name="subcategory" value="vegetarian" class="menu-text">Vegetarian products</button>
-</form>
+                </form>
+            </div>
+            <div class="menu-element">
+                <div>
+                    <img class="menu-image" src="Peste.png">
                 </div>
-                <div class="menu-element">
-                    <div>
-                        <img class="menu-image" src="Peste.png">
-                    </div>
-                    <form action="Subcategory.php" method="get">
+                <form action="Subcategory.php" method="get">
                     <button name="subcategory" value="fish" class="menu-text">Fish and Seafood</button>
-                    </form>
+                </form>
+            </div>
+            <div class="menu-element">
+                <div>
+                    <img class="menu-image" src="Ciorba.png">
                 </div>
-                <div class="menu-element">
-                    <div>
-                        <img class="menu-image" src="Ciorba.png">
-                    </div>
-                    <form action="Subcategory.php" method="get">
+                <form action="Subcategory.php" method="get">
                     <button name="subcategory" value="soups" class="menu-text">Soups</button>
-</form>
+                </form>
+            </div>
+            <div class="menu-element">
+                <div>
+                    <img class="menu-image" src="garnituri.png">
                 </div>
-                <div class="menu-element">
-                    <div>
-                        <img class="menu-image" src="garnituri.png">
-                    </div>
-                    <form action="Subcategory.php" method="get">
+                <form action="Subcategory.php" method="get">
                     <button name="subcategory" value="sides" class="menu-text">Sides</button>
-                    </form>
+                </form>
+            </div>
+            <div class="menu-element">
+                <div>
+                    <img class="menu-image" src="Salata.png">
                 </div>
-                <div class="menu-element">
-                    <div>
-                        <img class="menu-image" src="Salata.png">
-                    </div>
-                    <form action="Subcategory.php" method="get">
+                <form action="Subcategory.php" method="get">
                     <button name="subcategory" value="salads" class="menu-text">Salads</button>
-                    </form>
+                </form>
+            </div>
+            <div class="menu-element">
+                <div>
+                    <img class="menu-image" src="Tort.png">
                 </div>
-                <div class="menu-element">
-                    <div>
-                        <img class="menu-image" src="Tort.png">
-                    </div>
-                    <form action="Subcategory.php" method="get">
+                <form action="Subcategory.php" method="get">
                     <button name="subcategory" value="desserts" class="menu-text">Dessert</button>
-</form>
-                </div>
+                </form>
+            </div>
             <div class="header-links-wrapper">
-                <a href="#" class="header-link">
+                <a href="semafor.php" class="header-link">
                     <img src="persoana.png">
                 </a>
-                <a href="#" class="header-link">
+                <a href="group.php" class="header-link">
                     <img src="grup.png">
                 </a>
-                <a href="#" class="header-link">
+                <a href="semafor_liste.php" class="header-link">
                     <img src="list.png">
                 </a>
             </div>
             <div class="logout-wrapper">
-                <a href="/">Logout</a>
+                <a href="logout.php">Logout</a>
                 <i class="fa fa-sign-out"></i>
             </div>
         </div>
@@ -180,7 +182,7 @@
                     large group of friends which all have access to that list and they can also add or remove items
                     from the list.
                     <a href="logout.php">Inchide</a>
-                
+
                 </span>
             </div>
             <div class="menu">
@@ -189,33 +191,33 @@
                         <img class="menu-image" src="Pui.png">
                     </div>
                     <div class="submenu-claus-container">
-                        <p class="menu-text">Meat products</p>
+                        <a href="carne.asp" class="menu-text">Meat products</a>
 
                         <div class="submenu-claus">
                             <div>
-                            <form action="Subcategory.php" method="get">
-                                <button class="submenu-text" name="subcategory" value="chicken">Chicken</button>
-                            </form>
-                            </div>
-                            <div>
-                            <form action="Subcategory.php" method="get">
-                                <button name="subcategory" value="beef" class="submenu-text">Beef</button>
-                            </form> 
-                            </div>
-                            <div>
-                            <form action="Subcategory.php" method="get">
-                                <button name="subcategory" value="duck" class="submenu-text">Duck</button>
-                            </form>
+                                <form action="Subcategory.php" method="get">
+                                    <button class="submenu-text" name="subcategory" value="chicken">Chicken</button>
+                                </form>
                             </div>
                             <div>
                                 <form action="Subcategory.php" method="get">
-                                <button name="subcategory" value="turkey" class="submenu-text">Turkey</button>
-                            </form>
+                                    <button name="subcategory" value="beef" class="submenu-text">Beef</button>
+                                </form>
                             </div>
                             <div>
-                            <form action="Subcategory.php" method="get">
-                                <button name="subcategory" value="pork" class="submenu-text">Pork</button>
-                            </form>
+                                <form action="Subcategory.php" method="get">
+                                    <button name="subcategory" value="duck" class="submenu-text">Duck</button>
+                                </form>
+                            </div>
+                            <div>
+                                <form action="Subcategory.php" method="get">
+                                    <button name="subcategory" value="turkey" class="submenu-text">Turkey</button>
+                                </form>
+                            </div>
+                            <div>
+                                <form action="Subcategory.php" method="get">
+                                    <button name="subcategory" value="pork" class="submenu-text">Pork</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -225,15 +227,15 @@
                         <img class="menu-image" src="Vegetarian.png">
                     </div>
                     <form action="Subcategory.php" method="get">
-                    <button name="subcategory" value="vegetarian" class="menu-text">Vegetarian products</button>
-</form>
+                        <button name="subcategory" value="vegetarian" class="menu-text">Vegetarian products</button>
+                    </form>
                 </div>
                 <div class="menu-element">
                     <div>
                         <img class="menu-image" src="Peste.png">
                     </div>
                     <form action="Subcategory.php" method="get">
-                    <button name="subcategory" value="fish" class="menu-text">Fish and Seafood</button>
+                        <button name="subcategory" value="fish" class="menu-text">Fish and Seafood</button>
                     </form>
                 </div>
                 <div class="menu-element">
@@ -241,15 +243,15 @@
                         <img class="menu-image" src="Ciorba.png">
                     </div>
                     <form action="Subcategory.php" method="get">
-                    <button name="subcategory" value="soups" class="menu-text">Soups</button>
-</form>
+                        <button name="subcategory" value="soups" class="menu-text">Soups</button>
+                    </form>
                 </div>
                 <div class="menu-element">
                     <div>
                         <img class="menu-image" src="garnituri.png">
                     </div>
                     <form action="Subcategory.php" method="get">
-                    <button name="subcategory" value="sides" class="menu-text">Sides</button>
+                        <button name="subcategory" value="sides" class="menu-text">Sides</button>
                     </form>
                 </div>
                 <div class="menu-element">
@@ -257,7 +259,7 @@
                         <img class="menu-image" src="Salata.png">
                     </div>
                     <form action="Subcategory.php" method="get">
-                    <button name="subcategory" value="salads" class="menu-text">Salads</button>
+                        <button name="subcategory" value="salads" class="menu-text">Salads</button>
                     </form>
                 </div>
                 <div class="menu-element">
@@ -265,8 +267,8 @@
                         <img class="menu-image" src="Tort.png">
                     </div>
                     <form action="Subcategory.php" method="get">
-                    <button name="subcategory" value="desserts" class="menu-text">Dessert</button>
-</form>
+                        <button name="subcategory" value="desserts" class="menu-text">Dessert</button>
+                    </form>
                 </div>
             </div>
         </div>
