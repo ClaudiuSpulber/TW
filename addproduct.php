@@ -1,4 +1,5 @@
-<?php include('server.php') ?>
+<?php include('server.php');
+ ?>
 <?php
 
 $target_dir = getcwd().'\\Images\\';
@@ -18,7 +19,7 @@ if (isset($_POST['add_new_product'])) {
     $ingredients =  $_POST['ingredients'];
     $allergens =  $_POST['allergens'];
     $perishable =  $_POST['perishable'];
-    $restaurants =  $_POST['restaurants'];
+    $locations =  $_POST['locations'];
     $season =  $_POST['season'];
     $product_date =  $_POST['product_date'];
 
@@ -68,7 +69,7 @@ if (isset($_POST['add_new_product'])) {
 		}
     }
 
-    $insert = $dbh->prepare("INSERT INTO products(product_name, `description`, price, category, ingredients, allergens, perishable, locations, season, product_date, file_path) VALUES(?,?,?,?,?,?,?,?,?,?,?)");
+    $insert = $dbh->prepare("INSERT INTO products (product_name, description, price, category, ingredients, allergens, perishable, locations, season, product_date, file_path) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
     $insert->bindParam(1, $product_name);
     $insert->bindParam(2, $description);
     $insert->bindParam(3, $price);
@@ -76,15 +77,15 @@ if (isset($_POST['add_new_product'])) {
     $insert->bindParam(5, $ingredients);
     $insert->bindParam(6, $allergens);
     $insert->bindParam(7, $perishable);
-    $insert->bindParam(8, $restaurants);
+    $insert->bindParam(8, $locations);
     $insert->bindParam(9, $season);
     $insert->bindParam(10, $product_date);
     $insert->bindParam(11, $target_file);
 	if ($insert->execute()) {
-		echo ("succes");
-	} else {
-		echo("cant insert");
-	}
+	//	echo ("succes");
+	} //else {
+      //  echo("cant insert");      
+	//}
 }
 
 if (isset($_POST['delete_product'])) {
@@ -92,15 +93,15 @@ if (isset($_POST['delete_product'])) {
 	$delete = $dbh->prepare("DELETE FROM products WHERE product_name=?");
 	$delete->bindParam(1, $productname2);
 	if ($delete->execute()) {
-		echo ("succes");
-	} else {
-		echo("cant delete");
-	}
+		//echo ("succes");
+	}// else {
+		//echo("cant delete");
+	//}
 }
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -302,14 +303,12 @@ if (isset($_POST['delete_product'])) {
                         required="required" name="allergens"><br>
 					<input type="text" id="perishable" class="form5" maxlength="255" placeholder="Perishable"
                         required="required" name="perishable"><br>
-                    <input type="text" id="restaurants" class="form5" maxlength="255"
-                        placeholder="Restaurant where you find" required="required" name="restaurants"><br>
+                    <input type="text" id="locations" class="form5" maxlength="255"
+                        placeholder="Restaurant where you find" required="required" name="locations"><br>
                     <input type="text" id="season" class="form5" maxlength="255" placeholder="Season"
                         required="required" name="season"><br>
-					<input type="text" id="product_date" class="form5" maxlength="255" placeholder="Product Date"
+					<input type="date" id="product_date" class="form5" maxlength="255" placeholder="Product Date"
                         required="required" name="product_date"><br>
-
-					  
                     <input type="file" class="form5" name="productFile" id="productFile">
                     <div class="add-button">
                         <button type="submit" name="add_new_product">Add product</button>
@@ -416,7 +415,7 @@ if (isset($_POST['delete_product'])) {
     </div>
     <footer style="background-color:#381D2A">
             <div class="contact">
-                <a href="contact.php" target="_blank">Contact</a>
+                <a href="semafor-contact.php">Contact</a>
             </div>
         </footer>
 

@@ -10,14 +10,14 @@ if (isset($_GET['id'])) {
 
         if ($count > 0) {
             while ($row = mysqli_fetch_array($sql2)) {
-                $allergies = $row['allergies'];
+                $allergies = strtolower($row['allergies']);
             }
         }
 
         $allergies_list = array();
         $x = explode(',', $allergies);
         for ($a = 0; $a < sizeof($x); $a++) {
-            $allergies_list[$a] = $x[$a];
+            $allergies_list[$a] = strtolower($x[$a]);
         }
 
         $id = (int) $_GET['id'];
@@ -37,6 +37,7 @@ if (isset($_GET['id'])) {
                 $category = $row["category"];
                 $ingredients = $row["ingredients"];
                 $allergens = $row["allergens"];
+                $allergens2 = strtolower($row["allergens"]);
                 $perishable = $row["perishable"];
                 $locations = $row["locations"];
                 $season = $row["season"];
@@ -51,7 +52,7 @@ if (isset($_GET['id'])) {
       
         if($allergies){       
         for ($i = 0; $i < sizeof($allergies_list); $i++) {
-            if (strpos($allergens, $allergies_list[$i]) !== false) {
+            if (strpos($allergens2, $allergies_list[$i]) !== false) {
                 $atentie = 1;
             }
         }

@@ -2,21 +2,19 @@
 <?php
 if (isset($_POST["addgrup"])) {
 	$group_name = $_POST["groupname"]; 
-	$desc = $_POST["description"];
 	
-    $insert = $dbh->prepare("INSERT INTO groups(group_name, group_description) VALUES (?, ?)");
+    $insert = $dbh->prepare("INSERT INTO groups(name) VALUES (?)");
 	$insert->bindParam(1, $group_name);
-	$insert->bindParam(2, $desc);
 	if ($insert->execute()) {
-		echo ("succes");
+		//echo ("succes");
 	} else {
-		echo("cant insert");
+		//echo("cant insert");
 	}
 }
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -190,8 +188,6 @@ if (isset($_POST["addgrup"])) {
             <form method="post">
                 <input type="text" id="groupname" class="form6" maxlength="255" placeholder="Group name"
                     required="required" name="groupname"><br>
-                <input type="text" id="description" class="form6" maxlength="255" placeholder="Group description"
-                    required="required" name="description"><br>
                 <div class="add-button">
                     <button type="submit" name="addgrup" id="addgrup">Add group</button>
                 </div>
@@ -288,7 +284,7 @@ if (isset($_POST["addgrup"])) {
 
     <footer style="background-color:#381D2A">
             <div class="contact">
-                <a href="contact.php" target="_blank">Contact</a>
+                <a href="semafor-contact.php">Contact</a>
             </div>
         </footer>
 

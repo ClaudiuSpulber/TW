@@ -3,10 +3,10 @@
 /* DIANA */
 if (isset($_POST['add_new_admin'])) {
     $full_name =  $_POST['full_name'];
-    $email = $_POST['email'];
-    $phone_number =  $_POST['phone_number'];
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $email = $_POST['email1'];
+    $phone_number =  $_POST['phone_number1'];
+    $username = $_POST['username1'];
+    $password = $_POST['password1'];
     $isadmin = 1;
 
     $user_check_query = $dbh->prepare("SELECT * FROM users WHERE username= ? OR email= ? LIMIT 1");
@@ -98,7 +98,7 @@ if (isset($_POST['delete_user'])) {
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -311,16 +311,16 @@ if (isset($_POST['delete_user'])) {
         </form>
         <h1 class="product-title">Add an administrator account</h1>
         <form method="post" action="adduser.php">
-                <input type="text" id="fullname" class="form5" maxlength="255" placeholder="Full name"
+                <input type="text" id="fullname1" class="form5" maxlength="255" placeholder="Full name"
                     required="required" name="full_name"><br>
-                <input type="text" id="email" class="form5" maxlength="255" placeholder="E-mail"
-                    required="required" name="email"><br>
-                <input type="text" id="phonenumber" class="form5" maxlength="255" placeholder="Phone number"
-                    required="required" name="phone_number"><br>
-                <input type="text" id="username" class="form5" maxlength="255" placeholder="Username"
-                    required="required" name="username"><br> 
-                <input type="password" id="password" class="form5" maxlength="255"
-                    placeholder="Password" required="required" name="password">
+                <input type="text" id="email1" class="form5" maxlength="255" placeholder="E-mail"
+                    required="required" name="email1"><br>
+                <input type="text" id="phonenumber1" class="form5" maxlength="255" placeholder="Phone number"
+                    required="required" name="phone_number1"><br>
+                <input type="text" id="username1" class="form5" maxlength="255" placeholder="Username"
+                    required="required" name="username1"><br> 
+                <input type="password" id="password1" class="form5" maxlength="255"
+                    placeholder="Password" required="required" name="password1">
             <div class="add-button">
                 <button type="submit" name="add_new_admin">Add an administrator account</button>
             </div>
@@ -425,7 +425,7 @@ if (isset($_POST['delete_user'])) {
     </div>
     <footer style="background-color:#381D2A">
             <div class="contact">
-                <a href="contact.php" target="_blank">Contact</a>
+                <a href="semafor-contact.php">Contact</a>
             </div>
         </footer>
 

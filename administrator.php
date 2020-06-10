@@ -211,11 +211,12 @@ if (!isset($_SESSION['loggedin'])) {
 
                         </div>
                         <h1 class="title-csv"> RSS </h1>
-                        <a href="RSS.php">
+                       
                             <div class="csv-buttons">
-                                <button type="submit">See RSS </button>
+                                <form action="RSS.php" method="post">
+                                <button type="submit">See RSS </button></form>
                             </div>
-                        </a>
+                      
 
 
 
@@ -348,7 +349,7 @@ if (!isset($_SESSION['loggedin'])) {
         </div>
         <footer style="background-color:#381D2A">
             <div class="contact">
-                <a href="contact.php" target="_blank">Contact</a>
+                <a href="semafor-contact.php">Contact</a>
             </div>
         </footer>
     </div>

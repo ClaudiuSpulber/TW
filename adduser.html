@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -12,7 +12,8 @@
     <div class="page-wrapper">
         <header class="header-web">
             <div class="logo-wrapper">
-                <img class="logo" src="logo.jpg" alt="Logo">
+                <a href="principal.php">
+                <img class="logo" src="logo.jpg" alt="Logo"></a>
             </div>
             <div class="search-wrapper">
                 <form class="search" action="cautare.php">
@@ -21,19 +22,19 @@
                 </form>
             </div>
             <div class="header-links-wrapper">
-                <a href="#" class="header-link">
+                <a href="semafor.php" class="header-link">
                     <img src="persoana.png" alt="persoana">
                 </a>
-                <a href="#" class="header-link">
+                <a href="group.php" class="header-link">
                     <img src="grup.png" alt="grup">
                 </a>
-                <a href="#" class="header-link">
+                <a href="semafor_liste.php" class="header-link">
                     <img src="list.png" alt="list">
                 </a>
             </div>
 
             <div class="logout-wrapper">
-                <a href="/">Logout</a>
+                <a href="logout.php">Logout</a>
                 <i class="fa fa-sign-out"></i>
             </div>
         </header>
@@ -42,7 +43,8 @@
                 <i class="fa fa-bars"></i>
             </div>
             <div class="logo-mobile">
-                <img class="logo" src="logo.jpg" alt="logo">
+                <a href="principal.php">
+                <img class="logo" src="logo.jpg" alt="logo"></a>
             </div>
         </div>
         <div class="subheader-mobile">
@@ -126,22 +128,22 @@
                 <a href="desert.asp" class="menu-text">Dessert</a>
             </div>
             <div class="header-links-wrapper">
-                <a href="#" class="header-link">
+                <a href="semafor.php" class="header-link">
                     <img src="persoana.png" alt="persoana">
                 </a>
-                <a href="#" class="header-link">
+                <a href="group.php" class="header-link">
                     <img src="grup.png" alt="grup">
                 </a>
-                <a href="#" class="header-link">
+                <a href="semafor_liste.php" class="header-link">
                     <img src="list.png" alt="list">
                 </a>
             </div>
             <div class="logout-wrapper">
-                <a href="/">Logout</a>
+                <a href="logout.php">Logout</a>
                 <i class="fa fa-sign-out"></i>
             </div>
         </div>
-        <div class="content">
+        <div class="content2">
             <div class="container">
                 <h1 class="product-title">
                     Add an user account
@@ -182,6 +184,22 @@
                     <div class="add-button">
                         <button type="button">Add an user
                             account</button>
+                    </div>
+                </form>
+                <h1 class="product-title">Add an administrator account</h1>
+                <form method="post" action="adduser.php">
+                        <input type="text" id="fullname1" class="form5" maxlength="255" placeholder="Full name"
+                            required="required" name="full_name"><br>
+                        <input type="text" id="email1" class="form5" maxlength="255" placeholder="E-mail"
+                            required="required" name="email"><br>
+                        <input type="text" id="phonenumber1" class="form5" maxlength="255" placeholder="Phone number"
+                            required="required" name="phone_number"><br>
+                        <input type="text" id="username1" class="form5" maxlength="255" placeholder="Username"
+                            required="required" name="username"><br> 
+                        <input type="password" id="password1" class="form5" maxlength="255"
+                            placeholder="Password" required="required" name="password">
+                    <div class="add-button">
+                        <button type="submit" name="add_new_admin">Add an administrator account</button>
                     </div>
                 </form>
                 <h1 class="product-title">

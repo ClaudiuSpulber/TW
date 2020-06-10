@@ -337,7 +337,7 @@
          </div>
          <footer style="background-color:#381D2A">
             <div class="contact">
-                <a href="contact.php" target="_blank">Contact</a>
+                <a href="semafor-contact.php">Contact</a>
             </div>
         </footer>
 
