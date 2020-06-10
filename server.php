@@ -31,15 +31,17 @@ if (isset($_POST['register_user'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $okallergens = $_POST['allergies'];
+
     if($okallergens){
-    $allergies = implode(",", $okallergens); //dintr-un vector am facut un string cu virgula intre ele EXPLODE
+    $allergies = implode(",", $okallergens); //array to string
     }
+    
     $user_check_query = $dbh->prepare("SELECT * FROM users WHERE username= ? OR email= ? LIMIT 1");
-    $user_check_query->bindParam(1, $username);
+    $user_check_query->bindParam(1, $username);//seteaza parametrii
     $user_check_query->bindParam(2, $email);
 
     if ($user_check_query->execute()) {
-        while ($row = $user_check_query->fetch()) {
+        while ($row = $user_check_query->fetch()) {//fetches the next row from result
             if ($row['username'] === $username) {
                 array_push($errors, "Username already exists");
                 $userok = 1;
@@ -62,19 +64,26 @@ if (isset($_POST['register_user'])) {
         if ($insert->execute()) {
             echo ("succes");
             $_SESSION['username'] = $username;
-            $_SESSION['id'] = $raw['id'];
+            //$_SESSION['id'] = $row['id'];
             $_SESSION['loggedin']=true;
             $_SESSION['admin']=false;
             
-           header('Location: principal.php', true, 307);
+           header('Location: principal.php', true, 307);//temporary redirect
         } else {
             array_push($errors, "cant insert");
+        }
+        $sql=$dbh->prepare("SELECT * from users where username = ?");
+        $sql->bindParam(1,$_SESSION['username']);
+        if($sql->execute()){
+            while($row=$sql->fetch()){
+                $_SESSION['id']=$row['id'];
+            }
         }
     }
 }
 //LOGIN
 
-$logok = 0;
+$logok = 0;//valoare true sau false pentru mesaj
 if (isset($_POST['login_user'])) {
 
     $username = $_POST['username'];
@@ -98,12 +107,15 @@ if (isset($_POST['login_user'])) {
                 $_SESSION['username'] = $username;
                 $_SESSION['id'] = $raw['id'];
                 $_SESSION['loggedin']=true;
+
                 if($raw['isadmin']==1){
                 $_SESSION['admin']=true;
                 }else{
                     $_SESSION['admin']=false;
                 }
+
                 header('Location: principal.php', true, 307); //cod de raspuns 
+
             } else {
                 array_push($errors, "Wrong username/password");
                 $logok = 1;
