@@ -600,7 +600,8 @@ width: 30%;
 }
 
 .productButton{
-  background-color: cyan;
+  background-color: #381D2A;
+  color: white;
   border: none;
   border-radius: 8px;
   font-size: 16px;

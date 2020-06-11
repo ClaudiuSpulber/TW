@@ -1,6 +1,6 @@
 <?php  include "server.php"; ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<title>Subcategory</title>
@@ -250,9 +250,9 @@
                 <img src="Images/'.$file.'.jpg" alt="'.$row2[1].'">
                 <div class="buttons">
                 <form action="productPage.php" method="get">
-                  <button class="productButton" type="submit" name = "id" value = '.$row2[0].' method = "get">View Product</button></form>                  
+                  <button class="productButton" type="submit" name = "id" value = '.$row2[0].'>View Product</button></form>                  
                   <button class="productButton" type="submit" name = "favorite" value = '.$row2[0].' onclick="favorite('.$row2[0].','.$userId.')">'.$fButton.'</button>
-                  <button class="productButton" type="submit" name = "list" value = '.$row2[0].' onclick="list('.$row2[0].','.$userId.')">'.$lButton.'</button>
+                  <button class="productButton" type="submit" name = "list" value = '.$row2[0].' onclick="list('.$row2[0].','.$userId.')">'.$lButton.'</button></div>
               </li>
                 ';
                 $k = $k+1;
@@ -328,7 +328,7 @@
     <div class="menu">
                 <div class="menu-element">
                     <div>
-                        <img class="menu-image" src="Pui.png">
+                        <img class="menu-image" src="Pui.png" alt="pui">
                     </div>
                     <div class="submenu-claus-container">
                         <p class="menu-text">Meat products</p>
@@ -411,18 +411,14 @@
 </form>
                 </div>
             </div>
-        </div>
-        </div>
-      </div>
-        </div>
-        </div>
+     
                   </div>
                   <footer style="background-color:#381D2A">
             <div class="contact">
                 <a href="contact.php">Contact</a>
             </div>
         </footer>
-    </div>
+   
     <script src="./principal.js"></script>
 
 		</body>

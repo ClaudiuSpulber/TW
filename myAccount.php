@@ -1,6 +1,6 @@
 <?php include "server.php"; ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<title>My Account</title>
@@ -11,7 +11,7 @@
    <header class="header-web">
             <div class="logo-wrapper">
                 <a href="principal.php">
-                <img class="logo" src="logo.jpg">
+                <img class="logo" src="logo.jpg" alt="logo">
 </a>
             </div>
             <div class="search-wrapper">
@@ -22,13 +22,13 @@
             </div>
             <div class="header-links-wrapper">
                 <a href="semafor.php" class="header-link">
-                    <img src="persoana.png">
+                    <img src="persoana.png" alt="persoana">
                 </a>
                 <a href="Group.php" class="header-link">
-                    <img src="grup.png">
+                    <img src="grup.png" alt="grup">
                 </a>
                 <a href="semafor_liste.php" class="header-link">
-                    <img src="list.png">
+                    <img src="list.png" alt="list">
                 </a>
             </div>
 
@@ -42,7 +42,7 @@
                 <i class="fa fa-bars"></i>
             </div>
             <div class="logo-mobile">
-                <img class="logo" src="logo.jpg">
+                <img class="logo" src="logo.jpg" alt="logo">
             </div>
         </div>
         <div class="subheader-mobile">
@@ -59,12 +59,12 @@
                     <i class="fa fa-times"></i>
                 </div>
                 <div class="logo-mobile">
-                    <img class="logo" src="logo.jpg">
+                    <img class="logo" src="logo.jpg" alt="logo">
                 </div>
             </div>
             <div class="menu-element">
                 <div>
-                    <img class="menu-image" src="Pui.png">
+                    <img class="menu-image" src="Pui.png" alt="pui">
                 </div>
                 <div class="submenu-claus-container">
                     <a href="carne.asp" class="menu-text">Meat products</a>
@@ -99,7 +99,7 @@
             </div>
             <div class="menu-element">
                     <div>
-                        <img class="menu-image" src="Vegetarian.png">
+                        <img class="menu-image" src="Vegetarian.png" alt="vegetarian">
                     </div>
                     <form action="Subcategory.php" method="get">
                     <button name="subcategory" value="vegetarian" class="menu-text">Vegetarian products</button>
@@ -107,7 +107,7 @@
                 </div>
                 <div class="menu-element">
                     <div>
-                        <img class="menu-image" src="Peste.png">
+                        <img class="menu-image" src="Peste.png" alt="peste">
                     </div>
                     <form action="Subcategory.php" method="get">
                     <button name="subcategory" value="fish" class="menu-text">Fish and Seafood</button>
@@ -115,7 +115,7 @@
                 </div>
                 <div class="menu-element">
                     <div>
-                        <img class="menu-image" src="Ciorba.png">
+                        <img class="menu-image" src="Ciorba.png" alt="ciorba">
                     </div>
                     <form action="Subcategory.php" method="get">
                     <button name="subcategory" value="soups" class="menu-text">Soups</button>
@@ -123,7 +123,7 @@
                 </div>
                 <div class="menu-element">
                     <div>
-                        <img class="menu-image" src="garnituri.png">
+                        <img class="menu-image" src="garnituri.png" alt="garnituri">
                     </div>
                     <form action="Subcategory.php" method="get">
                     <button name="subcategory" value="sides" class="menu-text">Sides</button>
@@ -131,7 +131,7 @@
                 </div>
                 <div class="menu-element">
                     <div>
-                        <img class="menu-image" src="Salata.png">
+                        <img class="menu-image" src="Salata.png" alt="salata">
                     </div>
                     <form action="Subcategory.php" method="get">
                     <button name="subcategory" value="salads" class="menu-text">Salads</button>
@@ -139,7 +139,7 @@
                 </div>
                 <div class="menu-element">
                     <div>
-                        <img class="menu-image" src="Tort.png">
+                        <img class="menu-image" src="Tort.png" alt="tort">
                     </div>
                     <form action="Subcategory.php" method="get">
                     <button name="subcategory" value="desserts" class="menu-text">Dessert</button>
@@ -147,13 +147,13 @@
                 </div>
             <div class="header-links-wrapper">
                 <a href="semafor.php" class="header-link">
-                    <img src="persoana.png">
+                    <img src="persoana.png" alt="persoana">
                 </a>
                 <a href="Group.php" class="header-link">
-                    <img src="grup.png">
+                    <img src="grup.png" alt="grup">
                 </a>
                 <a href="semafor_list.php" class="header-link">
-                    <img src="list.png">
+                    <img src="list.png" alt="list">
                 </a>
             </div>
             <div class="logout-wrapper">
@@ -162,7 +162,7 @@
             </div>
         </div>
  
-     </header>
+     
     <div class="content">
 		          
                   <?php
@@ -211,7 +211,7 @@
                <div class="menu">
                 <div class="menu-element">
                     <div>
-                        <img class="menu-image" src="Pui.png">
+                        <img class="menu-image" src="Pui.png" alt="pui">
                     </div>
                     <div class="submenu-claus-container">
                         <a href="carne.asp" class="menu-text">Meat products</a>
@@ -248,7 +248,7 @@
                 </div>
                 <div class="menu-element">
                     <div>
-                        <img class="menu-image" src="Vegetarian.png">
+                        <img class="menu-image" src="Vegetarian.png" alt="vegetarian">
                     </div>
                     <form action="Subcategory.php" method="get">
                     <button name="subcategory" value="vegetarian" class="menu-text">Vegetarian products</button>
@@ -256,7 +256,7 @@
                 </div>
                 <div class="menu-element">
                     <div>
-                        <img class="menu-image" src="Peste.png">
+                        <img class="menu-image" src="Peste.png" alt="peste">
                     </div>
                     <form action="Subcategory.php" method="get">
                     <button name="subcategory" value="fish" class="menu-text">Fish and Seafood</button>
@@ -264,7 +264,7 @@
                 </div>
                 <div class="menu-element">
                     <div>
-                        <img class="menu-image" src="Ciorba.png">
+                        <img class="menu-image" src="Ciorba.png" alt="ciorba">
                     </div>
                     <form action="Subcategory.php" method="get">
                     <button name="subcategory" value="soups" class="menu-text">Soups</button>
@@ -272,7 +272,7 @@
                 </div>
                 <div class="menu-element">
                     <div>
-                        <img class="menu-image" src="garnituri.png">
+                        <img class="menu-image" src="garnituri.png" alt="garnituri">
                     </div>
                     <form action="Subcategory.php" method="get">
                     <button name="subcategory" value="sides" class="menu-text">Sides</button>
@@ -280,7 +280,7 @@
                 </div>
                 <div class="menu-element">
                     <div>
-                        <img class="menu-image" src="Salata.png">
+                        <img class="menu-image" src="Salata.png" alt="salata">
                     </div>
                     <form action="Subcategory.php" method="get">
                     <button name="subcategory" value="salads" class="menu-text">Salads</button>
@@ -288,7 +288,7 @@
                 </div>
                 <div class="menu-element">
                     <div>
-                        <img class="menu-image" src="Tort.png">
+                        <img class="menu-image" src="Tort.png" alt="tort">
                     </div>
                     <form action="Subcategory.php" method="get">
                     <button name="subcategory" value="desserts" class="menu-text">Dessert</button>
@@ -303,7 +303,7 @@
                     if (isset($_POST['edit'])){
                     echo
                   '<div class="date"><form id="editButton" action = "myAccount.php" method = post>
-                        <table class="dataTable" BORDER="5"  CELLPADDING="4" CELLSPACING="3">
+                        <table class="dataTable" >
                             <TR>
                                <TH class="titlu" COLSPAN="2"><BR><'.$row[3].'`s account
                                 <div class="editeazaDatele">
@@ -312,15 +312,15 @@
                                 </div>
                                </TH>
                             </TR>
-                            <TR ALIGN="center">
+                            <TR>
                                <TD>Full name</TD>
                                <TD><input type="text" size="50" maxlength="25" name="nameEdit" value="'.$row[1].'" /></TD>
                             </TR>
-                            <TR ALIGN="center">
+                            <TR>
                                <TD><p>E-mail</p>
                                <TD><input type="email" size="50" maxlength="25" name="emailEdit" value="'.$row[2].'" /></TD>
                             </TR>
-                            <TR ALIGN="center">
+                            <TR>
                                 <TD>Phone number</TD>
                                 <TD><input type="tel" pattern="[0-9]*" size="50" maxlength="25" name="phoneEdit" value="'.$row[5].'" /></TD>
                              </TR>
@@ -331,24 +331,24 @@
                 else{
                 echo
                     '<div class="date">
-                        <table class="dataTable" BORDER="5"  CELLPADDING="4" CELLSPACING="3">
+                        <table class="dataTable">
                             <TR>
                                <TH class="titlu" COLSPAN="2"><BR>'.$row[3].'`s account
                                 <div class="editeazaDatele">
                                 <form id="editButton" action="myAccount.php" method="post">
-                                            <button type="submit" name="edit" method="post">Edit details</button></form>
+                                            <button type="submit" name="edit">Edit details</button></form>
                                 </div>
                                </TH>
                             </TR>
-                            <TR ALIGN="center">
+                            <TR>
                                <TD>Full name</TD>
                                <TD>'.$row[1].'</TD>
                             </TR>
-                            <TR ALIGN="center">
+                            <TR>
                                <TD><p>E-mail</p>
                                <TD>'.$row[2].'</TD>
                             </TR>
-                            <TR ALIGN="center">
+                            <TR>
                                 <TD>Phone number</TD>
                                 <TD>'.$row[5].'</TD>
                              </TR>
@@ -362,11 +362,11 @@
                   }
                   
                   ?>
-                      </div>
+                 
         
                 <div class="content2">
                     <P class="favorites">Your favorite items</P>
-                    </div>    </div>
+                    </div>    
                  
             
             <div class="content3">
@@ -380,11 +380,11 @@
                     $file = strtolower(str_replace(' ', '', $row[1]));
                     echo '<li class="li1">
                     <form action="productPage.php" method="get">
-                  <button class="favoriteParagraph" type="submit" name = "id" value = "'.$row[0].'" method = "get">'.$row[1].'</button></form>
+                  <button class="favoriteParagraph" type="submit" name = "id" value = "'.$row[0].'">'.$row[1].'</button></form>
                     <img src="Images/'.$file.'.jpg" alt="'.$row[1].'">
                     <div class= "removeButton">
                     <form action="myAccount.php" method="post">
-                    <button class="productButton" type="submit" name = "remove" value = '.$row[0].' method = "post">Remove</button>
+                    <button class="productButton" type="submit" name = "remove" value = '.$row[0].'>Remove</button>
                 </form></div>
                   </li>';
                   $k=$k+1;
@@ -441,7 +441,7 @@
                 <a href="contact.php">Contact</a>
             </div>
         </footer>
-    </div>
+    
     <script src="./principal.js"></script>
 		</body>
 		</html>
