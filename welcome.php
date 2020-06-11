@@ -25,6 +25,9 @@ if(isset($_SESSION['loggedin'])){
                 <input type="text" id="username" name="username" class="form1" maxlength="255" placeholder="Username" required="required"><br>
                 <input type="password" id="password" name="password" class="form1" maxlength="255" placeholder="Password" required="required">
                 <br>
+                <?php if ($logok==1){ ?>
+                <p class="word">Username/password wrong</p>
+            <?php }; ?>
                 <div class="centerbutton">
                     <button type="submit" name="login_user" value="Log in">Log in</button>
                 </div>
